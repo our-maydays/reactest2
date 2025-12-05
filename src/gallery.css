@@ -1,15 +1,19 @@
 .slide-container {
-	padding: 10px;
-	display: flex !important;
+	padding: 0px;
+	display: flex;
 	justify-content: center;
+	align-items: center;
+
 }
 
-.slide-iamge {
-	width: 90%;
-	max-height: 300px;
-	border-radius: 10px;
+.slide-image {
+	width: auto;
+	height: auto;
+	border-radius: 20px;
 	cursor: pointer;
 	transition: 0.3s;
 }
 
-
+.slick-list {
+	overflow: visible;
+}
