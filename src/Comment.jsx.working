@@ -1,0 +1,143 @@
+import styled from 'styled-components';
+import { useState, useEffect } from 'react';
+import moment from 'moment';
+
+import { collection, doc, addDoc, getDocs, orderBy, query, limit } from 'firebase/firestore'
+import { db } from './firebase'
+
+import {StBarText, StEntireDiv, StInputDiv, StNameInput, StContentInput, StSubmitButton} from './Styled'
+
+import {StCommentName, StCommentDate, StCommentContent} from './Styled'
+
+const Comment = () => {
+
+	const [name, setName] = useState('')
+	const [content, setContent] = useState('')
+	const [comments, setComments] = useState([])
+	const [querySnapshot, setQuerySnapshot] = useState(null)
+	const [isLoading, setIsLoading] = useState(false)
+
+	const onChangeNameHandler = (e) => {
+		setName(e.target.value)
+	}
+
+	const onChangeContentHandler = (e) => {
+		setContent(e.target.value)
+	}
+
+	const fetchData = async (newLimit) => {
+		setIsLoading(true)
+		const querySnapshot = await getDocs(
+			query(
+				collection(db, 'comment'),
+				orderBy('createdAt','desc'),
+				limit(newLimit)
+			)
+		)
+		setQuerySnapshot(querySnapshot)
+		setIsLoading(false)
+	}
+
+	const loadMoreData = () => {
+		if (!isLoading) {
+			const newLimit = querySnapshot.docs.length + 10;
+			fetchData(newLimit)
+		}
+	}
+
+	useEffect( () => {
+		fetchData(10);
+	}, [])
+
+	useEffect( () => {
+		window.addEventListener('scroll',handleScroll)
+
+		return () => {
+			window.removeEventListener('scroll',handleScroll)
+		}
+	}, [querySnapshot])
+
+	const onClickSubmitHandler = async () => {
+		const createdAt = new Date()
+
+		await addDoc(collection(db,'comment'), {
+			name: name,
+			content: content,
+			createdAt: createdAt,
+		})
+
+		const newComment = {
+			id: comments.length,
+			name,
+			content,
+			createdAt,
+		}
+
+		setComments([...comments, newComment])
+
+		const querySnapshot = await getDocs(
+			query(collection(db, 'comment'), orderBy('createdAt','desc'))
+		)
+		setQuerySnapshot(querySnapshot)
+
+		setName('')
+		setContent('')
+
+	}
+
+	const handleScroll = () => {
+		const windowHeight = window.innerHeight
+		const scrollY = window.scrollY || window.pageYOffset
+		const documentHeight = document.documentElement.scrollHeight
+
+		if (windowHeight + scrollY >= documentHeight - 200) {
+			loadMoreData()
+		}
+	}
+
+
+	return (
+		<div>
+			<StBarText> 축하 메세지를 전해주세요 </StBarText>
+			<StEntireDiv>
+				<StInputDiv>
+					<StNameInput
+						placeholder='Name'
+						onChange={onChangeNameHandler}
+						value={name}
+					></StNameInput>
+					
+					<StContentInput
+						placeholder='comment leaves forever'
+						onChange={onChangeContentHandler}
+						value={content}
+					></StContentInput>
+
+					<StSubmitButton onClick={onClickSubmitHandler}>
+						Save
+					</StSubmitButton>
+				</StInputDiv>
+
+				<div>
+					{querySnapshot &&
+						querySnapshot.docs.map( (doc) => (
+							<div key={doc.id}>
+								<div style={{display: 'flex', flexDirection: 'row'}}>
+									<StCommentName> {doc.data().name} </StCommentName>
+									<StCommentDate> 
+										{moment(doc.data().createdAt.toDate()).format('LLL')}
+									</StCommentDate>
+								</div>
+								<StCommentContent> {doc.data().content} </StCommentContent>
+							</div>
+						))
+					}
+				</div>
+			</StEntireDiv>
+		</div>
+	)
+
+
+};
+
+export default Comment

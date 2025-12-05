@@ -1,0 +1,34 @@
+import styled from 'styled-components';
+import { useState, useEffect } from 'react';
+import moment from 'moment';
+
+import { collection, doc, addDoc, getDoc, orderBy, query, limit } from 'firebase/firestore'
+import { db } from './firebase'
+
+const Comment = () => {
+	
+	const [test,setTest] = useState()
+	async function getTest() {
+		const docRef = doc(db, 'items', '1')
+		const docSnap = await getDoc(docRef)
+
+		if (docSnap.exists()) {
+			setTest(docSnap.data())
+		}
+	}
+
+	useEffect( () => {
+		getTest()
+	}, [])
+
+	return (
+		<div>
+			{test !== undefined &&
+				<div> {test.name} </div>}
+		</div>
+	)
+
+
+};
+
+export default Comment

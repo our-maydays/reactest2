@@ -1,0 +1,98 @@
+import { useEffect, useRef, useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+import AudioComp from './AudioComp'
+import TopMsg from './TopMsg'
+import MainPhoto from './MainPhoto'
+import WelcomeMsg from './WelcomeMsg'
+import Calendar from './Calendar'
+import Gallery from './Gallery'
+import Navi from './Navi'
+import Account from './Account'
+import Intersect from './Intersect'
+
+import { Desktop, Mobile, Tablet, Default } from './Responsive'
+import Comment from './Comment'
+
+function App() {
+	
+	const debug = process.env.NODE_ENV === 'development'?'solid':'none';
+	return (
+		<>
+			<div className='main-frame'>
+
+				<div style={{border: debug, textAlign: 'right'}}>
+					<AudioComp/>
+				</div>
+
+				<Intersect className='fade-in' style={{border: debug}}>
+					<TopMsg/>
+				</Intersect>
+
+				<Intersect className='fade-in' style={{border: debug}}>
+					<MainPhoto/>
+					Photo
+				</Intersect>
+
+				<Intersect className='fade-in' style={{border: debug}}>
+					<WelcomeMsg/>
+					Welcome
+				</Intersect>
+
+				<Intersect className='fade-in' style={{border: debug}}>
+					<Calendar/>
+					Calender
+				</Intersect>
+
+				<Intersect className='fade-in' style={{border:debug}}>
+					<Gallery/>
+					Gallery
+				</Intersect>
+
+				<Intersect className='fade-in' style={{border:debug}}>
+					<Navi/>
+					Location
+				</Intersect>
+
+				<Intersect className='fade-in' style={{border:debug}}>
+					<Account/>
+					Account
+				</Intersect>
+
+				<Intersect className='fade-in' style={{border:debug}}>
+					<Comment/>
+					import {doc, getDoc} from 'firebase/firestore'
+					const [test, setTest] = useState()
+					async function getTest() {
+						const docRef = doc(db, 'items','1')
+						const docSnap = await getDoc(docRef)
+						if (docSnap.exists()) {
+							setTest(docSnap.data())
+						}
+					}
+
+					useEffect(()=> {
+						getTest()
+					}, [])
+					return (
+						<div>
+							{test!== undefined &&
+							<div>{test.name}</div>}
+						</div>
+					)
+
+					Message Boad
+				</Intersect>
+
+				<Intersect className='fade-in' style={{border:debug}}>
+					Share
+				</Intersect>
+
+			</div>
+		</>
+	)
+}
+
+export default App

@@ -1,0 +1,58 @@
+#root {
+	margin: 0 auto;
+	text-align: center;
+	border-style: solid;
+}
+
+.main-frame {
+	display: flex;
+	flex-direction: column;
+	color: black;
+	background-color: rgb(251,251,251);
+	font-family: MaruburiLight;
+	width: 100%;
+	max-width: 390px;
+}
+
+
+@media (max-width: 1400px) {
+	.main-frame {
+		width: 100%;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.fade-in {
+	animation: fadeIn 1.5s ease-in-out;
+}
+
+@font-face {
+	font-family: 'MaruBuriSemiBold';
+	src: url('./assets/fonts/MaruBuri-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'MaruBuri';
+	src: url('./assets/fonts/MaruBuri-Regular.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'MaruBuriLight';
+	src: url('./assets/fonts/MaruBuri-Light.otf') format('opentype');
+}
+@font-face {
+	font-family: 'MaruBuriExtraLight';
+	src: url('./assets/fonts/MaruBuri-ExtraLight.otf') format('openttype');
+}
+@font-face {
+	font-family: 'MaruBuriBold';
+	src: url('./assets/fonts/MaruBuri-Bold.otf') format('opentype');
+}

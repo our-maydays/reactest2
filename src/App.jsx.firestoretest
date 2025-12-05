@@ -1,0 +1,44 @@
+import { useEffect, useRef, useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+import AudioComp from './AudioComp'
+import TopMsg from './TopMsg'
+import MainPhoto from './MainPhoto'
+import WelcomeMsg from './WelcomeMsg'
+import Calendar from './Calendar'
+import Gallery from './Gallery'
+import Navi from './Navi'
+import Account from './Account'
+import Intersect from './Intersect'
+
+import { Desktop, Mobile, Tablet, Default } from './Responsive'
+import Comment from './Comment'
+
+import {db} from './firebase'
+import { doc, getDoc } from 'firebase/firestore'
+
+function App() {
+	const [test, setTest] = useState()
+	async function getTest() {
+		const docRef = doc(db, 'items','1')
+		const docSnap = await getDoc(docRef)
+		if (docSnap.exists()) {
+			setTest(docSnap.data())
+		}
+	}
+
+	useEffect(()=> {
+		getTest()
+	}, [])
+	return (
+		<div>
+			{test!== undefined &&
+			<div>{test.name}</div>}
+		</div>
+	)
+
+}
+
+export default App
