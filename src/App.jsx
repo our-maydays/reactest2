@@ -28,11 +28,11 @@ function App() {
 				</div>
 
 				<Intersect className='fade-in' style={{ }}>
-					<TopMsg/>
+					<MainPhoto/>
 				</Intersect>
 
 				<Intersect className='fade-in' style={{ }}>
-					<MainPhoto/>
+					<TopMsg/>
 				</Intersect>
 
 				<Intersect className='fade-in' style={{ }}>

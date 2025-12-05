@@ -5,50 +5,6 @@ import { useEffect, useRef, useState } from 'react';
 const AudioComp = () => {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const audioRef = useRef(null);
-	
-	useEffect( () => {
-		audioRef.current = new Audio(audioFile)
-		audioRef.current.load()
-		audioRef.current.addEventListener('ended', () => setIsPlaying(false))
-		audioRef.current.play().catch( () => {
-			console.log('autoplay blocked')
-			console.log(isPlaying)
-		})
-
-		const handleScrollStart = () => {
-			if (!isPlaying) {
-				audioRef.current.play().catch( () => {} )
-				setIsPlaying(!isPlaying)
-				window.removeEventListener('scroll',handleScrollStart)
-			}
-		}
-		window.addEventListener('scroll',handleScrollStart)
-
-		return () => {
-			window.removeEventListener('scroll',handleScrollStart);
-		}
-	}, [])
-
-	const handleAudioToggle = () => {
-		if (isPlaying) {
-			audioRef.current.pause()
-		} else {
-			audioRef.current.play()
-		}
-		setIsPlaying(!isPlaying)
-	}
-	
-	useEffect( () => {
-		return () => {
-			if (audioRef.current) {
-				audioRef.current.pause();
-				audioRef.current = null;
-			}
-		}
-	}, [])
-
-
-	{/*
 	const handleAudioToggle = () => {
 		// Load after icon click if preloaded error occur in iphone
 		if (!audioRef.current) {
@@ -72,8 +28,6 @@ const AudioComp = () => {
 			}
 		}
 	}, [])
-*/}
-
 
 	return (
 		<>

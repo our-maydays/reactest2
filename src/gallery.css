@@ -1,0 +1,15 @@
+.slide-container {
+	padding: 10px;
+	display: flex !important;
+	justify-content: center;
+}
+
+.slide-iamge {
+	width: 90%;
+	max-height: 300px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+

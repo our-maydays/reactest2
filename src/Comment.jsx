@@ -115,7 +115,7 @@ const Comment = () => {
 
 	return (
 		<div style={{display: 'flex', flexDirection:'column',alignItems:'center' }}>
-			<StBarText> 축하 메세지를 전해주세요 </StBarText>
+			<StBarText> 축하 메세지를 남겨주세요 </StBarText>
 			<StEntireDiv>
 				<StInputDiv>
 					<StNameInput
@@ -140,8 +140,8 @@ const Comment = () => {
 						display: 'flex',
 						flexDirection: 'column-reverse',
 						overflowY: 'scroll',
-						border: '2px solid red',
-						width: '350px',
+						border: '1px solid black',
+						width: '100%',
 						height: '399px',
 					}}
 				>

@@ -93,34 +93,41 @@ export const StDisplay = styled.div`
 export const StGallery = styled.div`
 	border: 1px solid rgb(230,224,255);
 	boarderRadius: 12px;
-	height: 600px;
-	margin: auto;
-	width: 380px;
-	background-color: grey;
-	display: block;
-	`;
-
-export const StSlider = styled(Slider)`
-	heigth: auto;
+	height: auto;
 	width: 95%;
 	margin: auto;
-	overflow: hidden;
+	background-color: grey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
 
-	.slick-slide div > div >  img {
+export const StSlider = styled(Slider)`
+	heigth: 100%;
+	width: 80%;
+
+	.slider-containder {
+		width: 100%
+		overflow: hidden;
+		min-width: 0;
+
+	}
+
+	.slider-image {
 		width: 100%;
 		height: auto;
 		display: block;
+		object-fit: cover;
 	}
 
-
-	.slick-slide {
-		display: inline-block;
-		margin: 0 0px ;
-		padding: 0;
+	.slick-slide > div {
+		padding: 0 0px;
 	}
-	
-	.slick-slide div {
-		outline: none;
+
+	.slick-slide > div > div > img  {
+		// div in children
+		height: 100%;
+		width: 100%;
 	}
 
 	//arrows
@@ -133,12 +140,12 @@ export const StSlider = styled(Slider)`
 	}
 	
 	.slick-prev {
-		left: 0px;
+		left: 20px;
 		top: 50%;
 	}				 
 	
 	.slick-next {
-		right: 0px;
+		right: 20px;
 		top: 50%;
 	}
 				

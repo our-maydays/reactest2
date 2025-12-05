@@ -4,6 +4,8 @@ const MainPhoto = () => {
 	return (
 		<div style={{position: 'relative'}}>
 			<img src={mainphoto} width={'100%'} style={{display: 'block'}} />
+
+			{/*
 			<span 
 				style={{
 					fontFamily: 'MaruBuriBold',
@@ -29,10 +31,41 @@ const MainPhoto = () => {
 			>
 				Yujin
 			</span>
+		*/}
 
+			<span 
+				style={{
+					fontFamily: 'MaruBuriBold',
+					fontSize: '30px',
+					color: 'white',
+					position: 'absolute',
+					top: '5%',
+					left: '50%',
+					transform: 'translate(-50%, -50%)',
+					width: '100%'
+				}}
+			>
+				Gyeongbo & Yujin
+			</span>
 			
-				
+			<span 
+				style= {{
+					fontFamily: 'MaruBuri',
+					fontSize: '16px',
+					color: 'brown',
+					position: 'absolute',
+					bottom: '8%',
+					left: '50%',
+					transform: 'translate(-50%,-50%)',
+					width: '100%',
+				}}
+			>
+				2026년 5월 9일 토요일 오후 1시<br/>
+				부산 영도 목장원
+			</span>
 
+				
+			{/*
 			<div style={{
 				position: 'absolute',
 				top: 0,
@@ -42,13 +75,14 @@ const MainPhoto = () => {
 				background: 'linear-gradient(to bottom, rgb(255,255,255) 0%, rgba(255,255,255,0.88) 30%, rgba(255,255,255,0) 100%)',
 				filter: 'blur(0px)'
 			}}> </div>
+			*/}
 
 			<div style={{
 				position: 'absolute',
 				bottom: 0,
 				left: 0,
 				right: 0,
-				height: '10%',
+				height: '20%',
 				background: 'linear-gradient(to top, rgb(255,255,255) 0%, rgba(255,255,255,0.88) 30%, rgba(255,255,255,0) 100%)',
 				filter: 'blur(0px)'
 			}}> </div>

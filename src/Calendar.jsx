@@ -41,7 +41,7 @@ const Calendar = () => {
 
 	return (
 		<>
-			<p style = {{fontSize: '20px', fontFamily: 'MaruBuri',margin: '20px'}}>
+			<p style = {{fontSize: '20px', fontFamily: 'MaruBuriBold',margin: '15px'}}>
 				2026. 5. 9.
 			</p>
 				토요일 오후 1시<br/>
@@ -60,10 +60,10 @@ const Calendar = () => {
 					</tbody>
 				</table>
 			</div>
-			경보 와 유진의 결혼식이
+			경보와 유진의 결혼식이&nbsp; 
 			<span style={{color: 'magenta'}}>
 				{Math.floor((dateOnly(tg_date)-dateOnly(today))/(1000*60*60*24))}
-			</span> 일 남았습니다..<br/>
+			</span>일 남았습니다.<br/>
 
 		</>
 	);

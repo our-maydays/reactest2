@@ -1,32 +1,8 @@
 import { useEffect, useState } from "react";
 import Modal from './Modal';
 
-import styled from 'styled-components';
-import { StSlider, StGallery } from './Styled';
-
-import './gallery.css';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
-
-
 // src/assets/images에 있는 모든 이미지를 한번에 불러오기
 const imagePaths = import.meta.glob('./assets/images/*.{png,JPG,jpeg,svg,webp}');
-
-
-const SliderSettings = {
-	dots: true,
-	infinite: true,
-	speed: 500,
-	slidesToShow: 1,
-	slidesToscroll: 1,
-	arrows: true,
-	draggable: true,
-	centerMode: false,
-	centerPadding: '0px',
-}
-
 
 const Gallery  = ({title}) => {
 	const [image_modal, set_image_modal] = useState({isopen:false, src:null});
@@ -58,23 +34,33 @@ const Gallery  = ({title}) => {
 				사진첩
 			</div>
 
-   		<StGallery>
-				<StSlider {...SliderSettings}>
+   		<div style={{
+				display: 'flex', 
+				gap:'8px', 
+				margin:'2%',
+				border: '1px solid rgb(230,224,255)',
+				borderRadius: '12px',
+				height:'300px',
+				overflowX: 'auto',
+				padding: '8px',
+				}}
+			>
 
-					{images.map( (img, i) => (
-						<div key={i} className='slide-container'>
-							<img
-								key={i}
-								src={img.src}
-								alt=''
-								className='slide-image'
-								onClick={() => {open_modal(img.src); console.log(img); document.body.classList.add('modal-open')}}
-							/>
-						</div>	
-					))}
-						
-				</StSlider>
-			</StGallery>
+				{images.map( (img, i) => (
+					<img
+						key={i}
+						src={img.src}
+						alt=''
+						onClick={() => {open_modal(img.src); console.log(img); document.body.classList.add('modal-open')}}
+						style={{
+							height: '100%',
+							width: 'auto',
+							cursor: 'pointer',
+							borderRadius: '8px',
+						}}
+					/>
+				))}
+			</div>
 
 
 			<Modal
