@@ -77,33 +77,17 @@ Error generating stack: `+l.message+`
 `;const iD=Fn.div`
 	border: 1px solid rgb(230,224,255);
 	boarderRadius: 12px;
-	height: 600px;
-	margin: auto;
-	width: 380px;
+	height: 590px;
 	background-color: grey;
 	display: block;
 	`,aD=Fn(KO)`
-	heigth: auto;
-	width: 95%;
-	margin: auto;
-	overflow: hidden;
-
-	.slick-slide div > div >  img {
-		width: 100%;
-		height: auto;
-		display: block;
-	}
 
 
-	.slick-slide {
-		display: inline-block;
-		margin: 0 0px ;
-		padding: 0;
+	img {
+		width: 95%;
+		margin: auto;
 	}
-	
-	.slick-slide div {
-		outline: none;
-	}
+
 
 	//arrows
 	.slick-arrow {
@@ -115,28 +99,28 @@ Error generating stack: `+l.message+`
 	}
 	
 	.slick-prev {
-		left: 0px;
-		top: 50%;
+		top: 101%;
+		left: 5%;
 	}				 
 	
 	.slick-next {
-		right: 0px;
-		top: 50%;
+		top: 101%;
+		right: 8%;
 	}
 				
 	 //dots
 	.slick-dots {
 		left: 50%;
-		bottom: -3px;
+		bottom: -4%;
 		width: auto;
-		padding: 0px 12px;
+		padding: 0px 10px;
 		background-color: none;
 		border-radius: 10.5px;
 		transform: translate(-50%,0);
 
 		li {
-			width: 8px;
-			height: 8px;
+			width: 15px;
+			height: 15px;
 			margin: 0;
 
 			&: last-of-type {
