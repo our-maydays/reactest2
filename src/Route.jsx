@@ -10,7 +10,8 @@ const Route = () => {
 
 	const openNaverMap = () => {
 		if (isMobile) {
-			const appUrl = `nmap://map?lat=${destLat}&lng=${destLng}&appname=com.example.myapp`
+//			const appUrl = `nmap://map?lat=${destLat}&lng=${destLng}&appname=com.example.myapp`
+			const appUrl = `nmap://route/public?dlat=${destLat}&dlng${destLng}&dname=${Dest}&appname=com.my.app`
 			window.location.href = appUrl
 		} else {
 			const webUrl = 'https:/map.naver.com/'
