@@ -1,0 +1,62 @@
+import React from 'react'
+
+const Route = () => {
+
+	const Lat = 35.0716472
+	const Lng = 129.0573867
+	const Dest = '영도 목장원'
+
+	const NAVER_MAP_APP_SCHEME = ({lat, lng, dest}) => `nmap:/route/car?dlat=${lat}&dlng=${lng}&dname=${dest}&appname=com.example.myapp`
+
+	const NAVER_MAP_ANDROID_STORE='market://details?id=com.nhn.android.nmap'
+	const NAVER_MAP_IOS_STORE='https://itunes.apple.com/app/id311867728?mt=8'
+
+	const KAKAO_MAP_APP_SCHEME = ({lat, lng}) => `kakaomap://route?ep=${lat},${lng}&by=CAR`
+	const KAKAO_MAP_ANDROID_STORE='market://details?id=net.daum.android.map'
+	const KAKAO_MAP_IOS_STORE='https://itunes.apple.com/app/id304608425?mt=8'
+
+	const TMAP_MAP_APP_SCHEME = ({lat, lng, dest}) => `tmap://route?goalname=${dest}&goalx=${lng}&goaly=${lat}`
+	const TMAP_MAP_ANDROID_STORE='market://details?id=coom.skt.tmap.ku'
+	const TMAP_MAP_IOS_STORE='https://itunes.apple.com/app/id431589174?mt=8'
+
+	type MapProvider ='tmap' | 'nmap' | 'kakaomap'
+
+	const handlePressOpenMap = async (provider: MapProvider, coordinate: LatLng, destination: string) => {
+		const appLink = links[provider].app({...coordinate, destination})
+	
+		const supported = await Linking.canOpenURL(appLink)
+
+		if (supported) {
+			await Linking.openURL(appLink)
+			return
+		}
+
+		const platform = Platform.OS === 'ios' ? 'ios' : 'android'
+	
+		await Linking.openURL(links[provider].store[platform]);
+	}
+
+	const isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent)
+
+	const openNaverMap = () => {
+		if (isMobile) {
+			const appUrl = `nmap://map?lat=${destLat}&lng=${destLng}&appname=com.example.myapp`
+			window.location.href = appUrl
+		} else {
+			const webUrl = 'https:/map.naver.com/'
+			window.open(webUrl,'_blank');
+		}
+	}
+
+
+return (
+	<div>
+		<button onClick={openNaverMap}>
+			네이버
+		</button>
+	</div>
+
+)
+
+export default Route
+

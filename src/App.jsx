@@ -13,6 +13,10 @@ import Navi from './Navi'
 import Account from './Account'
 import Intersect from './Intersect'
 
+import Map from './Map'
+
+import Route from './Route'
+
 import { Desktop, Mobile, Tablet, Default } from './Responsive'
 import Comment from './Comment'
 
@@ -22,6 +26,10 @@ function App() {
 	return (
 		<>
 			<div className='main-frame'>
+				
+				<Intersect className='fade-in' style={{ }}>
+					<Route/>
+				</Intersect>
 
 				<div style={{textAlign: 'right'}}>
 					<AudioComp/>
@@ -49,6 +57,12 @@ function App() {
 
 				<Intersect className='fade-in' style={{ }}>
 					<Navi/>
+				</Intersect>
+
+				<Intersect className='fade-in' style={{ }}>
+					Map below
+					<Map/>
+					Map above
 				</Intersect>
 
 				<Intersect className='fade-in' style={{ }}>

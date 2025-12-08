@@ -1,0 +1,153 @@
+import { useState, useEffect, useRef} from 'react'
+import { Container as MapDiv, NaverMap, Marker, useNavermaps} from 'react-naver-maps'
+
+const Map = () => {
+	
+	const navermaps = useNavermaps()
+
+	const lng = 129.0573867
+	const lat = 35.0716472
+
+	const [infoOpen, setInfoOpen] = useState(false)
+
+	const markerPosition = new navermaps.LatLng(lat, lng)
+
+	
+	return (
+		<MapDiv style={{width: '100%', heigth: '300px'}}>
+			<NaverMap
+				defaultCenter={markerPosition}
+				defaultZoom={15}
+			>
+				<Marker
+					position={markerPosition}
+					onClick={ () => setInfoOpen(!infoOpen)}
+				/>
+
+				{infoOpen && (
+					<InfoWindow
+						position={markerPosition}
+						onCloseClick={() => setInfoOpen(false)}
+					>
+						<div style={{padding: 10}}>
+							<h3 style={{margin:0}}>  영도 목장원 </h3>
+							<p style={{margin: 0}}> 부산시 영도구 </p>
+						</div>
+					</InfoWindow>
+				)}
+			</NaverMap>
+		</MapDiv>
+	)
+}
+
+
+export default Map
+
+{/*
+
+
+	const map = new navermaps.Map('map', {
+			center: place.destinationPoint(0,500),
+			zoom: 15,
+		});
+
+	const marker = new navermaps.Marker({
+		map: map,
+		position: place,
+	});
+
+
+
+//	naver.maps.Event.addListener(marker, 'click', function(e) {
+//		if (infowindow.getMap()) {
+//			infowindow.close()
+//		} else {
+//			infowindow.open(map,marker)
+//		}
+//	})
+///}
+
+
+	return (
+		<div>
+		<MapDiv style={{width: '100%', height: '400px'}}>
+			<NaverMap
+				defaultCenter={place}
+				defaultZoom={14}
+			>
+				<Marker
+					defaultPosition = {place}
+				/>
+				{/*
+onClick= { () => setInfoWindowOpened(!infoWindowOpened)}
+				/>
+				*/}
+				{/*
+				{ infoWindowOpened && (
+					<InfoWindow
+						anchor = {place}
+						maxWidth = {200}
+						onCloseClick={() => setInfoWindowOpened(false)}
+						content = {contentString}
+					/>
+					)}
+			</NaverMap>
+		</MapDiv>
+		</div>
+	)
+
+}
+
+
+
+
+	{/*
+const Map = () => {
+	const mapRef = useRef(null)
+	const {naver} = window;
+	const locat = new naver.maps.LatLng(37.566103, 126.9873772)
+
+	const mapOptions = {
+		center: locat,
+		logoControl: false,
+		mapDataControl: false,
+		scaleControl: true,
+		tileDuration: 200,
+		zoom: 14,
+		zoomControl: true,
+		zommControlOptions: {position: 9},
+	}
+
+	const map = new naver.maps.Map('map',mapOptions)
+	const marker = new naver.maps.Marker({
+		map,
+		position: locat,
+	})
+
+	return <div id='map' style={{width: '100%',height: '400px'}}/>
+}
+
+
+
+
+import { Container as Mapdiv, NaverMap, Marker } from 'react-naver-maps'
+
+const Map = () => {
+	return (
+		<MapDiv
+			style={{
+				width: '100%',
+				height: '600px',
+			}}
+		>
+
+			<NaverMap>
+				<Marker defaultPosition={{lat: 37.5666103, lng: 126.9783882}}/>
+			</NaverMap>
+		</MapDiv>
+	)
+}
+
+*/}
+
+

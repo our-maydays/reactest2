@@ -1,0 +1,22 @@
+<manifest xmlns:android='https://schemas.android.com/apk/res/android'
+	package='com.example.myapp'>
+	<application>
+
+	</application>
+
+	<queries>
+		<package android:name='com.skt.tmap.ky' />
+		<intent>
+			<action android:name='android.intent.action.VIEW'>
+			<data android:scheme='tmap' />
+		</intent>
+		<intent>
+			<action android:name='android.intent.action.VIEW'>
+			<data android:scheme='nmap' />
+		</intent>
+		<intent>
+			<action android:name='android.intent.action.VIEW'>
+			<dadta android:scheme='kakaomap' />
+		</intent>
+	</queries>
+</manifest>

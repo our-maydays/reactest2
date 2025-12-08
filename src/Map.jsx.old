@@ -1,0 +1,54 @@
+import {useEffect, useRef} from 'react'
+
+
+const Map = () => {
+	const mapRef = useRef(null)
+	const {naver} = window;
+	const locat = new naver.maps.LatLng(37.566103, 126.9873772)
+
+	const mapOptions = {
+		center: locat,
+		logoControl: false,
+		mapDataControl: false,
+		scaleControl: true,
+		tileDuration: 200,
+		zoom: 14,
+		zoomControl: true,
+		zommControlOptions: {position: 9},
+	}
+
+	const map = new naver.maps.Map('map',mapOptions)
+	const marker = new naver.maps.Marker({
+		map,
+		position: locat,
+	})
+
+	return <div id='map' style={{width: '100%',height: '400px'}}/>
+}
+
+
+{/*
+
+
+import { Container as Mapdiv, NaverMap, Marker } from 'react-naver-maps'
+
+const Map = () => {
+	return (
+		<MapDiv
+			style={{
+				width: '100%',
+				height: '600px',
+			}}
+		>
+
+			<NaverMap>
+				<Marker defaultPosition={{lat: 37.5666103, lng: 126.9783882}}/>
+			</NaverMap>
+		</MapDiv>
+	)
+}
+
+*/}
+
+
+export default Map
