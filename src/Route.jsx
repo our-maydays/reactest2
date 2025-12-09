@@ -11,9 +11,9 @@ const Route = () => {
 	const openNaverMap = () => {
 		if (isMobile) {
 //			const appUrl = `nmap://map?lat=${destLat}&lng=${destLng}&appname=com.example.myapp`
-			const appUrl = `nmap://route/car?dlat=${destLat}&dlng${destLng}&dname=${Dest}&appname=com.my.app`
-//			window.location.href = appUrl
-			UIApplication.shared.open(appUrl);
+			const appUrl = `nmap://route/car?dlat=${destLat}&dlng=${destLng}&dname=${Dest}&appname=com.my.app`
+			window.location.href = appUrl
+//			UIApplication.shared.open(appUrl);
 		} else {
 			
 			const appUrl = `nmap://route/car?dlat=${destLat}&dlng${destLng}&dname=${Dest}&appname=com.my.app`
@@ -28,7 +28,7 @@ const Route = () => {
 	return (
 		<div>
 			<button onClick={openNaverMap}>
-				네이버11:43
+				네이버11:49
 			</button>
 		</div>
 	)
