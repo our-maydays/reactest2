@@ -27,7 +27,7 @@ const Route = () => {
 	return (
 		<div>
 			<button onClick={openNaverMap}>
-				네이버
+				네이버11:28
 			</button>
 		</div>
 	)
