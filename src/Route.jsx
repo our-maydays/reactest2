@@ -5,6 +5,8 @@ import 'moment/dist/locale/ko'
 const Route = () => {
 
 	moment.locale('ko')
+	
+	const current = moment().format('HH:mm')
 
 	const destLat = 35.0716472
 	const destLng = 129.0573867
@@ -17,6 +19,9 @@ const Route = () => {
 		if (isMobile) {
 			const appUrl = `nmap://route/car?dlat=${destLat}&dlng=${destLng}&dname=${destName}&appname=com.my.app`
 			window.location.href = appUrl
+			setTimeout( () => {
+				window.location.href = 'https://map.naver.com/'
+			}, 1500)
 		} else {
 			const webUrl = 'https:/map.naver.com/'
 			window.open(webUrl,'_blank');
@@ -46,7 +51,7 @@ const Route = () => {
 	return (
 		<div>
 			<button onClick={openNaverMap}>
-				네이버{moment().format('HH:mm')}
+				네이버{current}
 			</button>
 			<button onClick={openKakaoMap}>
 				카카오{moment().format('HH:mm')}
