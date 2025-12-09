@@ -31,6 +31,7 @@ function App() {
 					<Route/>
 				</Intersect>
 
+				{/*
 				<div style={{textAlign: 'right'}}>
 					<AudioComp/>
 				</div>
@@ -77,7 +78,7 @@ function App() {
 				<Intersect className='fade-in' style={{ }}>
 					Share
 				</Intersect>
-
+*/}
 			</div>
 		</>
 	)
