@@ -6,7 +6,7 @@ const Route = () => {
 
 	moment.locale('ko')
 	
-	const current = moment().format('HH:mm')
+	const current = moment(import.meta.env.VITE_BUILD_TIME).format('HH:mm')
 
 	const destLat = 35.0716472
 	const destLng = 129.0573867
