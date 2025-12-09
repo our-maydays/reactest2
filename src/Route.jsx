@@ -8,14 +8,14 @@ const Route = () => {
 
 	const destLat = 35.0716472
 	const destLng = 129.0573867
-	const Dest = '영도목장원'
+	const destName = '영도목장원'
 
 	const isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent)
 
 
 	const openNaverMap = () => {
 		if (isMobile) {
-			const appUrl = `nmap://route/car?dlat=${destLat}&dlng=${destLng}&dname=${Dest}&appname=com.my.app`
+			const appUrl = `nmap://route/car?dlat=${destLat}&dlng=${destLng}&dname=${destName}&appname=com.my.app`
 			window.location.href = appUrl
 		} else {
 			const webUrl = 'https:/map.naver.com/'
@@ -33,6 +33,16 @@ const Route = () => {
 		}
 	}
 
+	const openTMap = () => {
+		if (isMobile) {
+			const appUrl = `tmap://route?goalname=${destName}&goalx=${destLng}&goaly=${destLat}`
+			window.location.href = appUrl
+		} else {
+			const webUrl = 'https://google.com'
+			window.open(webUrl, '_blank')
+		}
+	}
+
 	return (
 		<div>
 			<button onClick={openNaverMap}>
@@ -40,6 +50,9 @@ const Route = () => {
 			</button>
 			<button onClick={openKakaoMap}>
 				카카오{moment().format('HH:mm')}
+			</button>
+			<button>
+			 티맵 {moment().format('HH:mm')}
 			</button>
 		</div>
 	)
