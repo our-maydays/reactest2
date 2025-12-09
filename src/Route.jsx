@@ -51,7 +51,7 @@ const Route = () => {
 			<button onClick={openKakaoMap}>
 				카카오{moment().format('HH:mm')}
 			</button>
-			<button>
+			<button onClick={openTMap}>
 			 티맵 {moment().format('HH:mm')}
 			</button>
 		</div>
