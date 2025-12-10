@@ -45,7 +45,9 @@ const Route = () => {
 
 			const fallbackTimeout = setTimeout( () => {
 				if (!isAppOpened) {
-					window.location.href = 'https://map.kakao.com'
+					console.log(isAppOpened)
+					console.log(document.hidden)
+					window.open('https://map.kakao.com')
 				}
 			}, 1500)
 
@@ -57,7 +59,9 @@ const Route = () => {
 
 		} else {
 			const webUrl = 'https://map.kakao.com/'
-			window.open(webUrl,'_blank')
+			console.log(document.hidden)
+				window.open(webUrl,'_blank')
+			console.log(document.hidden)
 		}
 	}
 
