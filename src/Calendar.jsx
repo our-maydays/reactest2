@@ -1,7 +1,13 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 import './Calendar.css';
 
+import moment from 'moment'
+import 'moment/dist/locale/ko'
+
 const Calendar = () => {
+
+	moment.locale('ko')
 	const today = new Date();
 	const tg_date = new Date(2026,4,9,13,0,0);
 	const daysOfWeek = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
@@ -38,6 +44,39 @@ const Calendar = () => {
 			);
 	}
 
+	const targetDate = '2026-05-09 13:00:00'
+
+	const DDay = ( targetDate ) => {
+		const [daysLeft, setDaysLeft] = useState({days:0,hours:0, minutes:0, seconds:0})
+
+		useEffect( () => {
+			const calDaysLeft = () => {
+				const current = moment()
+				const wdngday = moment(targetDate)
+				const duration = moment.duration(wdngday.diff(current))
+
+				if (duration.asMilliseconds() <= 0) {
+					setDaysLeft({days:0, hours:0, minutes:0, seconds:0})
+				} else {
+					setDaysLeft({
+						days: Math.floor(duration.asDays()),
+						hours: duration.hours(),
+						minutes: duration.minutes(),
+						seconds: duration.seconds(),
+					})
+				}
+			}
+
+			calDaysLeft()
+
+			const interval = setInterval(calDaysLeft, 1000);
+			return () => clearInterval(interval);
+		},[targetDate]);
+
+	return daysLeft
+ }
+
+	const {days, hours, minutes, seconds } = DDay('2026-05-09 13:00:00')
 
 	return (
 		<>
@@ -61,10 +100,21 @@ const Calendar = () => {
 				</table>
 			</div>
 			<div>
-				<span style={{border: '1px solid black'}}> D </span>
-				<span style={{border: '1px solid black'}}> H </span>
-				<span style={{border: '1px solid black'}}> M </span>
-								d-day
+				{days + hours + minutes + seconds > 0 ? (
+					<p>
+						<span style={{border: '1px solid black'}}> {days} </span>
+						<span style={{border: '1px solid black'}}> {hours} </span>
+						<span style={{border: '1px solid black'}}> {minutes} </span>
+						<span style={{border: '1px solid black'}}> {seconds} </span>
+					</p>
+				) : (
+					<p>
+						<span style={{border: '1px solid black'}}> D </span>
+						<span style={{border: '1px solid black'}}> H </span>
+						<span style={{border: '1px solid black'}}> M </span>
+					</p>
+				)}
+				d-day
 			</div>
 			경보와 유진의 결혼식이&nbsp; 
 			<span style={{color: 'magenta'}}>
