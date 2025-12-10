@@ -60,6 +60,9 @@ const Calendar = () => {
 					</tbody>
 				</table>
 			</div>
+			<div>
+				d-day
+			</div>
 			경보와 유진의 결혼식이&nbsp; 
 			<span style={{color: 'magenta'}}>
 				{Math.floor((dateOnly(tg_date)-dateOnly(today))/(1000*60*60*24))}
