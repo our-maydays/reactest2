@@ -19,7 +19,7 @@ const Map = () => {
 			center: position,
 			zoom: 17,
 			minZoom: 6,
-			zoomControl: true,
+			zoomControl: false,
 			zoomControlOptions: {
 				position: navermaps.Position.TOP_RIGHT
 			},
