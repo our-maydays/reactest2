@@ -13,15 +13,24 @@ const Route = () => {
 	const destName = '영도목장원'
 
 	const isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent)
-
+	const isIos = /iPhone|iPad/i.test(navigator.userAgent)
+	const isAndroid = /Android/i.test(navigator.userAgent)
 
 	const openNaverMap = () => {
 		if (isMobile) {
 			const appUrl = `nmap://route/car?dlat=${destLat}&dlng=${destLng}&dname=${destName}&appname=com.my.app`
 			window.location.href = appUrl
 			setTimeout( () => {
-				window.location.href = 'https://map.naver.com/'
-			}, 1500)
+				if (!document.hidden) {
+					if (isIos) {
+						window.location.href = 'https://itunes.apple.com/app/id311867728?mt=8'
+					} else if (isAndroid) {
+						window.location.href = 'market://details?id=com.nhn.android.nmap'
+					} else {
+						window.location.href = 'https://map.naver.com/'
+					}
+				}
+			}, 3000)
 		} else {
 			const webUrl = 'https:/map.naver.com/'
 			window.open(webUrl,'_blank');
@@ -31,28 +40,23 @@ const Route = () => {
 	const openKakaoMap = () => {
 		if (isMobile) {
 			const appUrl = `kakaomap://route?ep=${destLat},${destLng}&by=car`
-			const now = Date.now()
 
 			window.location.href = appUrl;
 			
 			setTimeout( () => {
-				console.log('timeout 시작')
-//				if (Date.now() - now > 1500) {
-					console.log(' 1.5초지남')
-					if (!document.hidden) {
-						console.log('꺼짐')
+				if (!document.hidden) {
+					if (isIos) {
+						window.location.href = 'https://itunes.apple.com/app/id304608425?mt=8'
+					} else if (isAndroid) {
+						window.location.href = 'market://details?id=net.daum.android.map'
+					} else {
 						window.location.href = 'https://map.kakao.com/'
 					}
-//				}
+				}
 			}, 3000);
-
-
-
 		} else {
 			const webUrl = 'https://map.kakao.com/'
-			console.log(document.hidden)
 				window.open(webUrl,'_blank')
-			console.log(document.hidden)
 		}
 	}
 
@@ -60,6 +64,17 @@ const Route = () => {
 		if (isMobile) {
 			const appUrl = `tmap://route?goalname=${destName}&goalx=${destLng}&goaly=${destLat}`
 			window.location.href = appUrl
+			setTimeout( () => {
+				if (!document.hidden) {
+					if (isIos) {
+						window.location.href = 'https://itunes.apple.com/app/id431589174?mt=8'
+					} else if (isAndroid) {
+						window.location.href = 'market://details?id=com.skt.tmap.ku'
+					} else {
+						window.location.href = 'https://google.com/'
+					}
+				}
+			}, 3000)
 		} else {
 			const webUrl = 'https://google.com'
 			window.open(webUrl, '_blank')
