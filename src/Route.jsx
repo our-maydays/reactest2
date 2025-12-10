@@ -52,6 +52,7 @@ const Route = () => {
 			window.location.href = appUrl;
 
 			console.log('document hidden',document.hidden);
+			console.log(isAppOppened)
 
 
 		} else {
