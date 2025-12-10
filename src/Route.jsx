@@ -41,7 +41,8 @@ const Route = () => {
 		if (isMobile) {
 			const appUrl = `kakaomap://route?ep=${destLat},${destLng}&by=car`
 			console.log('try open kakao')
-			window.location.href = appUrl;
+			window.open(appUrl)
+//			window.location.href = appUrl;
 			
 			setTimeout( () => {
 				if (!document.hidden) {

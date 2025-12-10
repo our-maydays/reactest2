@@ -61,7 +61,10 @@ const Calendar = () => {
 				</table>
 			</div>
 			<div>
-				d-day
+				<span style={{border: '1px solid black'}}> D </span>
+				<span style={{border: '1px solid black'}}> H </span>
+				<span style={{border: '1px solid black'}}> M </span>
+								d-day
 			</div>
 			경보와 유진의 결혼식이&nbsp; 
 			<span style={{color: 'magenta'}}>
