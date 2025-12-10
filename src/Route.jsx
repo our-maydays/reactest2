@@ -44,7 +44,7 @@ const Route = () => {
 						window.location.href = 'https://map.kakao.com/'
 					}
 //				}
-			}, 1500);
+			}, 3000);
 
 
 
