@@ -31,15 +31,14 @@ const Route = () => {
 	const openKakaoMap = () => {
 		if (isMobile) {
 			const appUrl = `kakaomap://route?ep=${destLat},${destLng}&by=car`
-			window.location.href = appUrl
-
-			const fallbackTimeout = setTimeout(function () {
-				window.open('https://map.kakao.com/','_blank')
+			
+			const timeout = setTimeout( () => {
+				window.location.href = 'https://map.kakao.com'
 			}, 1000)
 
-			window.addEventListener('focus',function() {
-				clearTimeout(fallbackTimeout)
-			})
+			window.location.href = appUrl
+
+			window.addEventListener('pagehide',()=> clearTimeout(timeout));
 
 		} else {
 			const webUrl = 'https://map.kakao.com/'
