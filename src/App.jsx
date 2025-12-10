@@ -26,7 +26,9 @@ function App() {
 	return (
 		<>
 			<div className='main-frame'>
-				
+				<div>
+					build time : {import.meta.env.VITE_BUILD_TIME}
+				</div>
 				<Intersect className='fade-in' style={{ }}>
 					<Route/>
 				</Intersect>
@@ -59,13 +61,13 @@ function App() {
 				<Intersect className='fade-in' style={{ }}>
 					<Navi/>
 				</Intersect>
-
+*/}
 				<Intersect className='fade-in' style={{ }}>
 					Map below
 					<Map/>
 					Map above
 				</Intersect>
-
+{/*
 				<Intersect className='fade-in' style={{ }}>
 					<Account/>
 				</Intersect>

@@ -31,13 +31,7 @@ const Route = () => {
 	const openKakaoMap = () => {
 		if (isMobile) {
 			const appUrl = `kakaomap://route?ep=${destLat},${destLng}&by=car`
-
-			try {
-				window.location.href = appUrl
-			} catch (error) {
-				window.location.href = 'https://map.kakao.com/'
-			}
-
+			window.location.href = appUrl
 		} else {
 			const webUrl = 'https://map.kakao.com/'
 			window.open(webUrl,'_blank')
