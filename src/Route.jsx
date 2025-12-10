@@ -48,10 +48,10 @@ const Route = () => {
 					console.log('no kakaomap')
 					if (isIos) {
 						console.log('ios')
-						window.location.href = 'https://itunes.apple.com/app/id304608425?mt=8'
+						window.open('https://itunes.apple.com/app/id304608425?mt=8')
 					} else if (isAndroid) {
 						console.log('android')
-						window.location.href = 'market://details?id=net.daum.android.map'
+						window.open('market://details?id=net.daum.android.map')
 					} else {
 						console.log('else')
 						window.location.href = 'https://map.kakao.com/'
