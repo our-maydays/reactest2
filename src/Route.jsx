@@ -30,31 +30,19 @@ const Route = () => {
 
 	const openKakaoMap = () => {
 		if (isMobile) {
-			let isAppOpened = false
 			const appUrl = `kakaomap://route?ep=${destLat},${destLng}&by=car`
-			
-			const onVisibilityChange = () => {
-				if (document.hidden) {
-					isAppOpened = true
-					clearTimeout(fallbackTimeout)
-					document.removeEventListener('visibilitychange',onVisibilityChange)
-				}
-			}
-
-			document.addEventListener('visibilitychange',onVisibilityChange)
-
-			const fallbackTimeout = setTimeout( () => {
-				if (!isAppOpened) {
-					console.log(isAppOpened)
-					console.log(document.hidden)
-					window.open('https://map.kakao.com')
-				}
-			}, 1500)
+			const now = Date.now()
 
 			window.location.href = appUrl;
+			
+			setTimeout( () => {
+				console.log('timeout 시작')
+				if (Date.now() - now > 1500) {
+					console.log(' 1.5초지남')
+					window.location.href = 'https://map.kakao.com/'
+				}
+			}, 1500);
 
-			console.log('document hidden',document.hidden);
-			console.log(isAppOpened)
 
 
 		} else {
