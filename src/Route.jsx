@@ -37,13 +37,13 @@ const Route = () => {
 			
 			setTimeout( () => {
 				console.log('timeout 시작')
-				if (Date.now() - now > 1500) {
+//				if (Date.now() - now > 1500) {
 					console.log(' 1.5초지남')
 					if (!document.hidden) {
 						console.log('꺼짐')
 						window.location.href = 'https://map.kakao.com/'
 					}
-				}
+//				}
 			}, 1500);
 
 
