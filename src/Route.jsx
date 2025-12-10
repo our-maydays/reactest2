@@ -51,6 +51,8 @@ const Route = () => {
 
 			window.location.href = appUrl;
 
+			console.log('document hidden',document.hidden);
+
 
 		} else {
 			const webUrl = 'https://map.kakao.com/'
