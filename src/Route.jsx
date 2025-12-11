@@ -5,7 +5,26 @@ import 'moment/dist/locale/ko'
 const Route = () => {
 
 	moment.locale('ko')
-	
+	const [locat, setLocat] = useState({lat:'null',lng:'null'})
+	const [error, setError] = useState('')
+
+	const getLocation = () => {
+		if (!navigatior.geolocation) {
+			alert('위치 정보가 지원되지 않음')
+			return
+		}
+
+		navigator.geolocation.getCurrentPosition( (position) => {
+			setLocation({
+				lat: position.coords.latitude,
+				lng: position.coords.longitude,
+			})
+			console.log('Get position')
+			}, (err) => { setError('Cant get position authorize?')
+		})
+	}
+
+
 	const current = import.meta.env.VITE_BUILD_TIME
 
 	const destLat = 35.0716472
@@ -20,7 +39,9 @@ const Route = () => {
 		if (isMobile) {
 //			const appUrl = `nmap://route/car?dlat=${destLat}&dlng=${destLng}&dname=${destName}&appname=com.my.app`
 //			const appUrl = `https://m.map.naver.com/v5/directions/-/${destLat},${destLng},${destName}`
-			const appUrl = `http://m.map.naver.com/route.nhn?menu=route&sname=내위치&sx=126.9816485&sy=37.4765&ename=${destName}&ex=${destLng}&ey=${destLat}&pathType=0&showMap=true`
+			{getLocation}
+
+			const appUrl = `https://m.map.naver.com/route.nhn?menu=route&sname=내위치&sx=${locat.lng}&sy=${locat.lat}&ename=${destName}&ex=${destLng}&ey=${destLat}&pathType=0&showMap=true`
 			window.location.href = appUrl
 			setTimeout( () => {
 				if (!document.hidden) {
