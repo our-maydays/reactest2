@@ -41,7 +41,11 @@ const Route = () => {
 
 	const openNaverMap = async () => {
 //		getLocation()
-		const locat=	await getLocation()
+		try {
+			const locat=	await getLocation()
+		} catch (e) {
+			console.error(e);
+		}
 //		setTimeout( () => {
 //			getLocation()
 //		}, 500)
