@@ -55,7 +55,8 @@ const Route = () => {
 //			const appUrl = `https://m.map.naver.com/v5/directions/-/${destLat},${destLng},${destName}`
 
 			const appUrl = `https://m.map.naver.com/route.nhn?menu=route&sname=내위치&sx=${locat.lng}&sy=${locat.lat}&ename=${destName}&ex=${destLng}&ey=${destLat}&pathType=0&showMap=true`
-			window.location.href = appUrl
+			console.log({appUrl})
+//			window.location.href = appUrl
 			setTimeout( () => {
 				if (!document.hidden) {
 					if (isIos) {
