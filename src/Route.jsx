@@ -19,7 +19,7 @@ const Route = () => {
 	const openNaverMap = () => {
 		if (isMobile) {
 //			const appUrl = `nmap://route/car?dlat=${destLat}&dlng=${destLng}&dname=${destName}&appname=com.my.app`
-			const appUrl = `https://m.map.naver.com/v5/directions/128,34/${destLat},${destLng},${destName}`
+			const appUrl = `https://m.map.naver.com/v5/directions/-/${destLat},${destLng},${destName}`
 			window.location.href = appUrl
 			setTimeout( () => {
 				if (!document.hidden) {
