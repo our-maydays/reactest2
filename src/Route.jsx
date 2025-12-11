@@ -54,9 +54,13 @@ const Route = () => {
 //			const appUrl = `nmap://route/car?dlat=${destLat}&dlng=${destLng}&dname=${destName}&appname=com.my.app`
 //			const appUrl = `https://m.map.naver.com/v5/directions/-/${destLat},${destLng},${destName}`
 
-			const appUrl = `https://m.map.naver.com/route.nhn?menu=route&sname=내위치&sx=${locat.lng}&sy=${locat.lat}&ename=${destName}&ex=${destLng}&ey=${destLat}&pathType=0&showMap=true`
-			console.log(`&sx=${locat.lng}&sy=${locat.lat}&ename=${destName}&ex=${destLng}&ey=${destLat}`)
-//			window.location.href = appUrl
+//			const appUrl = `https://m.map.naver.com/route.nhn?menu=route&sname=내위치&sx=${locat.lng}&sy=${locat.lat}&ename=${destName}&ex=${destLng}&ey=${destLat}&pathType=0&showMap=true`
+			
+			const appUrl = `https://map.naver.com/direction?target=car&elat=${destLat}&elng=${detLng}&slat=${locat.lat}&slng=${locat.lng}`
+
+
+			window.location.href = appUrl
+
 			setTimeout( () => {
 				if (!document.hidden) {
 					if (isIos) {
