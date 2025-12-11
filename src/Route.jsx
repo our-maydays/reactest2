@@ -10,13 +10,13 @@ const Route = () => {
 	const [error, setError] = useState('')
 
 	const getLocation = () => {
-		if (!navigatior.geolocation) {
+		if (!navigator.geolocation) {
 			alert('위치 정보가 지원되지 않음')
 			return
 		}
 
 		navigator.geolocation.getCurrentPosition( (position) => {
-			setLocation({
+			setLocat({
 				lat: position.coords.latitude,
 				lng: position.coords.longitude,
 			})
@@ -37,10 +37,11 @@ const Route = () => {
 	const isAndroid = /Android/i.test(navigator.userAgent)
 
 	const openNaverMap = () => {
+		getLocation()
+		console.log({locat})
 		if (isMobile) {
 //			const appUrl = `nmap://route/car?dlat=${destLat}&dlng=${destLng}&dname=${destName}&appname=com.my.app`
 //			const appUrl = `https://m.map.naver.com/v5/directions/-/${destLat},${destLng},${destName}`
-			{getLocation}
 
 			const appUrl = `https://m.map.naver.com/route.nhn?menu=route&sname=내위치&sx=${locat.lng}&sy=${locat.lat}&ename=${destName}&ex=${destLng}&ey=${destLat}&pathType=0&showMap=true`
 			window.location.href = appUrl
