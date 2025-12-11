@@ -10,18 +10,21 @@ const Route = () => {
 	const [error, setError] = useState('')
 
 	const getLocation = () => {
-		if (!navigator.geolocation) {
-			alert('위치 정보가 지원되지 않음')
-			return
-		}
+		return new Promise((resolve, reject) => {
+			if (!navigator.geolocation) {
+				alert('위치 정보가 지원되지 않음')
+				return
+			}
 
-		navigator.geolocation.getCurrentPosition( (position) => {
-			setLocat({
-				lat: position.coords.latitude,
-				lng: position.coords.longitude,
-			})
-			console.log('Get position')
-			}, (err) => { setError('Cant get position authorize?')
+			navigator.geolocation.getCurrentPosition( (position) => {
+				const coords = {
+					lat: position.coords.latitude,
+					lng: position.coords.longitude,
+				}
+				resolve(coords)
+				console.log('Get position')
+				}, (err) => reject(err) 
+			)
 		})
 	}
 
@@ -36,8 +39,12 @@ const Route = () => {
 	const isIos = /iPhone|iPad/i.test(navigator.userAgent)
 	const isAndroid = /Android/i.test(navigator.userAgent)
 
-	const openNaverMap = () => {
-		getLocation()
+	const openNaverMap = async () => {
+//		getLocation()
+		const locat=	await getLocation()
+//		setTimeout( () => {
+//			getLocation()
+//		}, 500)
 		console.log({locat})
 		if (isMobile) {
 //			const appUrl = `nmap://route/car?dlat=${destLat}&dlng=${destLng}&dname=${destName}&appname=com.my.app`

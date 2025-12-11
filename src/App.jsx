@@ -49,7 +49,7 @@ function App() {
 				<Intersect className='fade-in' style={{ }}>
 					<WelcomeMsg/>
 				</Intersect>
-*/}
+
 				<Intersect className='fade-in' style={{ }}>
 					<Calendar/>
 				</Intersect>
