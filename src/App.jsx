@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from 'react'
-import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
@@ -16,6 +14,7 @@ import Intersect from './Intersect'
 import Map from './Map'
 
 import Route from './Route'
+import Dday from './Dday'
 
 import { Desktop, Mobile, Tablet, Default } from './Responsive'
 import Comment from './Comment'
@@ -26,14 +25,10 @@ function App() {
 	return (
 		<>
 			<div className='main-frame'>
-				<div>
+				<div style={{fontSize: '8px' }}>
 					build time : {import.meta.env.VITE_BUILD_TIME}
 				</div>
-				<Intersect className='fade-in' style={{ }}>
-					<Route/>
-				</Intersect>
 
-				{/*
 				<div style={{textAlign: 'right'}}>
 					<AudioComp/>
 				</div>
@@ -46,28 +41,35 @@ function App() {
 					<TopMsg/>
 				</Intersect>
 
+
 				<Intersect className='fade-in' style={{ }}>
 					<WelcomeMsg/>
 				</Intersect>
 
+
 				<Intersect className='fade-in' style={{ }}>
 					<Calendar/>
 				</Intersect>
-{/*
+
+				<Intersect className='fade-in' style={{ }}>
+					<Dday/>
+				</Intersect>
+
+				
 				<Intersect className='fade-in' style={{ }}>
 					<Gallery/>
 				</Intersect>
 
+
 				<Intersect className='fade-in' style={{ }}>
 					<Navi/>
 				</Intersect>
-*/}
+
+
 				<Intersect className='fade-in' style={{ }}>
-					Map below
-					<Map/>
-					Map above
+					<Route/>
 				</Intersect>
-{/*
+
 				<Intersect className='fade-in' style={{ }}>
 					<Account/>
 				</Intersect>
@@ -80,7 +82,7 @@ function App() {
 				<Intersect className='fade-in' style={{ }}>
 					Share
 				</Intersect>
-*/}
+
 			</div>
 		</>
 	)

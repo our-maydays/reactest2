@@ -2,14 +2,21 @@ import wedding from './assets/wedding.png'
 import mymap from './assets/map.png'
 import Transport from './Transport'
 
+
+import Map from './Map'
+
 const Navi = () => {
 	return (
 		<>
 			<div> Location </div>
 			<div> 오시는 길 </div>
 
+{/*
 			<img src={wedding} width={'35%'} style={{marginTop:'2%'}} />
 			<img src={mymap} width={'90%'} /> <br/>
+*/}
+				<Map/>
+				<br/>
 				주소: 부산광역시 영도구 절영로 355 목장원<br/>
 				전화: 051-404-5011<br/><br/>
 			<Transport 

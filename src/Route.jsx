@@ -51,12 +51,12 @@ const Route = () => {
 //		}, 500)
 		console.log({locat})
 		if (isMobile) {
-//			const appUrl = `nmap://route/car?dlat=${destLat}&dlng=${destLng}&dname=${destName}&appname=com.my.app`
+			const appUrl = `nmap://route/car?dlat=${destLat}&dlng=${destLng}&dname=${destName}&appname=com.my.app`
 //			const appUrl = `https://m.map.naver.com/v5/directions/-/${destLat},${destLng},${destName}`
 
 //			const appUrl = `https://m.map.naver.com/route.nhn?menu=route&sname=내위치&sx=${locat.lng}&sy=${locat.lat}&ename=${destName}&ex=${destLng}&ey=${destLat}&pathType=0&showMap=true`
 			
-			const appUrl = `https://map.naver.com/direction?target=car&elat=${destLat}&elng=${destLng}&slat=${locat.lat}&slng=${locat.lng}`
+//			const appUrl = `https://map.naver.com/direction?target=car&elat=${destLat}&elng=${destLng}&slat=${locat.lat}&slng=${locat.lng}`
 
 
 			window.location.href = appUrl
