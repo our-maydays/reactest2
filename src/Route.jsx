@@ -20,6 +20,7 @@ const Route = () => {
 		if (isMobile) {
 //			const appUrl = `nmap://route/car?dlat=${destLat}&dlng=${destLng}&dname=${destName}&appname=com.my.app`
 			const appUrl = `https://m.map.naver.com/v5/directions/-/${destLat},${destLng},${destName}`
+			const appUrl = `http://m.map.naver.com/route.nhn?menu=route&sname=내위치&sx=126.9816485&sy=37.4765&ename=${destName}&ex=${destLng}&ey=${destLat}&pathType=0&showMap=true`
 			window.location.href = appUrl
 			setTimeout( () => {
 				if (!document.hidden) {
