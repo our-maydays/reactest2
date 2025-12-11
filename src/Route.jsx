@@ -56,7 +56,7 @@ const Route = () => {
 
 //			const appUrl = `https://m.map.naver.com/route.nhn?menu=route&sname=내위치&sx=${locat.lng}&sy=${locat.lat}&ename=${destName}&ex=${destLng}&ey=${destLat}&pathType=0&showMap=true`
 			
-			const appUrl = `https://map.naver.com/direction?target=car&elat=${destLat}&elng=${detLng}&slat=${locat.lat}&slng=${locat.lng}`
+			const appUrl = `https://map.naver.com/direction?target=car&elat=${destLat}&elng=${destLng}&slat=${locat.lat}&slng=${locat.lng}`
 
 
 			window.location.href = appUrl
