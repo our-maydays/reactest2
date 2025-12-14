@@ -38,7 +38,6 @@ function App() {
 					<AudioComp/>
 				</div>
 
-{/*				
 				<Intersect className='fade-in' style={{ }}>
 					<MainPhoto/>
 				</Intersect>
@@ -101,7 +100,7 @@ function App() {
 				<Intersect className='fade-in' style={{ }}>
 					Share
 				</Intersect>
-*/}
+			
 			</div>
 		</>
 	)
