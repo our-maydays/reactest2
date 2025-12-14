@@ -1,26 +1,48 @@
+import silenceFile from './assets/silence.mp3'
 import audioFile from './assets/bgm.mp3'
-import audioIcon from './assets/bgm_on.png'
+import audioIconOn from './assets/volume_on.png'
+import audioIconOff from './assets/volume_off.png'
 import { useEffect, useRef, useState } from 'react';
 
 const AudioComp = () => {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const audioRef = useRef(null);
-	const handleAudioToggle = () => {
-		// Load after icon click if preloaded error occur in iphone
-		if (!audioRef.current) {
-			audioRef.current = new Audio(audioFile);
-			audioRef.current.load()
-			audioRef.current.addEventListner('ended', () => setIsPlaying(false));
-		}
-		if (isPlaying) {
-			audioRef.current.pause();
-		} else {
-			audioRef.current.play();
-		}
-		setIsPlaying(!isPlaying);
-	};
+	
 	useEffect( () => {
-		// Stop bgm if leave page
+		audioRef.current = new Audio(audioFile)
+		audioRef.current.load()
+		audioRef.current.addEventListener('ended', () => setIsPlaying(false))
+		audioRef.current.play().catch( () => {
+			console.log('autoplay blocked')
+			console.log(isPlaying)
+		})
+
+		const handleScrollStart = () => {
+			if (!isPlaying) {
+				audioRef.current.play().catch( () => {} )
+				setIsPlaying(!isPlaying)
+				window.removeEventListener('scroll',handleScrollStart)
+			}
+		}
+		window.addEventListener('scroll',handleScrollStart)
+
+		return () => {
+			window.removeEventListener('scroll',handleScrollStart);
+		}
+	}, [])
+
+	const handleAudioToggle = () => {
+		if (isPlaying) {
+			audioRef.current.pause()
+			console.log('audio pause')
+		} else {
+			audioRef.current.play()
+			console.log('audio start')
+		}
+		setIsPlaying(!isPlaying)
+	}
+	
+	useEffect( () => {
 		return () => {
 			if (audioRef.current) {
 				audioRef.current.pause();
@@ -29,16 +51,31 @@ const AudioComp = () => {
 		}
 	}, [])
 
+
+	{/*
 	return (
 		<>
 			<img
-				src={audioIcon}
+				src={isPlaying ? audioIconOn : audioIconOff}
 				width={'20px'}
 				style={{marginRight: '10px', marginTop: '10px'}}
 				onClick={() => handleAudioToggle()}
 			/>
 		</>
 	)
+*/}
+
+	return(
+		<>
+			<iframe src={silenceFile} allow='autoplay' id='audio'>
+			</iframe>
+			<audio id='audio' autoPlay>
+			<source src={audioFile}/>
+			</audio>
+
+		</>
+	)
+
 }
 
 export default AudioComp

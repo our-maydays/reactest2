@@ -93,7 +93,7 @@ export const StDisplay = styled.div`
 export const StGallery = styled.div`
 	border: 1px solid rgb(230,224,255);
 	boarderRadius: 12px;
-	height: 210px;
+	height: auto;
 	background-color: grey;
 	display: block;
 	padding-top: 5px;

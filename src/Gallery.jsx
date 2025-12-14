@@ -19,12 +19,12 @@ const SliderSettings = {
 	dots: true,
 	infinite: true,
 	speed: 500,
-	slidesToShow: 3,
+	slidesToShow: 1,
 	slidesToscroll: 1,
 	arrows: true,
 	draggable: true,
 	centerMode: true,
-	centerPadding: '0px',
+	centerPadding: '50px',
 }
 
 

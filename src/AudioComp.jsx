@@ -1,5 +1,7 @@
+import silenceFile from './assets/silence.mp3'
 import audioFile from './assets/bgm.mp3'
-import audioIcon from './assets/bgm_on.png'
+import audioIconOn from './assets/volume_on.png'
+import audioIconOff from './assets/volume_off.png'
 import { useEffect, useRef, useState } from 'react';
 
 const AudioComp = () => {
@@ -7,12 +9,20 @@ const AudioComp = () => {
 	const audioRef = useRef(null);
 	
 	useEffect( () => {
-		audioRef.current = new Audio(audioFile)
+		const audio = new Audio(audioFile)
+
+		audioRef.current = audio
 		audioRef.current.load()
 		audioRef.current.addEventListener('ended', () => setIsPlaying(false))
-		audioRef.current.play().catch( () => {
-			console.log('autoplay blocked')
+		audioRef.current.play().then( () => {
+			console.log('silence autoplay success')
 			console.log(isPlaying)
+
+			audio.src = audioFile
+			audio.play()
+			setIsPlaying(true)
+		}).catch(() => {
+			console.log('autoplay.blocked')
 		})
 
 		const handleScrollStart = () => {
@@ -20,20 +30,32 @@ const AudioComp = () => {
 				audioRef.current.play().catch( () => {} )
 				setIsPlaying(!isPlaying)
 				window.removeEventListener('scroll',handleScrollStart)
+				console.log('scroll detect')
+				window.removeEventListener('gesture',handleScrollStart)
+				console.log('gesture detect')
+				window.removeEventListener('touchstart',handleScrollStart)
+				console.log('touch detect')
 			}
 		}
 		window.addEventListener('scroll',handleScrollStart)
+		window.addEventListener('gesture',handleScrollStart)
+		window.addEventListener('touchstart',handleScrollStart)
 
 		return () => {
-			window.removeEventListener('scroll',handleScrollStart);
+			window.removeEventListener('scroll',handleScrollStart)
+			window.removeEventListener('gesture',handleScrollStart)
+			window.removeEventListener('touchstart',handleScrollStart)
 		}
 	}, [])
 
 	const handleAudioToggle = () => {
 		if (isPlaying) {
 			audioRef.current.pause()
+			console.log('audio pause')
 		} else {
-			audioRef.current.play()
+			audioRef.current.play();
+			console.log('audio start');
+			console.log(audioRef.current.play())
 		}
 		setIsPlaying(!isPlaying)
 	}
@@ -48,43 +70,30 @@ const AudioComp = () => {
 	}, [])
 
 
-	{/*
-	const handleAudioToggle = () => {
-		// Load after icon click if preloaded error occur in iphone
-		if (!audioRef.current) {
-			audioRef.current = new Audio(audioFile);
-			audioRef.current.load()
-			audioRef.current.addEventListner('ended', () => setIsPlaying(false));
-		}
-		if (isPlaying) {
-			audioRef.current.pause();
-		} else {
-			audioRef.current.play();
-		}
-		setIsPlaying(!isPlaying);
-	};
-	useEffect( () => {
-		// Stop bgm if leave page
-		return () => {
-			if (audioRef.current) {
-				audioRef.current.pause();
-				audioRef.current = null;
-			}
-		}
-	}, [])
-*/}
-
-
 	return (
 		<>
 			<img
-				src={audioIcon}
+				src={isPlaying ? audioIconOn : audioIconOff}
 				width={'20px'}
 				style={{marginRight: '10px', marginTop: '10px'}}
 				onClick={() => handleAudioToggle()}
 			/>
 		</>
 	)
+
+	{/*
+	return(
+		<>
+			<iframe src={silenceFile} allow='autoplay' id='audio'>
+			</iframe>
+			<audio id='audio' autoPlay>
+			<source src={audioFile}/>
+			</audio>
+
+		</>
+	)
+*/}
+
 }
 
 export default AudioComp

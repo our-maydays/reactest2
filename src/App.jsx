@@ -29,10 +29,16 @@ function App() {
 					build time : {import.meta.env.VITE_BUILD_TIME}
 				</div>
 
-				<div style={{textAlign: 'right'}}>
+				<div style={{
+					textAlign: 'right', 
+					position: 'sticky', 
+					top: 0,
+					zIndex: 9,
+				}}>
 					<AudioComp/>
 				</div>
 
+{/*				
 				<Intersect className='fade-in' style={{ }}>
 					<MainPhoto/>
 				</Intersect>
@@ -41,26 +47,33 @@ function App() {
 					<TopMsg/>
 				</Intersect>
 
+				<hr style={{width: '90%'}}/> 
 
 				<Intersect className='fade-in' style={{ }}>
 					<WelcomeMsg/>
 				</Intersect>
 
+				<hr style={{width: '90%'}}/>
 
 				<Intersect className='fade-in' style={{ }}>
 					<Calendar/>
 				</Intersect>
 
+				
 				<Intersect className='fade-in' style={{ }}>
 					<Dday/>
 				</Intersect>
 
+				
+				<hr style={{width: '90%'}}/>
 				
 				<Intersect className='fade-in' style={{ }}>
 					<Gallery/>
 				</Intersect>
 
 
+				<hr style={{width: '90%'}}/>
+			
 				<Intersect className='fade-in' style={{ }}>
 					<Navi/>
 				</Intersect>
@@ -70,19 +83,25 @@ function App() {
 					<Route/>
 				</Intersect>
 
+				<hr style={{width: '90%'}}/>
+				
 				<Intersect className='fade-in' style={{ }}>
 					<Account/>
 				</Intersect>
+
+				<hr style={{width: '90%'}}/>
 
 				<Intersect className='fade-in' style={{ }}>
 					<Comment/>
 					Message Boad
 				</Intersect>
 
+				<hr style={{width: '90%'}}/>
+
 				<Intersect className='fade-in' style={{ }}>
 					Share
 				</Intersect>
-
+*/}
 			</div>
 		</>
 	)
