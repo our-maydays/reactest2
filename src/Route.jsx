@@ -126,7 +126,8 @@ const Route = () => {
 			display: 'flex', 
 			justifyContent:'space-between', 
 			width: '80%',
-			margin: 'auto'
+			margin: 'auto',
+			marginTop: '1rem',
 		}}>
 			<div style={{
 				fontSize: '1.5rem',
