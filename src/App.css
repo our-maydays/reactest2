@@ -2,6 +2,11 @@
 	margin: 0 auto;
 	text-align: center;
 	border-style: solid;
+	font-size: 10px;
+}
+
+html {
+	font-size: 10px;
 }
 
 .main-frame {
@@ -53,7 +58,7 @@
 .dday-idx {
 	display: inline-block;
 	margin: auto;
-	font-size: 8px;
+	font-size: 0.8rem;
 }
 
 .dday-num {

@@ -93,11 +93,14 @@ export const StDisplay = styled.div`
 export const StGallery = styled.div`
 	border: 1px solid rgb(230,224,255);
 	boarderRadius: 12px;
+	margin: auto;
+	width: 98%;
 	height: auto;
-	background-color: grey;
+	background-color: white;
 	display: block;
 	padding-top: 5px;
 	padding-bottom: 5px;
+	border: none;
 	`;
 
 export const StSlider = styled(Slider)`
@@ -131,7 +134,7 @@ export const StSlider = styled(Slider)`
 	 //dots
 	.slick-dots {
 		left: 50%;
-		bottom: -9%;
+		bottom: -1.5rem;
 		width: auto;
 		padding: 0px 10px;
 		background-color: none;

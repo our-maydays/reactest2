@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef} from 'react'
 import { Container as MapDiv, NaverMap, Marker, useNavermaps, InfoWindow} from 'react-naver-maps'
 
+import Route from './Route'
+
 const {naver} = window;
 const Map = () => {
 
@@ -17,12 +19,10 @@ const Map = () => {
 		
 		const mapOptions = {
 			center: position,
-			zoom: 17,
+			zoom: 18,
 			minZoom: 6,
 			zoomControl: false,
-			zoomControlOptions: {
-				position: navermaps.Position.TOP_RIGHT
-			},
+			scaleControl: false,
 		}
 
 		const map = new naver.maps.Map(container, mapOptions)
@@ -57,7 +57,9 @@ const Map = () => {
 
 	return (
 		<div>
-			<div id='map' style={{width:'80%', height:'300px',margin: 'auto'}}> </div>
+			<div id='map' style={{width:'95%', height:'250px',margin: 'auto'}}> </div>
+
+			<Route/>
 		</div>
 	)
 }

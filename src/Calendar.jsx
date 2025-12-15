@@ -5,6 +5,8 @@ import './Calendar.css';
 import moment from 'moment'
 import 'moment/dist/locale/ko'
 
+import Dday from './Dday'
+
 const Calendar = () => {
 
 	moment.locale('ko')
@@ -46,8 +48,12 @@ const Calendar = () => {
 
 
 	return (
-		<>
-			<p style = {{fontSize: '20px', fontFamily: 'MaruBuriBold',margin: '15px'}}>
+		<div style={{fontSize: '1.5rem'}}>	
+			<p style = {{
+				fontSize: '2rem', 
+				fontFamily: 'MaruBuriBold',
+				margin: '1.5rem'
+			}}>
 				2026. 5. 9.
 			</p>
 				토요일 오후 1시<br/>
@@ -66,13 +72,16 @@ const Calendar = () => {
 					</tbody>
 				</table>
 			</div>
+			
+			경보와 유진의 결혼식이<br/>
+			<Dday/>
 {/*
 			경보와 유진의 결혼식이&nbsp; 
 			<span style={{color: 'magenta'}}>
 				{Math.floor((dateOnly(tg_date)-dateOnly(today))/(1000*60*60*24))}
 			</span>일 남았습니다.<br/>
 */}
-		</>
+		</div>
 	);
 };
 

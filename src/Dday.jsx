@@ -43,7 +43,7 @@ const Dday = () => {
 	}, [] );
 
 	return (
-		<div style={{width:'70%', margin: 'auto'}}>
+		<div style={{width:'70%', margin: 'auto', fontSize:'1.5rem', marginTop: '1.0rem'}}>
 			{left.past === true ? (
 				<div style={{display:'flex'}}>
 					<div className='dday-box'>

@@ -1,9 +1,13 @@
 const WelcomeMsg = () => {
 	return (
 		<>
-			<div style={{marginBottom: '10px', marginTop:'10px',
-				fontFamily:'Maruburi', fontSize: '15px'}}>
-			<span style={{fontSize:'12px'}}> INVITATION </span><br/>
+			<div style={{
+				marginBottom: '1rem', 
+				marginTop:'1rem',
+				fontFamily:'Maruburi', 
+				fontSize: '1.5rem'
+			}}>
+			<span style={{fontSize:'1.2rem'}}> INVITATION </span><br/>
 			초대합니다 <br/><br/>
 			살랑이는 바람결에<br/>
 			사랑이 묻어나는 계절입니다<br/>
@@ -13,14 +17,24 @@ const WelcomeMsg = () => {
 			축복해 주시면 감사하겠습니다	
 			</div>
 
-			<div style={{marginBottom: '10px', marginTop: '20px', fontFamily: 'MaruburiBold'}}>
-				강대원 & 노신조
+			<div style={{
+				marginBottom: '1rem', 
+				marginTop: '2.5rem', 
+				fontFamily: 'MaruburiBold',
+				fontSize: '1.5rem'
+			}}>
+				강대원 · 노신조
 				<span style={{fontFamily: 'Maruburi'}}> 의 아들</span>
 				<span style={{fontFamily: 'MaruburiBold'}}> 경보 </span><br/>
 			</div>
 
-			<div style={{marginBottom: '10px', marginTop: '20px', fontFamily: 'MaruburiBold'}}>
-				장상문 & 한현순
+			<div style={{
+				marginBottom: '1rem',
+				marginTop: '1rem', 
+				fontFamily: 'MaruburiBold',
+				fontSize: '1.5rem',
+			}}>
+				장상문 · 한현순
 				<span style={{fontFamily: 'Maruburi'}}> 의 딸</span>
 				<span style={{fontFamily: 'MaruburiBold'}}> 유진</span><br/>
 			</div>

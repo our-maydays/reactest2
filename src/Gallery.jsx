@@ -21,7 +21,7 @@ const SliderSettings = {
 	speed: 500,
 	slidesToShow: 1,
 	slidesToscroll: 1,
-	arrows: true,
+	arrows: false,
 	draggable: true,
 	centerMode: true,
 	centerPadding: '50px',
@@ -54,9 +54,11 @@ const Gallery  = ({title}) => {
 
 	return (
     <>
-			<div style={{fontFamily:'Maruburi', fontSize:'20px'}}>
+			Gallery
+			<div style={{fontFamily:'Maruburi', fontSize:'1.5rem'}}>
 				사진첩
 			</div>
+			<br/>
 
    		<StGallery>
 				<StSlider {...SliderSettings}>
@@ -75,6 +77,8 @@ const Gallery  = ({title}) => {
 						
 				</StSlider>
 			</StGallery>
+
+
 
 
 			<Modal

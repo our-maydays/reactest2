@@ -58,14 +58,8 @@ function App() {
 					<Calendar/>
 				</Intersect>
 
-				
-				<Intersect className='fade-in' style={{ }}>
-					<Dday/>
-				</Intersect>
-
-				
 				<hr style={{width: '90%'}}/>
-				
+
 				<Intersect className='fade-in' style={{ }}>
 					<Gallery/>
 				</Intersect>
@@ -75,11 +69,6 @@ function App() {
 			
 				<Intersect className='fade-in' style={{ }}>
 					<Navi/>
-				</Intersect>
-
-
-				<Intersect className='fade-in' style={{ }}>
-					<Route/>
 				</Intersect>
 
 				<hr style={{width: '90%'}}/>
