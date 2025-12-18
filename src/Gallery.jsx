@@ -119,23 +119,6 @@ const Gallery  = ({title}) => {
 
 
 
-   		<StGallery>
-				<StSlider {...SliderSettings}>
-
-					{images.map( (img, i) => (
-						<div key={i} className='slide-container'>
-							<img
-								key={i}
-								src={img.src}
-								alt=''
-								className='slide-image'
-								onClick={() => {open_modal(img.src); console.log(img); document.body.classList.add('modal-open')}}
-							/>
-						</div>	
-					))}
-						
-				</StSlider>
-			</StGallery>
 
 
 
