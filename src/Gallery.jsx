@@ -11,6 +11,9 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import closeIcon from './assets/close_icon.png'
 
+import video from './assets/videos/test.mov'
+
+
 // src/assets/images에 있는 모든 이미지를 한번에 불러오기
 const imagePaths = import.meta.glob('./assets/images/*.{jpg,JPG}');
 
@@ -133,7 +136,6 @@ const Gallery  = ({title}) => {
 						
 				</StSlider>
 			</StGallery>
-
 
 
 

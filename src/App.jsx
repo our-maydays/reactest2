@@ -19,6 +19,9 @@ import Dday from './Dday'
 import { Desktop, Mobile, Tablet, Default } from './Responsive'
 import Comment from './Comment'
 
+import Notice from './Notice'
+import Video from './Video'
+
 function App() {
 	
 	const debug = process.env.NODE_ENV === 'development'?'solid':'none';
@@ -64,6 +67,10 @@ function App() {
 					<Gallery/>
 				</Intersect>
 
+				<Intersect className='fade-in' style={{ }}>
+					<Video/>
+				</Intersect>
+
 
 				<hr style={{width: '90%'}}/>
 			
@@ -81,6 +88,12 @@ function App() {
 
 				<Intersect className='fade-in' style={{ }}>
 					<Comment/>
+				</Intersect>
+
+				<hr style={{width: '90%'}}/>
+
+				<Intersect calssName='fade-in' style={{ }}>
+					<Notice/>
 				</Intersect>
 
 				<hr style={{width: '90%'}}/>
