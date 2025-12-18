@@ -8,13 +8,18 @@ const Account = () => {
 
 
 	return (
-		<>
-			<p style = {{
-				fontSize: '20px',
-				fontFamily: 'MaruBuri',
-				margin: '20px'
-			}}>
+		<div style={{marginTop: '2rem',marginBottom: '2rem'}}>
+			<div className='sub-title'>
+				Account
+			</div>
+			<div className='div-title'>
 				마음 전하실 곳
+			</div>
+
+			<p style={{fontSize: '1.4rem' ,marginBottom: '1.5rem'}}>
+				참석이 어려우신 분들을 위해<br/>
+				계좌번호를 기재하였습니다<br/>
+				너그러운 마음으로 양해 부탁드립니다
 			</p>
 
 			<div onClick={() => {set_bank_modal({isopen:true,src:'M'}); document.body.classList.add('modal-open')}} 
@@ -23,7 +28,8 @@ const Account = () => {
 					padding: '12px',
 					margin: '12px',
 					marginLeft: '20%',
-					marginRight: '20%'
+					marginRight: '20%',
+					fontSize: '1.4rem',
 			}}>
 				신랑측 계좌번호
 			</div>
@@ -34,7 +40,8 @@ const Account = () => {
 					padding: '12px',
 					margin: '12px',
 					marginLeft: '20%',
-					marginRight: '20%'
+					marginRight: '20%',
+					fontSize: '1.4rem',
 			}}>
 				신부측 계좌번호
 			</div>
@@ -49,7 +56,7 @@ const Account = () => {
 				</div>
 			</Modal>
 
-		</>
+		</div>
 	)
 }
 

@@ -14,7 +14,7 @@ const Dday = () => {
 		const calDaysLeft = () => {
 			const today = moment()
 			const target = moment('2026-05-09 13:00:00')
-//			const target = moment('2025-12-11 20:21:55')
+//			const target = moment('2026-01-03 12:00:00')
 			const diff = moment.duration(target.diff(today))
 
 			if (diff.asMilliseconds() <=0) {
@@ -43,7 +43,13 @@ const Dday = () => {
 	}, [] );
 
 	return (
-		<div style={{width:'70%', margin: 'auto', fontSize:'1.5rem', marginTop: '1.0rem'}}>
+		<div style={{
+			width: '40%', 
+			margin: 'auto', 
+			fontSize:'1.6rem', 
+			marginTop: '1.0rem'
+			}}
+		>
 			{left.past === true ? (
 				<div style={{display:'flex'}}>
 					<div className='dday-box'>
@@ -74,10 +80,12 @@ const Dday = () => {
 						<p className='dday-idx'> 초 </p>
 						<p className='dday-num'> {left.seconds} </p>
 					</div>
+					{/*
 					<div className='dday-exp'>
 						<p className='dday-idx'> &nbsp;  </p>
 						<p className='dday-txt'> 지났습니다 </p>
 					</div>
+					*/}
 				</div>
 			) : (
 				<div style={{display:'flex'}}>
@@ -109,10 +117,12 @@ const Dday = () => {
 						<p className='dday-idx'> 초 </p>
 						<p className='dday-num'> {left.seconds} </p>
 					</div>
+					{/*
 					<div className='dday-exp'>
 						<p className='dday-idx'> &nbsp; </p>
 						<p className='dday-txt'> 남았습니다 </p>
 					</div>
+					*/}
 				</div>
 			)}
 		</div>

@@ -1,21 +1,25 @@
 import styled from 'styled-components';
-import { useState, useEffect } from 'react';
-import moment from 'moment';
+import { useState, useEffect, useCallback, useRef } from 'react';
+import moment from 'moment'
+import 'moment/dist/locale/ko'
 
 import { collection, doc, addDoc, getDocs, orderBy, query, limit } from 'firebase/firestore'
 import { db } from './firebase'
 
 import {StBarText, StEntireDiv, StInputDiv, StNameInput, StContentInput, StSubmitButton} from './Styled'
 
-import {StCommentName, StCommentDate, StCommentContent} from './Styled'
+import {StCommentName, StCommentDate, StCommentContent, StDisplay} from './Styled'
 
 const Comment = () => {
+
+	moment.locale('ko')
 
 	const [name, setName] = useState('')
 	const [content, setContent] = useState('')
 	const [comments, setComments] = useState([])
 	const [querySnapshot, setQuerySnapshot] = useState(null)
 	const [isLoading, setIsLoading] = useState(false)
+	const scrollRef = useRef(null);
 
 	const onChangeNameHandler = (e) => {
 		setName(e.target.value)
@@ -40,20 +44,23 @@ const Comment = () => {
 
 	const loadMoreData = () => {
 		if (!isLoading) {
-			const newLimit = querySnapshot.docs.length + 10;
+			const newLimit = querySnapshot.docs.length + 5
 			fetchData(newLimit)
 		}
 	}
+
 
 	useEffect( () => {
 		fetchData(10);
 	}, [])
 
-	useEffect( () => {
-		window.addEventListener('scroll',handleScroll)
 
+	useEffect( () => {
+		const div = scrollRef.current
+		if (!div) return;
+		div.addEventListener('scroll',handleScroll)
 		return () => {
-			window.removeEventListener('scroll',handleScroll)
+			div.removeEventListener('scroll',handleScroll)
 		}
 	}, [querySnapshot])
 
@@ -85,20 +92,43 @@ const Comment = () => {
 
 	}
 
-	const handleScroll = () => {
-		const windowHeight = window.innerHeight
-		const scrollY = window.scrollY || window.pageYOffset
-		const documentHeight = document.documentElement.scrollHeight
 
-		if (windowHeight + scrollY >= documentHeight - 200) {
-			loadMoreData()
+
+	const handleScroll = () => {
+		const div = scrollRef.current;
+		if (!div) return;
+		const scrollTop = div.scrollTop
+		const clientHeight = div.clientHeight;
+		const scrollHeight = div.scrollHeight;
+
+		if (-scrollTop + clientHeight >= scrollHeight - 50) {
+			console.log(div.scrollBottom)
+			console.log(scrollTop)
+			console.log(clientHeight)
+			console.log(scrollHeight)
+			loadMoreData();
 		}
+
+
 	}
 
 
 	return (
-		<div>
-			<StBarText> 축하 메세지를 전해주세요 </StBarText>
+		<div style={{
+			maginTop: '2.0rem',
+			marginBottom: '2.0rem',
+			display: 'flex', 
+			flexDirection:'column',
+			alignItems:'center' 
+		}}>
+			<div className='sub-title'>
+				Gusetbook
+			</div>
+			<div className='div-title'>
+				방명록
+			</div>
+
+			<StBarText> 축하 메세지를 남겨주세요 </StBarText>
 			<StEntireDiv>
 				<StInputDiv>
 					<StNameInput
@@ -108,7 +138,7 @@ const Comment = () => {
 					></StNameInput>
 					
 					<StContentInput
-						placeholder='comment leaves forever'
+						placeholder='comment leaves fiorever'
 						onChange={onChangeContentHandler}
 						value={content}
 					></StContentInput>
@@ -118,14 +148,25 @@ const Comment = () => {
 					</StSubmitButton>
 				</StInputDiv>
 
-				<div>
+				<div ref={scrollRef} 
+					style= {{
+						display: 'flex',
+						flexDirection: 'column-reverse',
+						overflowY: 'scroll',
+						border: '1px solid black',
+						width: '100%',
+						height: '399px',
+					}}
+				>
+
 					{querySnapshot &&
-						querySnapshot.docs.map( (doc) => (
+						[...querySnapshot.docs].map( (doc) => (
 							<div key={doc.id}>
 								<div style={{display: 'flex', flexDirection: 'row'}}>
 									<StCommentName> {doc.data().name} </StCommentName>
-									<StCommentDate> 
-										{moment(doc.data().createdAt.toDate()).format('LLL')}
+									<StCommentDate>
+										
+										{moment(doc.data().createdAt.toDate()).format('YY.MM.DD. a h:mm')}
 									</StCommentDate>
 								</div>
 								<StCommentContent> {doc.data().content} </StCommentContent>

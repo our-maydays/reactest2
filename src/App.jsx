@@ -81,7 +81,6 @@ function App() {
 
 				<Intersect className='fade-in' style={{ }}>
 					<Comment/>
-					Message Boad
 				</Intersect>
 
 				<hr style={{width: '90%'}}/>

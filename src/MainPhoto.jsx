@@ -1,11 +1,12 @@
-import mainphoto from './assets/images/IMG_0248.jpg'
+import mainphoto from './assets/images/DSC07876.jpg'
 
 const MainPhoto = () => {
 	return (
 		<div style={{position:'relative' }}>
 			
-			<img src={mainphoto} width={'98%'} style={{display:'block', margin: 'auto'}} />
-			
+			<img src={mainphoto} width={'100%'} style={{display:'block', margin: 'auto'}} />
+	
+			{/*			
 			<div style={{
 				border: '2px solid white',
 				height:'97%',
@@ -14,6 +15,7 @@ const MainPhoto = () => {
 				top: '1%',
 				left: '2%',
 				}}/>
+				*/}
 		</div>
 	)
 }

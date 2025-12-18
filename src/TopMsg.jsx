@@ -1,8 +1,10 @@
 const TopMsg = () => {
 	return (
-		<>
+		<div style={{
+			marginTop: '2rem',
+			marginBottom: '2rem',
+		}}>
 			<p style={{
-				marginTop: '2rem', 
 				marginBottom: '2rem', 
 				fontSize: '2rem', 
 				fontFamily: 'MaruBuriBold'}}>
@@ -11,6 +13,7 @@ const TopMsg = () => {
 
 			</p>
 
+{/*
 			<p style={{
 				fontSize: '1.5rem', 
 				marginTop: '0.2rem',
@@ -22,12 +25,11 @@ const TopMsg = () => {
 			<p style={{
 				fontSize: '1.5rem',
 				marginTop: '0.2rem',
-				marginBottom: '0.2rem',
 			}} >
 				부산 영도 목장원
 			</p>
-
-		</>
+*/}
+		</div>
 	)
 }
 

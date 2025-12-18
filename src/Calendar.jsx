@@ -12,7 +12,9 @@ const Calendar = () => {
 	moment.locale('ko')
 	const today = new Date();
 	const tg_date = new Date(2026,4,9,13,0,0);
-	const daysOfWeek = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+//	const tg_date = new Date(2025,11,17,20,38,0);
+//	const daysOfWeek = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+	const daysOfWeek = ['일','월','화','수','목','금','토']
 	const daysInMonth = 31;
 	const firstDayOfMonth = new Date(2026,4,1).getDay();
 	const target_day = 9;
@@ -46,19 +48,37 @@ const Calendar = () => {
 			);
 	}
 
+	const dayLeft = Math.floor((dateOnly(tg_date)-dateOnly(today))/(1000*60*60*24))
 
 	return (
-		<div style={{fontSize: '1.5rem'}}>	
+		<div style={{
+			fontSize: '1.6rem',
+			marginTop: '2.0rem',
+			marginBottom: '2.0rem',
+			}}
+		>	
 			<p style = {{
 				fontSize: '2rem', 
 				fontFamily: 'MaruBuriBold',
-				margin: '1.5rem'
+				marginBottom: '0rem',
 			}}>
 				2026. 5. 9.
 			</p>
+			<p style={{
+				fontSize: '1.4rem',
+				marginTop: '0.0rem',
+				marginBottom: '0rem',
+				}}
+			>
 				토요일 오후 1시<br/>
+			</p>
 
-			<div style={{display: 'flex', justifyContent: 'center'}}>
+			<div style={{
+				display: 'flex', 
+				justifyContent: 'center', 
+				marginTop:'2rem'
+				}}
+			>
 				<table className='calendar'>
 					<thead>
 						<tr>
@@ -72,9 +92,43 @@ const Calendar = () => {
 					</tbody>
 				</table>
 			</div>
-			
-			경보와 유진의 결혼식이<br/>
+
 			<Dday/>
+				
+			<p style={{marginTop: '1rem'}}> 
+				경보와 유진의 결혼식이 &nbsp;
+				{(dayLeft > 0) ? (
+					<>
+						<span style={{fontFamily: 'maruburibold'}}>
+							{dayLeft}
+						</span>
+						<span style={{fontFamily: 'maruburi'}}>
+							일 남았습니다.
+						</span>
+					</>
+				) : (
+					((dayLeft < 0) ? (
+						<>
+							<span style={{fontFamily: 'maruburibold'}}>
+								{-dayLeft}
+							</span>
+							<span style={{fontFamily: 'maruburi'}}>
+								일 지났습니다.
+							</span>
+						</>
+					) : (
+						<>
+							<span style={{fontFamily: 'maruburi'}}>
+								오늘입니다.
+							</span>
+						</>
+					))
+				)}
+
+
+								
+
+			</p>
 {/*
 			경보와 유진의 결혼식이&nbsp; 
 			<span style={{color: 'magenta'}}>

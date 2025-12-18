@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Slider from 'react-slick'
+import {useRef, useState} from 'react'
 
 export const MainPhotoDisplay = styled.div`
 	
@@ -18,67 +19,107 @@ export const StBarText = styled.div`
 export const StEntireDiv = styled.div`
 	display: flex;
 	flex-direction: column-reverse;
-	padding: 6px 12px;
-	border: 1px dashed brown;
 	align-items: center;
-	width: 85%;
+	width: 90%;
+	background-color: grey;
+	border-radius: 1.5rem;
 `;
 
 export const StNameInput = styled.textarea`
-	width: 100px;
-	height: 20px;
-	padding: 6px 12px;
+	display: inline-block;
+	font-size: 1.4rem;	
+	width: 8rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	padding: 0.5rem;
 	border: 1px solid green;
+	border-radius: 0.8rem;
+	margin-bottom: 0rem;
+	margin-left: 0.5rem;
+	&:focus {
+		outline: none;
+	}
 `;
 
 export const StContentInput = styled.textarea`
-	width: 200px;
-	height: 30px;
-	padding: 6px 12px;
-	border: 2px solid navy;
-	background-color: yellow;
+	display: inline-block;
+	font-size: 1.4rem;
+	padding: 0.5rem;
+	margin: 0rem 0.2rem 0.5rem 0.5rem;
+	width: 29rem;
+	field-sizing: content;
+	min-height: 1.5rem;
+	max-height: 7rem;
+	border: 1px solid navy;
+	border-radius: 0.8rem;
+	background-color: none;
 	color: black;
+	&:focus {
+		outline: none;
+	}
 `;
 
 export const StSubmitButton = styled.div`
-	width: 50px;
-	height: 20px;
-	padding: 6px 12px;
-	border: 2px solid black;
-	background-color: red;
+	display: inline-block;
+	width: 1.5rem;
+	font-size: 1.4rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	padding: 0.5rem;
+	margin: 0.5rem;
+	margin-top: 0rem;
+	border: 1px solid black;
+	border-radius: 35%;
+	background-color: white;
 `;
 
 export const StInputDiv = styled.div`
-	width: 300px;
-	heigth: 300px;
-	padding: 6px 12px;
-	border: 2px solid red;
+	padding: 0.5rem;
+	width: auto;
+	heigth: auto;
+	display: inline-block;
+	margin: 0rem;
+	text-align: left;
+	
 `;
 
 export const StCommentName = styled.div`
-	minimum-width: 50px;
-	height: 20px;
-	padding: 6px 12px;
-	border: 1px solid black;
+	height: 1.5rem;
+	max-width: 10rem;
+	font-size: 1.2rem;
+	font-family: maruburibold;
+	line-height: 1.5rem;
+	padding: 0.1rem 0.5rem 0.1rem 0.5rem;
 	text-align: left;
-	line-height: 20px;
+	margin: 0.5rem 0.5rem 0rem 0.8rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
 `;
 
 export const StCommentDate = styled.div`
-	width: 145px;
-	height: 20px;
-	padding: 6px 12px;
-	border: 1px solid blue;
+	min-width: 4.5rem;	
+	height: 1.5rem;
+	padding: 0.1rem 0.5rem  0.1rem 0.5rem;
 	text-align: left;
-	line-height: 20px;
+	line-height: 1.2rem;
+	font-size: 1.rem;
+	margin: 0.5rem 0.5rem 0.8rem 0.2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
 `;
 
 export const StCommentContent = styled.div`
-	width: 300px;
-	minimum-height: 20px;
-	border: 1px solid grey;
-	padding: 6px 12px;
+	display: inline-block;
+	float: left;
+	min-height: 1.5rem;
+	font-size: 1.4rem;
+	margin: 0.1rem 0.2rem 0.8rem 0.8rem;
+	padding: 0.5rem;
 	text-align: left;
+	border-radius: 1.0rem;
+	background-color: rgb(168,239,233);
 `;
 
 export const StDisplay = styled.div`
@@ -87,7 +128,7 @@ export const StDisplay = styled.div`
 	overflowY: scroll;
 	width: 300px;
 	height: 400px;
-	border: 1px solid black;
+	border: 1px solid red;
 `;
 
 export const StGallery = styled.div`
@@ -98,9 +139,9 @@ export const StGallery = styled.div`
 	height: auto;
 	background-color: white;
 	display: block;
-	padding-top: 5px;
-	padding-bottom: 5px;
 	border: none;
+	margin-top: 1.5rem;
+	margin-bottom: 2.0rem;
 	`;
 
 export const StSlider = styled(Slider)`
@@ -134,7 +175,7 @@ export const StSlider = styled(Slider)`
 	 //dots
 	.slick-dots {
 		left: 50%;
-		bottom: -1.5rem;
+		bottom: -2.0rem;
 		width: auto;
 		padding: 0px 10px;
 		background-color: none;

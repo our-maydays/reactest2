@@ -7,13 +7,9 @@ import Map from './Map'
 
 const Navi = () => {
 	return (
-		<>
-			<div> Location </div>
-			<div style={{
-				fontSize: '1.5rem',
-				marginBottom: '1.0rem',
-				}}
-			>
+		<div style={{marginTop: '2rem', marginBottom: '2rem'}}>
+			<div className='sub-title'> Location </div>
+			<div className='div-title' style={{marginBottom: '1.5rem'}}>
 				오시는 길 
 			</div>
 
@@ -21,15 +17,22 @@ const Navi = () => {
 			<img src={wedding} width={'35%'} style={{marginTop:'2%'}} />
 			<img src={mymap} width={'90%'} /> <br/>
 */}
-				<Map/>
+
+				<span style={{fontSize: '1.6rem', fontFamily:'maruburibold'}}>
+					영도 목장원
+				</span>
 				<br/>
-			
-				<span style={{fontSize: '1.5rem'}}> 
-					주소: 부산광역시 영도구 절영로 355 목장원<br/> 
+				<span style={{fontSize: '1.4rem'}}>
+					부산광역시 영도구 절영로 355
 				</span>
-				<span style={{fontSize: '1.22rem'}}>
-					전화: 051-404-5011<br/><br/>
+				<br/><br/>
+				<span style={{fontSize: '1.1rem'}}>
+					051-404-5011
 				</span>
+				
+				<div style={{marginTop: '1.5rem', marginBottom: '1.5rem'}}>
+					<Map/>
+				</div>
 
 			<Transport 
 				tr_type = 'bus'
@@ -40,7 +43,7 @@ const Navi = () => {
 			<Transport 
 				tr_type='metro'
 			/>
-		</>
+		</div>
 	)
 }
 
