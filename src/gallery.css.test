@@ -1,0 +1,98 @@
+ddd.gallery-slider .slick-list {
+	margin: 6px;
+}
+
+.gallery-slider .slick-slide {
+	padding: 6px;
+}
+
+.gallery-slider img {
+	width: 100%;
+	height: 50%;
+	object-fit: cover;
+	display: block;
+}
+
+.grid-item {
+	padding: 8px;
+}
+
+.grid-item img {
+	width: 100%;
+	display: block;
+}
+
+.modal-container,
+.slick-slider,
+.slick-list,
+.slick-track {
+	width: 100%;
+	height: 100%;
+}
+
+.modal-container {
+	width: 92%;
+	height: 100%;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	outline: 2px solid red;
+}
+
+
+.modal-container .slick-slider {
+	width: 100%;
+	height: 100%;
+}
+
+.slick-slide {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-slide {
+	width: 100%;
+	height: 100%;		 
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: green;
+	outline: 2px solid brown;
+}
+
+.modal-slide img {
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+}
+
+.modal-image {
+	max-width: 100%;
+	max-height: 100%;	
+	object-fit: cover;
+	object-position: center;
+	margin: auto;
+}
+
+.slide {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid red;
+	
+}
+
+.slide img {
+	margin: auto;
+	max-width: 100%;
+	max-height: 100%;
+	width: 50px;
+	height: auto;
+}
