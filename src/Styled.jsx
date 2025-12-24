@@ -27,10 +27,10 @@ export const StEntireDiv = styled.div`
 
 export const StNameInput = styled.textarea`
 	display: inline-block;
-	font-size: 1.4rem;	
+	font-size: 1.6rem;	
 	width: 8rem;
-	height: 1.5rem;
-	line-height: 1.5rem;
+	height: 1.6rem;
+	line-height: 1.6rem;
 	padding: 0.5rem;
 	border: 1px solid green;
 	border-radius: 0.8rem;
@@ -43,12 +43,12 @@ export const StNameInput = styled.textarea`
 
 export const StContentInput = styled.textarea`
 	display: inline-block;
-	font-size: 1.4rem;
+	font-size: 1.6rem;
 	padding: 0.5rem;
 	margin: 0rem 0.2rem 0.5rem 0.5rem;
 	width: 29rem;
 	field-sizing: content;
-	min-height: 1.5rem;
+	min-height: 1.6rem;
 	max-height: 7rem;
 	border: 1px solid navy;
 	border-radius: 0.8rem;
@@ -61,10 +61,10 @@ export const StContentInput = styled.textarea`
 
 export const StSubmitButton = styled.div`
 	display: inline-block;
-	width: 1.5rem;
-	font-size: 1.4rem;
-	height: 1.5rem;
-	line-height: 1.5rem;
+	width: 1.6rem;
+	font-size: 1.6rem;
+	height: 1.6rem;
+	line-height: 1.6rem;
 	padding: 0.5rem;
 	margin: 0.5rem;
 	margin-top: 0rem;

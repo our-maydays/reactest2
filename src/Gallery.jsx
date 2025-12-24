@@ -61,10 +61,11 @@ const Gallery = () => {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: true,
+		dots: false,
 	})
 
 	return (
-		 <div style={{border: '1px solid black'}}>
+		 <div style={{border: 'none'}}>
 		 	<Slider {...gridSettings}>
 				{images.map( (src, index) => (
 					<div 
@@ -98,9 +99,9 @@ const Gallery = () => {
 						top: '50%',
 						left: '50%',
 						transform: 'translate(-50%, -50%)',
-						background: 'black',
-						width: '80vw',
-						height: '80vh',
+						background: 'none',
+						width: '95vw',
+						height: '95vh',
 						margin: '0 auto',
 						padding: '10px',
 						border: 'none',
@@ -125,16 +126,18 @@ const Gallery = () => {
 							onClick={ () => setIsOpen(false)}
 							style={{
 								position: 'absolute',
-								top: '10px',
-								right: '10px',
+								top: '1rem',
+								right: '1rem',
 								background: 'transparent',
 								color: 'white',
 								fontSize: '1.6rem',
 								border: 'none',
 								cursor: 'pointer',
+								margin: '0',
+								padding: '0',
 							}}
 						>
-							x
+							<img src={closeIcon} width='25rem'/>
 						</button>
 
 					</div>

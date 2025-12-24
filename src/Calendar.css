@@ -1,5 +1,5 @@
 .calendar {
-	width: 80%;
+	width: 70%;
 	height: auto;
 	border-collapse: collapse;
 	margin: auto;
@@ -7,8 +7,8 @@
 
 .calendar th, .calendar td {
 	text-align: center;
-	padding-bottom: 5px;
-	padding-top: 5px;
+	padding-bottom: 0.3rem;
+	padding-top: 0.3rem;
 }
 
 .calendar th {
@@ -33,13 +33,24 @@
 .calendar .special-day {
 	position: relative;
 	z-index: 1;
+	font-family: maruburibold;
+	color: black;
 }
 
 
 .calendar .special-day::after {
-	content: '♥';
-	color: rgba(255,0,0,0.5);
-	font-size: 35px;
+	{/*	content: '♥';*/}
+	content:'. ';
+
+	display: block;
+	background-image: url(./assets/love.png);
+	background-size: 3rem;
+	background-repeat: no-repeat;
+	background-position: center;
+	color: transparent;
+	font-size: 10px;
+	width: 3rem;
+	height: 3rem;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -53,13 +64,13 @@
 		transform: translate(-50%,-50%) scale(1);
 	}
 	25% {
-		transform: translate(-50%,-50%) scale(1.1);
+		transform: translate(-50%,-50%) scale(1.05);
 	}
 	50% {
 		transform: translate(-50%,-50%) scale(1);
 	}
 	75% {
-		transform: translate(-50%,-50%) scale(1.1);
+		transform: translate(-50%,-50%) scale(1.05);
 	}
 	100% {
 		transform: translate(-50%,-50%) scale(1);
