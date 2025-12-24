@@ -32,8 +32,8 @@ export const StNameInput = styled.textarea`
 	height: 1.6rem;
 	line-height: 1.6rem;
 	padding: 0.5rem;
-	border: 1px solid green;
 	border-radius: 0.8rem;
+	border: none;
 	margin-bottom: 0rem;
 	margin-left: 0.5rem;
 	&:focus {
@@ -50,7 +50,7 @@ export const StContentInput = styled.textarea`
 	field-sizing: content;
 	min-height: 1.6rem;
 	max-height: 7rem;
-	border: 1px solid navy;
+	border: none;
 	border-radius: 0.8rem;
 	background-color: none;
 	color: black;

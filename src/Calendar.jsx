@@ -65,7 +65,7 @@ const Calendar = () => {
 				2026. 5. 9.
 			</p>
 			<p style={{
-				fontSize: '1.4rem',
+				fontSize: '1.6rem',
 				marginTop: '0.0rem',
 				marginBottom: '0rem',
 				}}

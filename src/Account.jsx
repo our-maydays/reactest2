@@ -29,7 +29,8 @@ const Account = () => {
 					margin: '12px',
 					marginLeft: '20%',
 					marginRight: '20%',
-					fontSize: '1.4rem',
+					fontSize: '1.6rem',
+					borderRadius: '1.6rem',
 			}}>
 				신랑측 계좌번호
 			</div>
@@ -41,7 +42,8 @@ const Account = () => {
 					margin: '12px',
 					marginLeft: '20%',
 					marginRight: '20%',
-					fontSize: '1.4rem',
+					fontSize: '1.6rem',
+					borderRadius: '1.6rem',
 			}}>
 				신부측 계좌번호
 			</div>

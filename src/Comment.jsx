@@ -160,7 +160,8 @@ const Comment = () => {
 					</StSubmitButton>
 					</span>
 				</StInputDiv>
-				
+
+				<hr style={{width: "80%"}} />
 
 				<div ref={scrollRef} 
 					style= {{

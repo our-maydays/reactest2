@@ -20,11 +20,11 @@ html {
 }
 
 .sub-title {
-	font-size: 1.2rem;
+	font-size: 1.4rem;
 }
 
 .div-title {
-	font-size: 1.8rem;
+	font-size: 2.0rem;
 	font-family: MaruburiBold;
 	margin-bottom: 1.5rem;
 }
@@ -33,7 +33,7 @@ html {
 	display: flex;
 	flex-direction: column;
 	width: auto;
-	line-height: 1em;		 
+	line-height: 1.6rem;		 
 	margin: auto;
 }
 .dday-box {
@@ -42,7 +42,7 @@ html {
 	min-width: 25px;
 	width: 25px;
 	flex-wrap: nowrap;
-	line-height: 1em;
+	line-height: 1.6rem;
 	margin: auto;
 	margin-left: 5px;
 	margin-right: 5px;
@@ -60,7 +60,7 @@ html {
 
 .dday-txt {
 	display: inline-block;
-	line-height: 1em;
+	line-height: 1rem;
 	margin: auto;
 	width: auto;
 }
@@ -68,7 +68,7 @@ html {
 .dday-idx {
 	display: inline-block;
 	margin: auto;
-	font-size: 0.8rem;
+	font-size: 1.0rem;
 }
 
 .dday-num {
@@ -77,7 +77,7 @@ html {
 	margin: auto;
 	min-width: 25px;
 	vertical-align: middle;
-	line-height: 1em;
+	line-height: 1.6rem;
 }
 
 @media (max-width: 1400px) {
