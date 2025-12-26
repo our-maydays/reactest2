@@ -88,6 +88,7 @@ const Gallery = () => {
 								src={src}
 								style={{
 									width: '100%',
+									border: '2.5rem',
 								}}
 							/>
 						</div>
