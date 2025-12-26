@@ -96,7 +96,7 @@ const Calendar = () => {
 			<Dday/>
 				
 			<p style={{marginTop: '1rem'}}> 
-				경보와 유진의 결혼식이 &nbsp;
+				경보, 유진의 결혼식이 &nbsp;
 				{(dayLeft > 0) ? (
 					<>
 						<span style={{fontFamily: 'maruburibold'}}>

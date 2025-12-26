@@ -14,10 +14,12 @@ const WelcomeMsg = () => {
 			}}>
 				<span className='sub-title'> INVITATION </span><br/>
 				<span className='div-title' style={{fontFamily: 'MaruburiBold'}}>
-					소중한 분들을 초대합니다 <br/><br/> 
+				소중한 분들을 초대합니다<br/>  
 				</span>
-				<span style={{lineHeight: '3rem'}}>	
-				벚꽃이 지는 봄날, 처음 만난 인연이 <br/>
+
+				<span style={{lineHeight: '4.5rem'}}>	
+				<br/>
+				벚꽃이 지는 봄날 처음 만난 인연이 <br/>
 				4년이 지나 같은 계절에 이르렀습니다 <br/>
 				벚꽃이 지고 새싹이 돋아나는 이 순간처럼 <br/>
 				닮은 듯 다른 두 사람이 함께 손을 잡고 <br/>
@@ -25,6 +27,7 @@ const WelcomeMsg = () => {
 				저희의 새로운 시작을 함께<br/>
 				기억해주셨으면 좋겠습니다<br/>
 				</span>
+				<br/>
 			</div>
 
 			<div style={{
