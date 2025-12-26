@@ -5,9 +5,7 @@ const WelcomeMsg = () => {
 		<div style={{
 			marginTop: '2rem',
 			marginBottom: '2rem',
-			color: '#1E2677',
-			color: '#672026',
-			color: '#3A2665',
+			color: '#372773',
 			}}
 		>
 			<div style={{
