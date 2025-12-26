@@ -20,7 +20,7 @@ const MyBank = ({src}) => {
 	}
 
 	return (
-		<div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%'}}>
+		<div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', fontFamily:'Easta'}}>
 			계좌번호를 누르면 복사됩니다
 			{
 				['Father','Mother','Me'].map((key,idx) => {
@@ -36,7 +36,7 @@ const MyBank = ({src}) => {
 						}}>
 
 						<div>
-							<p style={{fontFamily:'MaruBuriLight', fontSize: '18px', marginTop: '0px'}}>
+							<p style={{fontWeight:'500', fontSize: '18px', marginTop: '0px'}}>
 								{dt[key][0]}
 							</p>
 							{dt[key][1]} {dt[key][2]} {dt[key][3]}

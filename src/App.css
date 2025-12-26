@@ -13,7 +13,7 @@ html {
 	display: flex;
 	flex-direction: column;
 	color: black;
-	background-color: rgb(200,200,200);
+	background-color: #F8F7EE;
 	font-family: MaruburiLight;
 	width: 100%;
 	max-width: 390px;
@@ -21,11 +21,11 @@ html {
 
 .sub-title {
 	font-size: 1.4rem;
+	color: #F24822;
 }
 
 .div-title {
 	font-size: 2.0rem;
-	font-family: MaruburiBold;
 	margin-bottom: 1.5rem;
 }
 
@@ -123,3 +123,78 @@ html {
 	font-family: 'MaruBuriBold';
 	src: url('./assets/fonts/MaruBuri-Bold.otf') format('opentype');
 }
+
+@font-face {
+	font-family: 'NPS';
+	src: url('./assets/fonts/NPSfont_regular.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'NPSBold';
+	src: url('./assets/fonts/NPSfont_bold.otf') format('opentype');
+}
+@font-face {
+	font-family: 'Happiness';
+	src: url('./assets/fonts/Happiness-Sans-Regular.otf') format('opentype');
+}
+@font-face {
+	font-family: 'HappinessBold';
+	src: url('./assets/fonts/Happiness-Sans-Bold.otf') format('opentype');
+}
+@font-face {
+	font-family: 'HappinessTitle';
+	src: url('./assets/fonts/Happiness-Sans-Title.otf') format('opentype');
+}
+@font-face {
+	font-family: 'KPWD';
+	src: url('./assets/fonts/KPWDM.otf') format('opentype');
+}
+@font-face {
+	font-family: 'KPWDBold';
+	src: url('./assets/fonts/KPWDB.otf') format('opentype');
+}
+@font-face {
+	font-family: 'KPWDLight';
+	src: url('./assets/fonts/KPWDL.otf') format('opentype');
+}
+@font-face {
+	font-family: 'KPD';
+	src: url('./assets/fonts/KPDM.otf') format('opentype');
+}
+@font-face {
+	font-family: 'KPDLight';
+	src: url('./assets/fonts/KPDL.otf') format('opentype');
+}
+@font-face {
+	font-family: 'KPDBold';
+	src: url('./assets/fonts/KPDB.otf') format('opentype');
+}
+@font-face {
+	font-family: 'Suit';
+	src: url('./assets/fonts/SUIT-Regular.otf') format('opentype');
+}
+@font-face {
+	font-family: 'SuitBold';
+	src: url('./assets/fonts/SUIT-Bold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Easta';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/EASTARJET-DemiLight.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Easta';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/EASTARJET-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Easta';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/EASTARJET-Heavy.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+

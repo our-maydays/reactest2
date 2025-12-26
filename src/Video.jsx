@@ -17,11 +17,11 @@ const Video = () => {
 	}
 
 	return (
-		<div style={{marginTop:'2rem', marginBottom:'2rem'}}>
-			<div className='sub-title'>
+		<div style={{marginTop:'2rem', marginBottom:'2rem', fontFamily:'Easta'}}>
+			<div className='sub-title' style={{fontWeight:'300'}}>
 				Video
 			</div>
-			<div className='div-title'>
+			<div className='div-title' style={{fontWeight:'500'}}>
 				웨딩비디오
 			</div>
 

@@ -17,11 +17,11 @@ const Transport = ({tr_type}) => {
 	}
 
 	return (
-		<div>
-			<div style= {{fontSize: '1.6rem', fontFamily:'MaruBuriBold'}}>
+		<div style={{fontFamily:'Easta'}}>
+			<div style= {{fontSize: '1.6rem', fontWeight:'500'}}>
 				{rev_tr_type}
 			</div>
-			<div style= {{fontSize: '1.4rem'}}>
+			<div style= {{fontSize: '1.4rem', fontWeight:'300'}}>
 				<div dangerouslySetInnerHTML={{__html: contents}} />
 			</div>
 			<br/>

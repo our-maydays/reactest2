@@ -65,7 +65,16 @@ const Gallery = () => {
 	})
 
 	return (
-		 <div style={{border: 'none'}}>
+		<div style={{
+			border: 'none',
+			marginTop: '2rem',
+			marginBottom: '2rem',
+			fontFamily: 'Easta',
+		}}>
+		<div style={{fontWeight:'300',marginBottom:'2rem'}}>
+			<span className='sub-title'> Gallery </span><br/>
+			<span className='div-title' style={{fontWeight:'500'}}> 사진첩</span>
+		</div>
 		 	<Slider {...gridSettings}>
 				{images.map( (src, index) => (
 					<div 

@@ -55,11 +55,13 @@ const Calendar = () => {
 			fontSize: '1.6rem',
 			marginTop: '2.0rem',
 			marginBottom: '2.0rem',
+			fontFamily: 'Easta',
+			fontWeight: '300',
 			}}
 		>	
 			<p style = {{
 				fontSize: '2rem', 
-				fontFamily: 'MaruBuriBold',
+				fontWeight: '500',
 				marginBottom: '0rem',
 			}}>
 				2026. 5. 9.
@@ -99,26 +101,26 @@ const Calendar = () => {
 				경보, 유진의 결혼식이 &nbsp;
 				{(dayLeft > 0) ? (
 					<>
-						<span style={{fontFamily: 'maruburibold'}}>
+						<span style={{fontWeight: '500'}}>
 							{dayLeft}
 						</span>
-						<span style={{fontFamily: 'maruburi'}}>
+						<span style={{fontWeight: '300'}}>
 							일 남았습니다.
 						</span>
 					</>
 				) : (
 					((dayLeft < 0) ? (
 						<>
-							<span style={{fontFamily: 'maruburibold'}}>
+							<span style={{fontWeight: '500'}}>
 								{-dayLeft}
 							</span>
-							<span style={{fontFamily: 'maruburi'}}>
+							<span style={{fontWeight: '300'}}>
 								일 지났습니다.
 							</span>
 						</>
 					) : (
 						<>
-							<span style={{fontFamily: 'maruburi'}}>
+							<span style={{fontWeight: '300'}}>
 								오늘입니다.
 							</span>
 						</>

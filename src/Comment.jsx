@@ -130,12 +130,14 @@ const Comment = () => {
 			marginBottom: '2.0rem',
 			display: 'flex', 
 			flexDirection:'column',
-			alignItems:'center' 
+			alignItems:'center',
+			fontFamily:'Easta',
+			fontWeight:'300',
 		}}>
 			<div className='sub-title'>
 				Gusetbook
 			</div>
-			<div className='div-title'>
+			<div className='div-title' style={{fontWeight:'500'}}>
 				방명록
 			</div>
 

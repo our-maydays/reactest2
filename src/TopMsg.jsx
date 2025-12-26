@@ -7,12 +7,25 @@ const TopMsg = () => {
 			<p style={{
 				marginBottom: '2rem', 
 				fontSize: '2rem', 
-				fontFamily: 'MaruBuriBold'}}>
-
+				fontFamily: 'Easta',
+				fontWeight: '500',
+				color: '#3A2665',
+//				color: '#672026',
+			}}>
 				강 경 보 &nbsp;&nbsp;  & &nbsp;&nbsp;  장 유 진 
 
 			</p>
-
+		
+			{/*
+			<p style={{
+				fontSize: '2rem',
+				fontFamily: 'HappinessBold',
+				color: '#672026',
+				}}
+			>
+				강 경 보 &nbsp;&nbsp; & &nbsp;&nbsp;	장 유 진
+			</p>
+			*/}
 {/*
 			<p style={{
 				fontSize: '1.5rem', 

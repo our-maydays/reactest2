@@ -4,7 +4,7 @@ const MainPhoto = () => {
 	return (
 		<div style={{position:'relative' }}>
 			
-			<img src={mainphoto} width={'100%'} style={{display:'block', margin: 'auto'}} />
+			<img src={mainphoto} width={'90%'} style={{display:'block', margin: 'auto'}} />
 	
 			{/*			
 			<div style={{
