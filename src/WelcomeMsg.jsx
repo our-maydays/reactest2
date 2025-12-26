@@ -14,7 +14,9 @@ const WelcomeMsg = () => {
 			}}>
 				<span className='sub-title'> INVITATION </span><br/>
 				<span className='div-title' style={{fontFamily: 'MaruburiBold'}}>
-				소중한 분들을 초대합니다<br/>  
+				{/*				소중한 분들을 초대합니다<br/>  */}
+				저희들의 새로운 시작을 알리는<br/>
+				작은 축제에 여러분을 초대합니다<br/>
 				</span>
 
 				<span style={{lineHeight: '4.5rem'}}>	
