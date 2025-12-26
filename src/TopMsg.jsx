@@ -12,7 +12,7 @@ const TopMsg = () => {
 				color: '#3A2665',
 //				color: '#672026',
 			}}>
-				강 경 보 &nbsp;&nbsp;  & &nbsp;&nbsp;  장 유 진 
+				강경보 &nbsp;  & &nbsp;  장유진 
 
 			</p>
 		
