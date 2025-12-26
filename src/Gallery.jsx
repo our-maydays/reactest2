@@ -100,7 +100,7 @@ const Gallery = () => {
 				onRequestClose={() => setIsOpen(false)}
 				style={{
 					overlay: {
-						backgroundColor: 'rgba(100,100,100,0.8)',
+						backgroundColor: 'rgba(230,230,230,0.9)',
 						zIndex: 1000,
 					},
 					content: {
@@ -109,8 +109,8 @@ const Gallery = () => {
 						left: '50%',
 						transform: 'translate(-50%, -50%)',
 						background: 'none',
-						width: '95vw',
-						height: '95vh',
+						width: '100vw',
+						height: '100vh',
 						margin: '0 auto',
 						padding: '10px',
 						border: 'none',
