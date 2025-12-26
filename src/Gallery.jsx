@@ -88,7 +88,6 @@ const Gallery = () => {
 								src={src}
 								style={{
 									width: '100%',
-									border: '2.5rem',
 								}}
 							/>
 						</div>
@@ -136,7 +135,7 @@ const Gallery = () => {
 							onClick={ () => setIsOpen(false)}
 							style={{
 								position: 'absolute',
-								top: '1rem',
+								top: '2rem',
 								right: '1rem',
 								background: 'transparent',
 								color: 'white',
