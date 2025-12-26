@@ -111,6 +111,7 @@ const Gallery = () => {
 						background: 'none',
 						width: '95vw',
 						height: '95vh',
+						outline: '1px solid red',
 						margin: '0 auto',
 						padding: '10px',
 						border: 'none',
