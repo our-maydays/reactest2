@@ -7,7 +7,7 @@ import Map from './Map'
 
 const Navi = () => {
 	return (
-		<div style={{marginTop: '2rem', marginBottom: '2rem', fontFamily:'Easta'}}>
+		<div style={{marginTop: '2rem', marginBottom: '2rem', fontFamily:'GowunDodum'}}>
 			<div className='sub-title' style={{fontWeight:'300'}}> Location </div>
 			<div className='div-title' style={{fontWeight:'500', marginBottom: '1.5rem'}}>
 				오시는 길 

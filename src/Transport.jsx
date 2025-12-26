@@ -17,7 +17,7 @@ const Transport = ({tr_type}) => {
 	}
 
 	return (
-		<div style={{fontFamily:'Easta'}}>
+		<div style={{fontFamily:'GowunDodum'}}>
 			<div style= {{fontSize: '1.6rem', fontWeight:'500'}}>
 				{rev_tr_type}
 			</div>

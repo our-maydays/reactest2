@@ -55,7 +55,7 @@ const Calendar = () => {
 			fontSize: '1.6rem',
 			marginTop: '2.0rem',
 			marginBottom: '2.0rem',
-			fontFamily: 'Easta',
+			fontFamily: 'GowunDodum',
 			fontWeight: '300',
 			}}
 		>	

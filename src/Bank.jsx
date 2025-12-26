@@ -20,7 +20,13 @@ const MyBank = ({src}) => {
 	}
 
 	return (
-		<div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', fontFamily:'Easta'}}>
+		<div style={{
+			display: 'flex', 
+			flexDirection: 'column', 
+			justifyContent: 'space-between',
+			height: '100%', 
+			fontFamily:'GowunDodum'
+		}}>
 			계좌번호를 누르면 복사됩니다
 			{
 				['Father','Mother','Me'].map((key,idx) => {

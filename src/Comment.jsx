@@ -131,7 +131,7 @@ const Comment = () => {
 			display: 'flex', 
 			flexDirection:'column',
 			alignItems:'center',
-			fontFamily:'Easta',
+			fontFamily:'GowunDodum',
 			fontWeight:'300',
 		}}>
 			<div className='sub-title'>

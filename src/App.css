@@ -198,3 +198,8 @@ html {
     font-display: swap;
 }
 
+@font-face {
+	font-family: 'GowunDodum';
+	src: url('./assets/fonts/GowunDodum-Regular.ttf') format('truetype');
+}
+

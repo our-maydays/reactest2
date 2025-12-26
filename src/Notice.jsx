@@ -1,7 +1,12 @@
 
 const Notice = () => {
 	return (
-		<div style={{marginTop: '2rem',marginBottom:'2rem', fontFamily:'Easta',fontWeight:'300'}}>
+		<div style={{
+			marginTop: '2rem',
+			marginBottom:'2rem',
+			fontFamily:'GowunDodum',
+			fontWeight:'300'
+		}}>
 			<div className='sub-title'>
 				Notice
 			</div>

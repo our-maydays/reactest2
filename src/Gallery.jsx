@@ -69,7 +69,7 @@ const Gallery = () => {
 			border: 'none',
 			marginTop: '2rem',
 			marginBottom: '2rem',
-			fontFamily: 'Easta',
+			fontFamily: 'GowunDodum',
 		}}>
 		<div style={{fontWeight:'300',marginBottom:'2rem'}}>
 			<span className='sub-title'> Gallery </span><br/>
