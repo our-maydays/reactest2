@@ -15,8 +15,10 @@ html {
 	color: black;
 	background-color: #F8F7EE;
 	font-family: MaruburiLight;
-	width: 100%;
-	max-width: 390px;
+/*	width: 100%; */
+	width: 100vw;
+/*	max-width: 390px; */
+	max-width: 400px;
 }
 
 .sub-title {

@@ -62,6 +62,11 @@ function App() {
 				</Intersect>
 
 				<hr style={{width: '90%'}}/>
+			
+				<Intersect className='fade-in' style={{ }}>
+					<Navi/>
+				</Intersect>
+				<hr style={{width: '90%'}}/>
 
 				<Intersect className='fade-in' style={{ }}>
 					<Gallery/>
@@ -69,13 +74,6 @@ function App() {
 
 				<Intersect className='fade-in' style={{ }}>
 					<Video/>
-				</Intersect>
-
-
-				<hr style={{width: '90%'}}/>
-			
-				<Intersect className='fade-in' style={{ }}>
-					<Navi/>
 				</Intersect>
 
 				<hr style={{width: '90%'}}/>

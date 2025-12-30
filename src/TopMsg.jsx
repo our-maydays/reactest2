@@ -7,7 +7,7 @@ const TopMsg = () => {
 			<p style={{
 				marginBottom: '2rem', 
 				fontSize: '2rem', 
-				fontFamily: 'Easta',
+				fontFamily: 'GowunDodum',
 				fontWeight: '500',
 				color: '#3A2665',
 //				color: '#672026',
