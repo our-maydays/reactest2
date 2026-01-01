@@ -21,7 +21,7 @@ export const StEntireDiv = styled.div`
 	flex-direction: column-reverse;
 	align-items: center;
 	width: 90%;
-	background-color: grey;
+	background-color: #8FAFD9;
 	border-radius: 1.5rem;
 `;
 
@@ -33,6 +33,8 @@ export const StNameInput = styled.textarea`
 	height: 1.6rem;
 	line-height: 1.6rem;
 	padding: 0.5rem;
+	color: black;
+	background-color: #F2F1EB;
 	border-radius: 0.8rem;
 	border: none;
 	margin-bottom: 0rem;
@@ -55,7 +57,7 @@ export const StContentInput = styled.textarea`
 	max-height: 7rem;
 	border: none;
 	border-radius: 0.8rem;
-	background-color: none;
+	background-color: #F2F1EB;
 	color: black;
 	&:focus {
 		outline: none;
@@ -122,7 +124,7 @@ export const StCommentContent = styled.div`
 	padding: 0.5rem;
 	text-align: left;
 	border-radius: 1.0rem;
-	background-color: rgb(168,239,233);
+	background-color: #F2F1EB;
 `;
 
 export const StDisplay = styled.div`

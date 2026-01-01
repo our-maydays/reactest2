@@ -9,12 +9,20 @@ const AudioComp = () => {
 	const audioRef = useRef(null);
 	
 	useEffect( () => {
-		audioRef.current = new Audio(audioFile)
+		const audio = new Audio(audioFile)
+
+		audioRef.current = audio
 		audioRef.current.load()
 		audioRef.current.addEventListener('ended', () => setIsPlaying(false))
-		audioRef.current.play().catch( () => {
-			console.log('autoplay blocked')
+		audioRef.current.play().then( () => {
+			console.log('silence autoplay success')
 			console.log(isPlaying)
+
+			audio.src = audioFile
+			audio.play()
+			setIsPlaying(true)
+		}).catch(() => {
+			console.log('autoplay.blocked')
 		})
 
 		const handleScrollStart = () => {
@@ -22,12 +30,21 @@ const AudioComp = () => {
 				audioRef.current.play().catch( () => {} )
 				setIsPlaying(!isPlaying)
 				window.removeEventListener('scroll',handleScrollStart)
+				console.log('scroll detect')
+				window.removeEventListener('gesture',handleScrollStart)
+				console.log('gesture detect')
+				window.removeEventListener('touchstart',handleScrollStart)
+				console.log('touch detect')
 			}
 		}
 		window.addEventListener('scroll',handleScrollStart)
+		window.addEventListener('gesture',handleScrollStart)
+		window.addEventListener('touchstart',handleScrollStart)
 
 		return () => {
-			window.removeEventListener('scroll',handleScrollStart);
+			window.removeEventListener('scroll',handleScrollStart)
+			window.removeEventListener('gesture',handleScrollStart)
+			window.removeEventListener('touchstart',handleScrollStart)
 		}
 	}, [])
 
@@ -36,8 +53,9 @@ const AudioComp = () => {
 			audioRef.current.pause()
 			console.log('audio pause')
 		} else {
-			audioRef.current.play()
-			console.log('audio start')
+			audioRef.current.play();
+			console.log('audio start');
+			console.log(audioRef.current.play())
 		}
 		setIsPlaying(!isPlaying)
 	}
@@ -52,7 +70,6 @@ const AudioComp = () => {
 	}, [])
 
 
-	{/*
 	return (
 		<>
 			<img
@@ -63,8 +80,8 @@ const AudioComp = () => {
 			/>
 		</>
 	)
-*/}
 
+	{/*
 	return(
 		<>
 			<iframe src={silenceFile} allow='autoplay' id='audio'>
@@ -75,6 +92,7 @@ const AudioComp = () => {
 
 		</>
 	)
+*/}
 
 }
 

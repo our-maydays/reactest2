@@ -5,7 +5,7 @@ const Notice = () => {
 			marginTop: '2rem',
 			marginBottom:'2rem',
 			fontFamily:'GowunDodum',
-			fontWeight:'300'
+			fontWeight:'300',
 		}}>
 			<div className='sub-title'>
 				Notice
@@ -19,6 +19,10 @@ const Notice = () => {
 				style={{
 					fontFamily:'maruburi',
 					fontSize:'1.4rem',
+					textAlign: 'left',
+					width: '90%',
+					paddingLeft: '1.6rem',
+					paddingRight: '1.6rem',
 				}}
 			>
 				0. 야외에서 예식이 진행됩니다<br/>

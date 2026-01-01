@@ -206,3 +206,22 @@ html {
 	src: url('./assets/fonts/GowunDodum-Regular.ttf') format('truetype');
 }
 
+@font-face {
+	font-family: 'GowunBatang';
+	src: url('./assets/fonts/GowunBatang-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'GowunBatangBold';
+	src: url('./assets/fonts/GowunBatang-Bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Regular';
+	src: url('./assets/fonts/GowunDodum-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Bold';
+	src: url('./assets/fonts/GowunBatang-Bold.ttf') format('truetype');
+}
