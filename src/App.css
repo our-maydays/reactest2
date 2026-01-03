@@ -15,10 +15,11 @@ html {
 	color: #2F2359;
 	background-color: #F8F7EE;
 	font-family: GowunDodum;
-/*	width: 100%; */
-	width: 100vw; 
+	width: 100%; 
+/*	width: 100vw; */
 /*	max-width: 390px; */
 	max-width: 450px;
+	margin: 0 auto;
 }
 
 .sub-title {
