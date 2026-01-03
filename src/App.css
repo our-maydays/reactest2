@@ -12,13 +12,13 @@ html {
 .main-frame {
 	display: flex;
 	flex-direction: column;
-	color: black;
+	color: #2F2359;
 	background-color: #F8F7EE;
 	font-family: GowunDodum;
 /*	width: 100%; */
 	width: 100vw; 
 /*	max-width: 390px; */
-	max-width: 400px;
+	max-width: 450px;
 }
 
 .sub-title {
