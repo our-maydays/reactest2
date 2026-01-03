@@ -53,7 +53,7 @@ const Dday = () => {
 			{left.past === true ? (
 				<div style={{display:'flex'}}>
 					<div className='dday-box'>
-						<p className='dday-idx'> 일 </p>
+						<p className='dday-idx'> Day </p>
 						<p className='dday-num'> {left.days} </p>
 					</div>
 					<div className='dday-div'>

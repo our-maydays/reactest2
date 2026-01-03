@@ -10,7 +10,7 @@ const WelcomeMsg = () => {
 		>
 			<div style={{
 				marginBottom: '1rem', 
-				fontFamily:'GowunDodum', 
+				fontFamily:'Regular', 
 				fontWeight: '300',
 				fontSize: '1.6rem',
 			}}>
@@ -38,24 +38,24 @@ const WelcomeMsg = () => {
 			<div style={{
 				marginBottom: '1rem', 
 				marginTop: '2.5rem', 
-				fontFamily: 'GowunDodum',
+				fontFamily: 'Bold',
 				fontWeight: '500',
 				fontSize: '1.6rem'
 			}}>
 				강대원 · 노신조
-				<span style={{fontWeight: '300'}}> 의 아들</span>
-				<span style={{fontWeight: '500' }}> 경보 </span><br/>
+				<span style={{fontFamily: 'Regular'}}> 의 아들</span>
+				<span style={{ }}> 경보 </span><br/>
 			</div>
 
 			<div style={{
 				marginBottom: '1rem',
 				marginTop: '1rem', 
-				fontFamily: 'GowunDodum',
+				fontFamily: 'Bold',
 				fontWeight: '500',
 				fontSize: '1.6rem',
 			}}>
 				장상문 · 한현순
-				<span style={{ fontWeight: '300'}}> 의 딸</span>
+				<span style={{ fontFamily: 'Regular'}}> 의 딸</span>
 				<span style={{ fontWeight: '500'}}> 유진</span><br/>
 			</div>
 			

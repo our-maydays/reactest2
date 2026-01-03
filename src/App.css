@@ -15,8 +15,8 @@ html {
 	color: black;
 	background-color: #F8F7EE;
 	font-family: GowunDodum;
-	width: 100%; 
-/*	width: 100vw; */
+/*	width: 100%; */
+	width: 100vw; 
 /*	max-width: 390px; */
 	max-width: 400px;
 }
@@ -24,12 +24,14 @@ html {
 .sub-title {
 	font-size: 1.4rem;
 	color: #F24822;
+	font-family: Bold;
 }
 
 .div-title {
 	font-size: 2.0rem;
 	margin-bottom: 1.5rem;
 	color: #2F2359;
+	font-family: Bold;
 }
 
 .dday-div {
@@ -218,7 +220,7 @@ html {
 
 @font-face {
 	font-family: 'Regular';
-	src: url('./assets/fonts/GowunDodum-Regular.ttf') format('truetype');
+	src: url('./assets/fonts/GowunBatang-Regular.ttf') format('truetype');
 }
 
 @font-face {

@@ -55,12 +55,13 @@ const Calendar = () => {
 			fontSize: '1.6rem',
 			marginTop: '2.0rem',
 			marginBottom: '2.0rem',
-			fontFamily: 'GowunDodum',
+			fontFamily: 'Regular',
 			fontWeight: '300',
 			}}
 		>	
 			<p style = {{
 				fontSize: '2rem', 
+				fontFamily: 'Bold',
 				fontWeight: '500',
 				marginBottom: '0rem',
 			}}>

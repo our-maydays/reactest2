@@ -21,7 +21,7 @@ export const StEntireDiv = styled.div`
 	flex-direction: column-reverse;
 	align-items: center;
 	width: 90%;
-	background-color: #8FAFD9;
+	background-color: #F2DDB6;
 	border-radius: 1.5rem;
 `;
 
@@ -124,8 +124,10 @@ export const StCommentContent = styled.div`
 	padding: 0.5rem;
 	text-align: left;
 	border-radius: 1.0rem;
-	background-color: #F2F1EB;
+	background-color: #F2C029;
 `;
+
+// #F29727 orangecolor
 
 export const StDisplay = styled.div`
 	display: flex
