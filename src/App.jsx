@@ -90,7 +90,7 @@ function App() {
 
 				<hr style={{width: '90%'}}/>
 
-				<Intersect calssName='fade-in' style={{ }}>
+				<Intersect className='fade-in' style={{ }}>
 					<Notice/>
 				</Intersect>
 

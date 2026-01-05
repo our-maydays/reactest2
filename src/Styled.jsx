@@ -21,15 +21,27 @@ export const StEntireDiv = styled.div`
 	flex-direction: column-reverse;
 	align-items: center;
 	width: 90%;
-	background-color: #F2DDB6;
+	background-color: #BAD4B9;
 	border-radius: 1.5rem;
 `;
 
+export const StCommentContent = styled.div`
+	display: inline-block;
+	float: left;
+	min-height: 1.5rem;
+	font-size: 1.4rem;
+	margin: 0.1rem 0.2rem 0.8rem 0.8rem;
+	padding: 0.5rem;
+	text-align: left;
+	border-radius: 1.0rem;
+	background-color: #39A448;
+	color: black;
+`;
 export const StNameInput = styled.textarea`
 	display: inline-block;
-	font-family: GowunDodum;
+	font-family: Regular;
 	font-size: 1.6rem;	
-	width: 8rem;
+	width: 15rem;
 	height: 1.6rem;
 	line-height: 1.6rem;
 	padding: 0.5rem;
@@ -37,24 +49,38 @@ export const StNameInput = styled.textarea`
 	background-color: #F2F1EB;
 	border-radius: 0.8rem;
 	border: none;
-	margin-bottom: 0rem;
-	margin-left: 0.5rem;
 	&:focus {
 		outline: none;
 	}
 `;
 
+export const StPasswordInput = styled.textarea`
+	display: inline-block;
+	font-family: Regular;
+	font-size: 1.6rem;	
+	width: 15rem;
+	height: 1.6rem;
+	line-height: 1.6rem;
+	padding: 0.5rem;
+	color: black;
+	background-color: #F2F1EB;
+	border-radius: 0.8rem;
+	border: none;
+	&:focus {
+		outline: none;
+	}
+`;
 export const StContentInput = styled.textarea`
 	display: inline-block;
 	font-size: 1.6rem;
-	font-family: GowunDodum;
+	font-family: Regular;
 	padding: 0.5rem;
-	margin: 0rem 0.2rem 0.5rem 0.5rem;
-	width: 29rem;
+	width: 100%;
 	line-height: 1.6rem;
 	field-sizing: content;
-	min-height: 1.6rem;
-	max-height: 7rem;
+	height: 20vh;
+	min-height: 10rem;
+	max-height: 20rem;
 	border: none;
 	border-radius: 0.8rem;
 	background-color: #F2F1EB;
@@ -80,12 +106,12 @@ export const StSubmitButton = styled.div`
 
 export const StInputDiv = styled.div`
 	padding: 0.5rem;
-	width: auto;
+	width: 100%;
 	heigth: auto;
 	display: inline-block;
 	margin: 0rem;
 	text-align: left;
-	
+	outline: 1px solid black;	
 `;
 
 export const StCommentName = styled.div`
@@ -115,17 +141,6 @@ export const StCommentDate = styled.div`
 	justify-content: flex-end;
 `;
 
-export const StCommentContent = styled.div`
-	display: inline-block;
-	float: left;
-	min-height: 1.5rem;
-	font-size: 1.4rem;
-	margin: 0.1rem 0.2rem 0.8rem 0.8rem;
-	padding: 0.5rem;
-	text-align: left;
-	border-radius: 1.0rem;
-	background-color: #F2C029;
-`;
 
 // #F29727 orangecolor
 

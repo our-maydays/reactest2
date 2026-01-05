@@ -13,13 +13,13 @@
 
 .calendar th {
 	/*background-color: rgba(255,205,240,0.281);*/
-	color: #333;
+	color: #2F2359;
 	z-index: 1;
 }
 
 .calendar td {
 	/*background-color: rgb(254,247,238);*/
-	color: #333;
+	color: #2F2359;
 	z-index: 1;
 }
 
@@ -37,11 +37,9 @@
 	color: black;
 }
 
-
-.calendar .special-day::after {
 	{/*	content: '♥';*/}
+.calendar .special-day::after {
 	content:'. ';
-
 	display: block;
 	background-image: url(./assets/love.png);
 	background-size: 3rem;

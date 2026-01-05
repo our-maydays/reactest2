@@ -106,7 +106,7 @@ const Calendar = () => {
 							{dayLeft}
 						</span>
 						<span style={{fontWeight: '300'}}>
-							일 남았습니다.
+							일 남았습니다
 						</span>
 					</>
 				) : (
@@ -116,13 +116,13 @@ const Calendar = () => {
 								{-dayLeft}
 							</span>
 							<span style={{fontWeight: '300'}}>
-								일 지났습니다.
+								일 지났습니다
 							</span>
 						</>
 					) : (
 						<>
 							<span style={{fontWeight: '300'}}>
-								오늘입니다.
+								오늘입니다
 							</span>
 						</>
 					))

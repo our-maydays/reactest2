@@ -53,7 +53,7 @@ const Dday = () => {
 			{left.past === true ? (
 				<div style={{display:'flex'}}>
 					<div className='dday-box'>
-						<p className='dday-idx'> Day </p>
+						<p className='dday-idx'> 일 </p>
 						<p className='dday-num'> {left.days} </p>
 					</div>
 					<div className='dday-div'>
@@ -88,14 +88,14 @@ const Dday = () => {
 					*/}
 				</div>
 			) : (
-				<div style={{display:'flex'}}>
+				<div style={{display:'flex', justifyContent:'center'}}>
 					<div className='dday-box'>
 						<p className='dday-idx'> 일 </p>
 						<p className='dday-num'> {left.days} </p>
 					</div>
 					<div className='dday-div'>
 						<p className='dday-idx'> &nbsp; </p>
-						<p className='dday-div'>:</p>
+						<p className='dday-sep'>:</p>
 					</div>
 					<div className='dday-box'>
 						<p className='dday-idx'> 시간 </p>
@@ -103,15 +103,15 @@ const Dday = () => {
 					</div>
 					<div className='dday-div'>
 						<p className='dday-idx'> &nbsp; </p>
-						<p className='dday-div'>:</p>
+						<p className='dday-sep'>:</p>
 					</div>
 					<div className='dday-box'>
 						<p className='dday-idx'> 분 </p>
 						<p className='dday-num'> {left.minutes} </p>
 					</div>
 					<div className='dday-div'>
-						<p className='dday-idx'> &nbsp; </p>
-						<p className='dday-div'>:</p>
+						<p className='dday-idx'> &nbsp;  </p>
+						<p className='dday-sep'>:</p>
 					</div>
 					<div className='dday-box'>
 						<p className='dday-idx'> 초 </p>

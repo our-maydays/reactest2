@@ -3,6 +3,8 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import moment from 'moment'
 import 'moment/dist/locale/ko'
 
+import sendIcon from './assets/send_icon.png'
+
 import { collection, doc, addDoc, getDocs, orderBy, query, limit } from 'firebase/firestore'
 import { db } from './firebase'
 
@@ -66,30 +68,39 @@ const Comment = () => {
 
 	const onClickSubmitHandler = async () => {
 		const createdAt = new Date()
+		const validName = name.trim().length > 0
+		const validContent = content.trim().length > 0
 
-		await addDoc(collection(db,'comment'), {
-			name: name,
-			content: content,
-			createdAt: createdAt,
-		})
+		if (!validName && !validContent) {
+			alert('이름과 메세지를 모두 입력해주세요')
+		} else if (!validName) {
+			alert('이름을 입력해주세요') 
+		} else if (!validContent) {
+			alert('메세지를 입력해주세요')
+		} else {
+			await addDoc(collection(db,'comment'), {
+				name: name,
+				content: content,
+				createdAt: createdAt,
+			})
 
-		const newComment = {
-			id: comments.length,
-			name,
-			content,
-			createdAt,
+			const newComment = {
+				id: comments.length,
+				name,
+				content,
+				createdAt,
+			}
+
+			setComments([...comments, newComment])
+
+			const querySnapshot = await getDocs(
+				query(collection(db, 'comment'), orderBy('createdAt','desc'))
+			)
+			setQuerySnapshot(querySnapshot)
+
+			setName('')
+			setContent('')
 		}
-
-		setComments([...comments, newComment])
-
-		const querySnapshot = await getDocs(
-			query(collection(db, 'comment'), orderBy('createdAt','desc'))
-		)
-		setQuerySnapshot(querySnapshot)
-
-		setName('')
-		setContent('')
-
 	}
 
 
@@ -119,41 +130,46 @@ const Comment = () => {
 			marginBottom: '2.0rem',
 			display: 'flex', 
 			flexDirection:'column',
-			alignItems:'center' 
+			alignItems:'center',
+			fontFamily:'GowunDodum',
+			fontWeight:'300',
 		}}>
 			<div className='sub-title'>
 				Gusetbook
 			</div>
-			<div className='div-title'>
+			<div className='div-title' style={{fontWeight:'500'}}>
 				방명록
 			</div>
 
-			<StBarText> 축하 메세지를 남겨주세요 </StBarText>
 			<StEntireDiv>
 				<StInputDiv>
 					<StNameInput
-						placeholder='Name'
+						placeholder='이름'
 						onChange={onChangeNameHandler}
 						value={name}
 					></StNameInput>
-					
+				
+					<span style={{display: 'flex', marginTop:'0', alignItems: 'flex-end'}}>
 					<StContentInput
-						placeholder='comment leaves fiorever'
+						rows='1'
+						placeholder='메세지를 작성해주세요'
 						onChange={onChangeContentHandler}
 						value={content}
 					></StContentInput>
 
 					<StSubmitButton onClick={onClickSubmitHandler}>
-						Save
+						<img src={sendIcon} width='100%'/>
 					</StSubmitButton>
+					</span>
 				</StInputDiv>
+
+				<hr style={{width: "80%"}} />
 
 				<div ref={scrollRef} 
 					style= {{
 						display: 'flex',
 						flexDirection: 'column-reverse',
 						overflowY: 'scroll',
-						border: '1px solid black',
 						width: '100%',
 						height: '399px',
 					}}
@@ -162,14 +178,16 @@ const Comment = () => {
 					{querySnapshot &&
 						[...querySnapshot.docs].map( (doc) => (
 							<div key={doc.id}>
-								<div style={{display: 'flex', flexDirection: 'row'}}>
 									<StCommentName> {doc.data().name} </StCommentName>
-									<StCommentDate>
-										
-										{moment(doc.data().createdAt.toDate()).format('YY.MM.DD. a h:mm')}
-									</StCommentDate>
-								</div>
-								<StCommentContent> {doc.data().content} </StCommentContent>
+									
+									<div style={{display: 'flex', flexDirection: 'row', alignItems: 'flex-end'}}>
+										<StCommentContent> {doc.data().content} </StCommentContent>
+										<StCommentDate>
+											{moment(doc.data().createdAt.toDate()).format('YY.MM.DD')}
+											<br/>
+											{moment(doc.data().createdAt.toDate()).format('a h:mm')}
+										</StCommentDate>
+									</div>
 							</div>
 						))
 					}

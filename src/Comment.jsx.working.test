@@ -56,7 +56,6 @@ const Comment = () => {
 	const [inputPassword, setInputPassword] = useState('')
 	const [isAuthorized, setIsAuthorized] = useState(false)
 	const [editContent, setEditContent] = useState('')
-	const [editName, setEditName] = useState('')
 
 	const [isOpenNew, setIsOpenNew] = useState(false)
 	const [isOpenVerify, setIsOpenVerify] = useState(false)
@@ -145,7 +144,6 @@ const Comment = () => {
 	const handleUpdate = async () => {
 		await updateDoc(doc(db,'comment', selectedComment.id), {
 			content: editContent,
-			name: editName,
 		})
 		closeModal()
 		fetchData(querySnapshot.docs.length) //??
@@ -161,7 +159,6 @@ const Comment = () => {
 		setSelectedComment(null)
 		setInputPassword('')
 		setIsAuthorized(false)
-		setIsOpenVerify(false)
 	}
 
 	const passwordShow = () => {
@@ -267,9 +264,7 @@ const Comment = () => {
 								key={doc.id}
 								onClick={ () => {
 									setSelectedComment({ id: doc.id, ...doc.data() })
-									setEditContent(doc.data().content)
-									setEditName(doc.data().name)
-									setIsOpenVerify(true)
+									setEditContent(doc.data.content)
 								}}
 							>
 									<StCommentName> {doc.data().name} </StCommentName>
@@ -292,11 +287,11 @@ const Comment = () => {
 
 			{selectedComment && (
 				<Modal
-					isOpen={isOpenVerify}
-					onRequestClose={closeModal}
+					isOpen={isOpenVeryfy}
+					onRequestClose={() => setIsOpenVerify(false)}
 					style={{
 						overlay: {
-							backgroundColor: 'rgba(230,230,230,0.9)',
+							backgroundColor: 'rgba(230,230,230,0.9)'),
 							zIndex: '1000',
 						},
 						content: {
@@ -317,10 +312,10 @@ const Comment = () => {
 						},
 					}}
 				>
-					<div style={{height: '100%', displayy:'flex',flexDirection: 'column',}}>
+					<div>
 						<div style={{display:'flex'}}>
 							<button
-								onClick={ closeModal}
+								onClick={ () => setIsOpenVerify(false)}
 								style={{
 									alignItems: 'left',
 									background: 'transparent',
@@ -344,108 +339,68 @@ const Comment = () => {
 							marginTop: '0',
 							padding: '0',
 							position: 'relative',
-							height: '80%',
-							width: 'auto',
 						}}>
 							{!isAuthorized ? (
-								<div 
-									style={{
-										display: 'flex',
-										margin: 'auto',
-										alignItems: 'center',
-										justifyContents: 'center',
-										padding: '1rem',
-
-									}}
-								>
-									<div 
+								<>
+									<StPasswordInput
+										type='password',
+										placeholder='비밀번호를 입력하세요',
 										style={{
-											position: 'relative',
-											display: 'flex',
-											alignItems: 'center',
-											marginRight: '1rem',
+											WebkitTextSecurity: show ? 'none' : 'disc'
 										}}
-									>
-										<StPasswordInput
-											type='password'
-											placeholder='비밀번호'
-											style={{
-												WebkitTextSecurity: show ? 'none' : 'disc'
-											}}
-											onChange={(e) => setInputPassword(e.target.value.replace(/[^a-z]/g,''))}
-											value={inputPassword}
-										/>
-										<div
-											type='button'
-											onClick={passwordShow}
-											style={{
-												position: 'absolute',
-												right: '0.5rem',
-												margin: '0rem',
-												padding: '0',
-											}}
-										>
-											<img
-												src={show ? openlockIcon : lockIcon}
-												width='20px'
-											/>
-										</div>
-									</div>
+										onChange={onChangePasswordHandler}
+										value={inputPassword}
+									/>
+									
 									<button onClick={verifyPassword}> 확인 </button>
-								</div>
+								</>
 							) : (
-								<div style={{ width: '100%'}}>
-									<div style={{
-										display: 'flex',
-										justifyContent: 'space-between',
-										alignItems:'center',
-										margin: '1rem',
-										marginTop:'0',
-										padding: '0',
-										position: 'relative',
-									}}>
-										<StNameInput
-											placeholder='이름'
-											onChange={ (e) => setEditName(e.target.value)}
-											value={editName}
-										/>
-									</div>
+								<>
+									
 
-									<div style={{
-										display: 'flex',
-										justifyContent: 'space-between',
-										alignItems: 'center',
-										margin: '1rem',
-										marginTop: '0',
-										padding: '0',
-										position: 'relative',
-									}}>
-										<StContentInput
-											rows= '1'
-											placeholder='메세지'
-											onChange={(e) => setEditContent(e.target.value)}
-											value={editContent}
-										/>
-									</div>
-
-									<div 
-										style={{
-											display: 'flex',
-											justifyContent: 'center',
-										}}
-									>
-										<button onClick={handleUpdate}> 확인 </button>
-										<button onClick={handleDelete}> 삭제 </button>
-									</div>
-								</div>
-							)}
-						</div>
+				<div 
+					style= {{
+						position: 'fixed',
+						top: 0,
+						left: 0,
+						width: '80%',
+						height: '80%',
+						background: 'rgba(0,0,0,0.3)',
+						display: 'flex',
+						justifyContent: 'center',
+						alignItems: 'center',
+					}}
+				>
+					<div 
+						style={{
+							background: '#fff',
+							padding: '20px',
+							width: '300px',
+						}}
+					>
+						{!isAuthorized ? (
+							<>
+								<input
+									placeholder='비밀번호'
+									value={inputPassword}
+									onChange={(e) => setInputPassword(e.target.value)}
+								/>
+								<button onClick={verifyPassword}> 확인 </button>
+								<button onClick={closeModal}> 취소 </button>
+							</>
+						) : (
+							<>
+								<textarea
+									value={editContent}
+									onChange={ (e) => setEditContent(e.target.value)}
+								/>
+								<button onClick={handleUpdate}> 수정 </button>
+								<button onClick={handleDelete}> 삭제 </button>
+							</>
+						)}
 					</div>
-				</Modal>
-			)}								
-
-
-
+				</div>
+			)}
 			<div
 				style={{
 					fontSize: '1.6rem',
