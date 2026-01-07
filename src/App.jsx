@@ -34,7 +34,7 @@ function App() {
 					build time : {import.meta.env.VITE_BUILD_TIME}
 				</div>
 
-				<WeddingDay targetDate='2026-01-07'/>
+				<WeddingDay targetDate='2026-05-09'/>
 
 				<div style={{
 					textAlign: 'right', 

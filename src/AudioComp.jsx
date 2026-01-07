@@ -72,7 +72,15 @@ const AudioComp = () => {
 
 
 	return (
-		<div style={{display:'flex', justifyContent: 'right',flexDirection:'row',alignItems:'center'}}>
+		<div style={{
+			position: 'relative',
+			display:'flex', 
+			justifyContent: 'right',
+			flexDirection:'row',
+			alignItems:'center',
+			width:'100%',
+			}}
+		>
 			<span
 				class='disappear'
 				style={{
@@ -80,10 +88,15 @@ const AudioComp = () => {
 					height: '25px',
 					display:'flex',
 					alignItems: 'center',
+					justifyContent:'center',
 					padding: '0',
 					margin: '0',
 					marginTop: '10px',
 					marginRight: '80px',
+					width: '200px',
+					position: 'absolute',
+					left: '50%',
+					transform: 'translate(-50%,0)',
 				}}
 			>
 				배경음악이 준비되어 있습니다
