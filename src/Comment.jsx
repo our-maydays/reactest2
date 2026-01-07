@@ -42,6 +42,7 @@ const hashPassword = (password) => {
 }
 
 const Comment = () => {
+	Modal.setAppElement('#root')
 	moment.locale('ko')
 	const [name, setName] = useState('')
 	const [content, setContent] = useState('')
@@ -177,7 +178,7 @@ const Comment = () => {
 		timerRef.current = setTimeout( () => {
 			setShow(false)
 			timerRef.current = null
-		}, 1000)
+		}, 3000)
 	}
 
 
@@ -196,7 +197,32 @@ const Comment = () => {
 	}
 
 
+	useEffect( () => {
+		if (isOpenNew) {
+			document.body.style.overflow = 'hidden'
+		} else {
+			document.body.style.overflow = 'auto'
+		}
 
+		return () => {
+			document.body.style.overflow = 'auto'
+		}
+
+	}, [isOpenNew])
+
+
+	useEffect( () => {
+		if (isOpenVerify) {
+			document.body.style.overflow = 'hidden'
+		} else {
+			document.body.style.overflow = 'auto'
+		}
+
+		return () => {
+			document.body.style.overflow = 'auto'
+		}
+
+	}, [isOpenVerify])
 
 
 	useEffect( () => {
@@ -245,9 +271,7 @@ const Comment = () => {
 				방명록
 			</div>
 			<StEntireDiv>
-				{/* Input Area */}
 
-				<hr style={{width: "80%"}} />
 
 				{/* Display Area */}
 
@@ -294,6 +318,7 @@ const Comment = () => {
 				<Modal
 					isOpen={isOpenVerify}
 					onRequestClose={closeModal}
+					preventScroll={true}
 					style={{
 						overlay: {
 							backgroundColor: 'rgba(230,230,230,0.9)',
@@ -311,7 +336,7 @@ const Comment = () => {
 							maxWidth: '400px',
 							minHeight: '220px',
 							maxHeight: '400px',
-							margin: '0 auto',
+							margin: '0',
 							padding: '0',
 							border: 'none',
 						},
@@ -449,6 +474,7 @@ const Comment = () => {
 			<div
 				style={{
 					fontSize: '1.6rem',
+					marginTop: '1rem',
 				}}
 				onClick={() => setIsOpenNew(true) }
 			>
@@ -464,7 +490,6 @@ const Comment = () => {
 						zIndex: '1000',
 					},
 					content: {
-						position: 'absolute',
 						top: '50%',
 						left: '50%',
 						transform: 'translate(-50%,-50%)',
@@ -475,9 +500,9 @@ const Comment = () => {
 						maxWidth: '400px',
 						minHeight: '220px',
 						maxHeight: '400px',
-						margin: '0 auto',
-						padding: '0',
 						border: 'none',
+						margin: '0',
+						padding: '0',
 					},
 				}}
 			>

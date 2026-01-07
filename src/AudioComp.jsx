@@ -24,7 +24,7 @@ const AudioComp = () => {
 		}).catch(() => {
 			console.log('autoplay.blocked')
 		})
-
+		{/*
 		const handleScrollStart = () => {
 			if (!isPlaying) {
 				audioRef.current.play().catch( () => {} )
@@ -46,6 +46,7 @@ const AudioComp = () => {
 			window.removeEventListener('gesture',handleScrollStart)
 			window.removeEventListener('touchstart',handleScrollStart)
 		}
+		*/}
 	}, [])
 
 	const handleAudioToggle = () => {
@@ -71,14 +72,29 @@ const AudioComp = () => {
 
 
 	return (
-		<>
+		<div style={{display:'flex', justifyContent: 'right',flexDirection:'row',alignItems:'center'}}>
+			<span
+				class='disappear'
+				style={{
+					fontSize: '1.6rem',
+					height: '25px',
+					display:'flex',
+					alignItems: 'center',
+					padding: '0',
+					margin: '0',
+					marginTop: '10px',
+					marginRight: '80px',
+				}}
+			>
+				배경음악이 준비되어 있습니다
+			</span>
 			<img
 				src={isPlaying ? audioIconOn : audioIconOff}
-				width={'20px'}
-				style={{marginRight: '10px', marginTop: '10px'}}
+				width={'25px'}
+				style={{marginRight: '10px', marginTop: '10px', }}
 				onClick={() => handleAudioToggle()}
 			/>
-		</>
+		</div>
 	)
 
 	{/*

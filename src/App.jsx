@@ -11,6 +11,8 @@ import Navi from './Navi'
 import Account from './Account'
 import Intersect from './Intersect'
 
+import WeddingDay from './Weddingday'
+
 import Map from './Map'
 
 import Route from './Route'
@@ -31,6 +33,8 @@ function App() {
 				<div style={{fontSize: '8px' }}>
 					build time : {import.meta.env.VITE_BUILD_TIME}
 				</div>
+
+				<WeddingDay targetDate='2026-01-07'/>
 
 				<div style={{
 					textAlign: 'right', 
