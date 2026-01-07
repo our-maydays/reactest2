@@ -76,7 +76,8 @@ const Route = () => {
 	const openKakaoMap = () => {
 		if (isMobile) {
 //			const appUrl = `kakaomap://route?ep=${destLat},${destLng}&by=car`
-			const appUrl = `https://map.kakao.com/link/map/${destName},${destLat},${destLng}`
+//			const appUrl = `https://map.kakao.com/link/map/${destName},${destLat},${destLng}`
+			const appUrl = 'kakaomap://place?id=1432444585'
 			console.log('try open kakao')
 			window.location.href = appUrl;
 			
