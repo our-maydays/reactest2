@@ -51,7 +51,7 @@ const Route = () => {
 		}
 		console.log({locat})
 		if (isMobile) {
-			const appUrl = `nmap://route/car?dlat=${destLat}&dlng=${destLng}&dname=${destName}&appname=com.my.app`
+//			const appUrl = `nmap://route/car?dlat=${destLat}&dlng=${destLng}&dname=${destName}&appname=com.my.app`
 
 			const appUrl = `nmap://map?lat=${destLat}&lng=${destLng}&name=${destName}&appname=com.my.app`
 			window.location.href = appUrl
