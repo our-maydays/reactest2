@@ -37,12 +37,6 @@ const Navi = () => {
 			<Transport 
 				tr_type = 'bus'
 			/>
-			<Transport
-				tr_type = 'car'
-			/>
-			<Transport 
-				tr_type='metro'
-			/>
 		</div>
 	)
 }
