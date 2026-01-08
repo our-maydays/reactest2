@@ -5,6 +5,10 @@
 	width: 100%;
 }
 
+:root {
+	color-scheme: light;
+}
+
 html, body {
 	font-size: 10px;
 	border: none;
