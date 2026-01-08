@@ -486,27 +486,28 @@ const Comment = () => {
 				onRequestClose= {() => setIsOpenNew(false)}
 				style={{
 					overlay: {
-						backgroundColor: 'rgba(230,230,230,0.9)',
+						backgroundColor: '#D2D7D9CC',
 						zIndex: '1000',
 					},
 					content: {
 						top: '50%',
 						left: '50%',
 						transform: 'translate(-50%,-50%)',
-						background: 'white',
+						background: '#F8F7EE',
 						width: '80vw',
 						height: '40vh',
 						minWidth: '370px',
 						maxWidth: '400px',
-						minHeight: '220px',
+						minHeight: '280px',
 						maxHeight: '400px',
 						border: 'none',
 						margin: '0',
 						padding: '0',
+						borderRadius: '1.5rem',
 					},
 				}}
 			>
-				<div>
+				<div style={{height: '100%'}}>
 					<div style={{display:'flex'}}>
 						<button
 							onClick={ () => setIsOpenNew(false)}
@@ -563,7 +564,7 @@ const Comment = () => {
 							>
 								<img 
 									src={show ? openlockIcon : lockIcon}
-									width= '20px'
+									width= '22px'
 								/>
 							</div>
 					</div>
@@ -576,6 +577,7 @@ const Comment = () => {
 						marginTop: '0',
 						padding: '0',
 						position: 'relative',
+						height: '60%',
 					}}>
 						<StContentInput
 							rows='1'

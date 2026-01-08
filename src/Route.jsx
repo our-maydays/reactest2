@@ -97,7 +97,7 @@ const Route = () => {
 				}
 			}, 3000);
 		} else {
-			const webUrl = 'https://map.kakao.com/'
+			const webUrl = 'https://m.map.kakao.com/scheme/place?id=1432444585/'
 				window.open(webUrl,'_blank')
 		}
 	}

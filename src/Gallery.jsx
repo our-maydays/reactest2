@@ -61,7 +61,7 @@ const Gallery = () => {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: true,
-		dots: false,
+		dots: true,
 	})
 
 	return (

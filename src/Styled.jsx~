@@ -77,13 +77,15 @@ export const StContentInput = styled.textarea`
 	padding: 0.5rem;
 	width: 100%;
 	line-height: 1.6rem;
-	background-color: #BAD4D9;
-	height: 100%;
-	border: none;
+	field-sizing: content;
+	height: 40vh;
+	rows: 1;
+	min-height: 50px;
+	max-height: 160px;
+	background-color: #F2F1EB;
 	border-radius: 0.8rem;
-	&:focus {
-		outline: none;
-	}
+
+
 `;
 
 export const StSubmitButton = styled.div`
