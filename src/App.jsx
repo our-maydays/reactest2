@@ -53,24 +53,20 @@ function App() {
 					<TopMsg/>
 				</Intersect>
 
-				<hr style={{width: '90%'}}/> 
 
 				<Intersect className='fade-in' style={{ }}>
 					<WelcomeMsg/>
 				</Intersect>
 
-				<hr style={{width: '90%'}}/>
 
 				<Intersect className='fade-in' style={{ }}>
 					<Calendar/>
 				</Intersect>
 
-				<hr style={{width: '90%'}}/>
 			
 				<Intersect className='fade-in' style={{ }}>
 					<Navi/>
 				</Intersect>
-				<hr style={{width: '90%'}}/>
 
 				<Intersect className='fade-in' style={{ }}>
 					<Gallery/>
@@ -80,25 +76,20 @@ function App() {
 					<Video/>
 				</Intersect>
 
-				<hr style={{width: '90%'}}/>
 				
 				<Intersect className='fade-in' style={{ }}>
 					<Account/>
 				</Intersect>
-
-				<hr style={{width: '90%'}}/>
-
+				
 				<Intersect className='fade-in' style={{ }}>
 					<Comment/>
 				</Intersect>
 
-				<hr style={{width: '90%'}}/>
 
 				<Intersect className='fade-in' style={{ }}>
 					<Notice/>
 				</Intersect>
 
-				<hr style={{width: '90%'}}/>
 
 				<Intersect className='fade-in' style={{ }}>
 					Share
