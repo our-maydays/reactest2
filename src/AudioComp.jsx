@@ -7,6 +7,17 @@ import { useEffect, useRef, useState } from 'react';
 const AudioComp = () => {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const audioRef = useRef(null);
+	const [phase, setPhase] = useState('hidden')
+
+	useEffect( () => {
+		setPhase('visible')
+		const fadeTimer = setTimeout( () => {
+			setPhase('fadeOut')
+		}, 2000)
+
+		return () => clearTimeout(fadeTimer)
+	}, [])
+
 	
 	useEffect( () => {
 		const audio = new Audio(audioFile)
@@ -102,6 +113,7 @@ const AudioComp = () => {
 				배경음악이 준비되어 있습니다
 			</span>
 			<img
+				class='slidedown'
 				src={isPlaying ? audioIconOn : audioIconOff}
 				width={'25px'}
 				style={{marginRight: '10px', marginTop: '10px', }}
