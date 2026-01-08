@@ -104,7 +104,8 @@ const Route = () => {
 
 	const openTMap = () => {
 		if (isMobile) {
-			const appUrl = `tmap://route?goalname=${destName}&goalx=${destLng}&goaly=${destLat}`
+//			const appUrl = `tmap://route?goalname=${destName}&goalx=${destLng}&goaly=${destLat}`
+			const appUrl = `tmap://search?name=${destName}`
 			window.location.href = appUrl
 			setTimeout( () => {
 				if (!document.hidden) {

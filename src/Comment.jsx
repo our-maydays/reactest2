@@ -321,7 +321,7 @@ const Comment = () => {
 					preventScroll={true}
 					style={{
 						overlay: {
-							backgroundColor: 'rgba(230,230,230,0.9)',
+							backgroundColor: '#D2D7D9CC',
 							zIndex: '1000',
 						},
 						content: {
@@ -329,20 +329,21 @@ const Comment = () => {
 							top: '50%',
 							left: '50%',
 							transform: 'translate(-50%,-50%)',
-							background: 'white',
+							background: '#F8F7EE',
 							width: '80vw',
 							height: '40vh',
 							minWidth: '370px',
 							maxWidth: '400px',
-							minHeight: '220px',
+							minHeight: '280px',
 							maxHeight: '400px',
 							margin: '0',
 							padding: '0',
 							border: 'none',
+							borderRadius: '1.5rem',
 						},
 					}}
 				>
-					<div style={{height: '100%', displayy:'flex',flexDirection: 'column',}}>
+					<div style={{height: '100%', display:'flex',flexDirection: 'column',}}>
 						<div style={{display:'flex'}}>
 							<button
 								onClick={ closeModal}
@@ -369,7 +370,7 @@ const Comment = () => {
 							marginTop: '0',
 							padding: '0',
 							position: 'relative',
-							height: '80%',
+							height: '100%',
 							width: 'auto',
 						}}>
 							{!isAuthorized ? (
@@ -408,18 +409,21 @@ const Comment = () => {
 												right: '0.5rem',
 												margin: '0rem',
 												padding: '0',
+												display: 'flex',
+												alignItems: 'center',
+												justifyContent: 'center',
 											}}
 										>
 											<img
 												src={show ? openlockIcon : lockIcon}
-												width='20px'
+												width='22px'
 											/>
 										</div>
 									</div>
 									<button onClick={verifyPassword}> 확인 </button>
 								</div>
 							) : (
-								<div style={{ width: '100%'}}>
+								<div style={{ width: '100%', height:'100%'}}>
 									<div style={{
 										display: 'flex',
 										justifyContent: 'space-between',
@@ -441,9 +445,10 @@ const Comment = () => {
 										justifyContent: 'space-between',
 										alignItems: 'center',
 										margin: '1rem',
-										marginTop: '0',
+										marginTop: '1.5rem',
 										padding: '0',
 										position: 'relative',
+										height: '70%',
 									}}>
 										<StContentInput
 											rows= '1'
@@ -560,6 +565,9 @@ const Comment = () => {
 									color:'red',
 									margin: '0',
 									padding: '0',
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center',
 								}}
 							>
 								<img 
@@ -574,7 +582,7 @@ const Comment = () => {
 						justifyContent: 'space-between',
 						alignItems: 'center',
 						margin: '1rem',
-						marginTop: '0',
+						marginTop: '1.5rem',
 						padding: '0',
 						position: 'relative',
 						height: '60%',

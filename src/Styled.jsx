@@ -46,11 +46,14 @@ export const StNameInput = styled.textarea`
 	line-height: 1.6rem;
 	padding: 0.5rem;
 	color: black;
-	background-color: #F2F1EB;
+	background-color: #F3E3B4;
 	border-radius: 0.8rem;
 	border: none;
 	&:focus {
 		outline: none;
+	}
+	&::placeholder {
+		color: #7553A6;
 	}
 `;
 
@@ -63,11 +66,14 @@ export const StPasswordInput = styled.textarea`
 	line-height: 1.6rem;
 	padding: 0.5rem;
 	color: black;
-	background-color: #F2F1EB;
+	background-color: #F3E3B4;
 	border-radius: 0.8rem;
 	border: none;
 	&:focus {
 		outline: none;
+	}
+	&::placeholder {
+		color: #7553A6;
 	}
 `;
 export const StContentInput = styled.textarea`
@@ -77,12 +83,15 @@ export const StContentInput = styled.textarea`
 	padding: 0.5rem;
 	width: 100%;
 	line-height: 1.6rem;
-	background-color: #BAD4D9;
+	background-color: #BAD4B9;
 	height: 100%;
 	border: none;
 	border-radius: 0.8rem;
 	&:focus {
 		outline: none;
+	}
+	&::placeholder {
+		color: #7553A6;
 	}
 `;
 
