@@ -17,7 +17,7 @@ const Account = () => {
 			</div>
 
 			<p style={{fontSize: '1.4rem' ,marginBottom: '1.5rem', fontWeight:'300'}}>
-				참석이 어려우신 분들을 위해<br/>
+				참석이 어려우신 분들을 위해
 				계좌번호를 기재하였습니다<br/>
 				너그러운 마음으로 양해 부탁드립니다
 			</p>

@@ -1,0 +1,27 @@
+.name {
+	font-size: 1.8rem;
+	font-family: Bold;
+	width: 100%;
+	height: 100%;
+	margin-top: 1rem;
+	margin-bottom: 0rem;
+	text-align: left;
+}
+
+.explain {
+	font-size: 1.6rem;
+	font-family: Regular;
+	width: 100%;
+	height: 100%;
+	margin-top: 0rem;
+	margin-bottom: 1rem;
+	text-align: left;
+}
+
+.notation {
+	font-size: 1.4rem;
+	font-family: Regular;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}

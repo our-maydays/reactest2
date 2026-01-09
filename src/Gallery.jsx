@@ -68,7 +68,7 @@ const Gallery = () => {
 		<div style={{
 			border: 'none',
 			marginTop: '2rem',
-			marginBottom: '2rem',
+			marginBottom: '5rem',
 			fontFamily: 'GowunDodum',
 		}}>
 		<div style={{fontWeight:'300',marginBottom:'2rem'}}>

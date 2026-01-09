@@ -1,4 +1,6 @@
-const Transport = ({tr_type}) => {
+import './Transport.css'
+
+const Transport = ( ) => {
 
 	return (
 		<div style={{
@@ -10,37 +12,38 @@ const Transport = ({tr_type}) => {
 			width: '80%',
 			margin: 'auto',
 			marginTop: '2rem',
+			height: '100%',
 		}}>
-			<div style= {{fontSize: '1.6rem', fontFamily:'Bold'}}>
+			
+			<div className='name'>
 				셔틀버스
 			</div>
-			<div style= {{fontSize: '1.4rem', fontFamily:'Regular',textAlign:'left'}}>
+			<div className='explain'>
 				부산역 토요코인호텔 앞 12시 출발<br/>
-				* 편도 운행
+				<span className='notation'>	* 편도 운행 </span>
 			</div>
 
-			<div style= {{fontSize: '1.6rem', fontFamily:'Bold'}}>
+			<div className='name'>
 				시내버스
 			</div>
-			<div style= {{fontSize: '1.4rem', fontFamily:'Regular'}}>
+			<div className='explain'>
 				6번, 7번, 70번, 71번, 508번 / 75광장 하차<br/>
 			</div>
 
-			<div style= {{fontSize: '1.6rem', fontFamily:'Bold'}}>
+			<div className='name'>
 				급행버스
 			</div>
-			<div style= {{fontSize: '1.4rem', fontFamily:'Regular',textAlign:'left'}}>
+			<div className='explain'>
 				3003번(김해공항↔태종도) / 75광장 하차<br/>
-				* 사상역 / 파라곤호텔 승차
+				<span className='notation'> * 사상역 / 파라곤호텔 승차</span>
 			</div>
 
-			<div style= {{fontSize: '1.6rem', fontFamily:'Bold'}}>
+			<div className='name'>
 				주차
 			</div>
-			<div style= {{fontSize: '1.4rem', fontFamily:'Regular'}}>
+			<div className='explain'>
 				약 150대 가능
 			</div>
-			<br/>
 		</div>
 	)
 }

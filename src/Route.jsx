@@ -1,39 +1,16 @@
 import React from 'react'
 import { useState } from 'react'
-import moment from 'moment'
-import 'moment/dist/locale/ko'
 
 import nmapIcon from './assets/nmap.png'
 import kmapIcon from './assets/kmap.png'
 import tmapIcon from './assets/tmap.jpeg'
 
+import './Route.css'
+
 const Route = () => {
 
-	moment.locale('ko')
 	const [locat, setLocat] = useState({lat:'null',lng:'null'})
 	const [error, setError] = useState('')
-
-	const getLocation = () => {
-		return new Promise((resolve, reject) => {
-			if (!navigator.geolocation) {
-				alert('위치 정보가 지원되지 않음')
-				return
-			}
-
-			navigator.geolocation.getCurrentPosition( (position) => {
-				const coords = {
-					lat: position.coords.latitude,
-					lng: position.coords.longitude,
-				}
-				resolve(coords)
-				console.log('Get position')
-				}, (err) => reject(err) 
-			)
-		})
-	}
-
-
-	const current = import.meta.env.VITE_BUILD_TIME
 
 	const destLat = 35.0716472
 	const destLng = 129.0573867
@@ -78,20 +55,14 @@ const Route = () => {
 //			const appUrl = `kakaomap://route?ep=${destLat},${destLng}&by=car`
 //			const appUrl = `https://map.kakao.com/link/map/${destName},${destLat},${destLng}`
 			const appUrl = 'kakaomap://place?id=1432444585'
-			console.log('try open kakao')
 			window.location.href = appUrl;
-			
 			setTimeout( () => {
 				if (!document.hidden) {
-					console.log('no kakaomap')
 					if (isIos) {
-						console.log('ios')
 						window.open('https://itunes.apple.com/app/id304608425?mt=8')
 					} else if (isAndroid) {
-						console.log('android')
 						window.open('market://details?id=net.daum.android.map')
 					} else {
-						console.log('else')
 						window.location.href = 'https://map.kakao.com/'
 					}
 				}
@@ -131,66 +102,42 @@ const Route = () => {
 			justifyContent:'space-between', 
 			width: '80%',
 			margin: 'auto',
-			marginTop: '1rem',
+			marginTop: '2rem',
+			marginBottpm: '2rem',
 		}}>
-			<div style={{
-				fontSize: '1.5rem',
-				lineHeight: '3rem',
-				display: 'flex',
-				alignItems: 'center',
-				width: '9rem',
-				textAlign: 'center',
-				}}
-				onClick={openNaverMap}
-			>
+			<div className='map-button' onClick={openNaverMap}>
 				<img src={nmapIcon}
 					style={{
 						height: '3rem',
 						display: 'inline-block',
 						marginRight: '1rem',
+						borderRadius: '0.8rem',
 						}} 
 				/>
 				네이버
 			</div>
 
-			<div style={{
-				fontSize: '1.5rem',
-				lineHeight: '3rem',
-				display: 'flex',
-				alignItems: 'center',
-				width: '9rem',
-				textAlign: 'left',	
-				}}
-				onClick={openKakaoMap}
-			>
+			<div className='map-button' onClick={openKakaoMap}>
 
 				<img src={kmapIcon}
 					style={{
 						height: '3rem',
 						display: 'inline-block',
 						marginRight: '1rem',
+						borderRadius: '0.8rem',
 					}}
 				/>
 				카카오
 			</div>
 
-			<div style={{
-				fontSize: '1.5rem',
-				lineHeight: '3rem',
-				display: 'flex',
-				alignItems: 'center',
-				width: '9rem',
-				justifyContent:'center',
-				textAlign: 'left',
-				}}
-				onClick={openTMap}
-				>
+			<div className='map-button'	onClick={openTMap}>
 
 				<img src={tmapIcon}
 					style={{
 						height: '3rem',
 						display: 'inline-block',
 						marginRight: '1rem',
+						borderRadius: '0.8rem',
 					}}
 				/>
 				<span> 티맵</span>

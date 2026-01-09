@@ -60,7 +60,7 @@ const Calendar = () => {
 			}}
 		>	
 			<p style = {{
-				fontSize: '2rem', 
+				fontSize: '1.8rem', 
 				fontFamily: 'Bold',
 				fontWeight: '500',
 				marginBottom: '0rem',
@@ -68,7 +68,7 @@ const Calendar = () => {
 				2026. 5. 9.
 			</p>
 			<p style={{
-				fontSize: '1.6rem',
+				fontSize: '1.8rem',
 				marginTop: '0.0rem',
 				marginBottom: '0rem',
 				}}
@@ -79,7 +79,7 @@ const Calendar = () => {
 			<div style={{
 				display: 'flex', 
 				justifyContent: 'center', 
-				marginTop:'2rem'
+				marginTop:'2rem',
 				}}
 			>
 				<table className='calendar'>

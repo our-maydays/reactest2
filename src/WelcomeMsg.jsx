@@ -15,12 +15,12 @@ const WelcomeMsg = () => {
 				fontWeight: '300',
 				fontSize: '1.6rem',
 			}}>
-				<span className='sub-title' style={{ }}> INVITATION </span><br/>
-				<span className='div-title' style={{ fontWeight:'500'}}>
+				<span className='sub-title' style={{ }}> Invitation </span><br/>
+
+				<span className='div-title' style={{ }}>
 
 				{/*				소중한 분들을 초대합니다<br/>  */}
-				저희들의 새로운 시작을 알리는<br/>
-				작은 축제에 여러분을 초대합니다<br/>
+				저희만의 작은 축제에 여러분을 초대합니다<br/>
 				</span>
 
 				<span style={{lineHeight: '3rem'}}>	
@@ -30,8 +30,8 @@ const WelcomeMsg = () => {
 				벚꽃이 지고 새싹이 돋아나는 이 순간처럼 <br/>
 				닮은 듯 다른 두 사람이 함께 손을 잡고 <br/>
 				새로운 시작을 맞이하려 합니다<br/><br/>
-				저희의 새로운 시작을 함께<br/>
-				기억해주셨으면 좋겠습니다<br/>
+				이 봄날의 순간을 소중한 분들과 <br/>
+				함께 기억하고 싶습니다<br/>
 				</span>
 				<br/>
 			</div>
