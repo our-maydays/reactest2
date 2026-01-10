@@ -11,24 +11,28 @@ const Map = () => {
 
 		const navermaps = useNavermaps()
 
-		const lng = 129.0573879
-		const lat = 35.0716389
+		const lng = 129.057387
+		const lat = 35.071647
 
 
 		const position = new naver.maps.LatLng(lat, lng)
 		
 		const mapOptions = {
-			center: position,
+			center: position.destinationPoint(0,-30),
 			zoom: 17,
 			minZoom: 6,
 			zoomControl: false,
 			scaleControl: false,
+			disableKineticPan: false,
+			draggable: false,
+			logoControl: false,
+			scrollWheel: false,
 		}
 
 		const map = new naver.maps.Map(container, mapOptions)
 
 		const markerOptions = {
-			position: position.destinationPoint(90,15),
+			position: position.destinationPoint(0,-30),
 			map: map,
 		}
 
