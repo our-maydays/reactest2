@@ -8,7 +8,7 @@ const Notice = () => {
 			fontWeight:'300',
 		}}>
 			<div className='sub-title'>
-				Notice
+				NOTICE
 			</div>
 	
 			<div className='div-title' style={{fontWeight:'500'}}>

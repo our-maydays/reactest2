@@ -15,7 +15,7 @@ const WelcomeMsg = () => {
 				fontWeight: '300',
 				fontSize: '1.6rem',
 			}}>
-				<span className='sub-title' style={{ }}> Invitation </span><br/>
+				<span className='sub-title' style={{ }}> INVITATION </span><br/>
 
 				<span className='div-title' style={{ }}>
 

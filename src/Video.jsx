@@ -19,7 +19,7 @@ const Video = () => {
 	return (
 		<div style={{marginTop:'2rem', marginBottom:'2rem', fontFamily:'GowunDodum'}}>
 			<div className='sub-title' style={{fontWeight:'300'}}>
-				Video
+				VIDEO
 			</div>
 			<div className='div-title' style={{fontWeight:'500'}}>
 				웨딩비디오

@@ -72,7 +72,7 @@ const Gallery = () => {
 			fontFamily: 'GowunDodum',
 		}}>
 		<div style={{fontWeight:'300',marginBottom:'2rem'}}>
-			<span className='sub-title'> Gallery </span><br/>
+			<span className='sub-title'> GALLERY </span><br/>
 			<span className='div-title' style={{fontWeight:'500'}}> 사진첩</span>
 		</div>
 		 	<Slider {...gridSettings}>

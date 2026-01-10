@@ -265,7 +265,7 @@ const Comment = () => {
 			fontWeight:'300',
 		}}>
 			<div className='sub-title'>
-				Gusetbook
+				GUESTBOOK
 			</div>
 			<div className='div-title' style={{fontWeight:'500'}}>
 				방명록

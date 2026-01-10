@@ -18,6 +18,7 @@ import Map from './Map'
 import Route from './Route'
 import Dday from './Dday'
 
+
 import { Desktop, Mobile, Tablet, Default } from './Responsive'
 import Comment from './Comment'
 
@@ -76,11 +77,10 @@ function App() {
 					<Video/>
 				</Intersect>
 
-				
-				<Intersect className='fade-in' style={{ }}>
+				<Intersect classname='fade-in'>
 					<Account/>
 				</Intersect>
-				
+
 				<Intersect className='fade-in' style={{ }}>
 					<Comment/>
 				</Intersect>

@@ -92,7 +92,7 @@ const AudioComp = () => {
 			width:'100%',
 			}}
 		>
-			<span
+			<div
 				class='disappear'
 				style={{
 					fontSize: '1.6rem',
@@ -104,14 +104,15 @@ const AudioComp = () => {
 					margin: '0',
 					marginTop: '10px',
 					marginRight: '80px',
-					width: '200px',
+					width: '100%',
 					position: 'absolute',
 					left: '50%',
 					transform: 'translate(-50%,0)',
+					background: 'rgba(100,100,100,0.8)',
 				}}
 			>
 				배경음악이 준비되어 있습니다
-			</span>
+			</div>
 			<img
 				class='slidedown'
 				src={isPlaying ? audioIconOn : audioIconOff}
