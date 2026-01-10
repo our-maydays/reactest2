@@ -100,7 +100,7 @@ const Route = () => {
 			fontSize:'1.5rem', 
 			display: 'flex', 
 			justifyContent:'space-between', 
-			width: '80%',
+			width: '85%',
 			margin: 'auto',
 			marginTop: '2rem',
 			marginBottpm: '2rem',

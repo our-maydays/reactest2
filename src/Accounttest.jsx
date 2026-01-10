@@ -103,16 +103,16 @@ export default function AccountAccordion() {
 const styles = {
   wrapper: {
     maxWidth: 420,
-    width: '70%',
+    width: '75%',
 		margin: '0 auto',
 		fontSize: '1.6rem',
   },
   card: {
-    background: '#fff',
+    background: 'rgb(242,238,238)',
     borderRadius: 12,
     marginBottom: 16,
     overflow: 'hidden',
-    boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+    boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
   },
   header: {
     padding: '1.5rem',
@@ -132,7 +132,7 @@ const styles = {
   },
   row: {
     padding: '1.5rem',
-    borderTop: '1px solid #eee',
+    borderTop: '1px solid #F2CEE6CC',
     display: 'flex',
     justifyContent: 'space-between',
     fontSize: '1.6rem',
@@ -140,7 +140,7 @@ const styles = {
 		alignItems: 'center',
   },
   account: {
-    color: '#555',
+//    color: '#555',
   },
 }
 

@@ -93,7 +93,7 @@ const AudioComp = () => {
 			}}
 		>
 			<div
-				class='disappear'
+				className='disappear'
 				style={{
 					fontSize: '1.6rem',
 					height: '25px',
@@ -114,7 +114,7 @@ const AudioComp = () => {
 				배경음악이 준비되어 있습니다
 			</div>
 			<img
-				class='slidedown'
+				className='slidedown'
 				src={isPlaying ? audioIconOn : audioIconOff}
 				width={'25px'}
 				style={{marginRight: '10px', marginTop: '10px', }}

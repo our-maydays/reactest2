@@ -77,7 +77,7 @@ function App() {
 					<Video/>
 				</Intersect>
 
-				<Intersect classname='fade-in'>
+				<Intersect className='fade-in'>
 					<Account/>
 				</Intersect>
 

@@ -261,8 +261,7 @@ const Comment = () => {
 			display: 'flex', 
 			flexDirection:'column',
 			alignItems:'center',
-			fontFamily:'GowunDodum',
-			fontWeight:'300',
+			fontFamily:'Regular',
 		}}>
 			<div className='sub-title'>
 				GUESTBOOK
