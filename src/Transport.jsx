@@ -1,4 +1,5 @@
 import './Transport.css'
+import './App.css'
 
 const Transport = ( ) => {
 
@@ -11,7 +12,8 @@ const Transport = ( ) => {
 			alignItems: 'flex-start',
 			width: '80%',
 			margin: 'auto',
-			marginTop: '2rem',
+			marginTop: '0rem',
+			pading: 0,
 			height: '100%',
 		}}>
 			

@@ -1,28 +1,31 @@
+import './App.css'
 
 const Notice = () => {
 	return (
+		<div className='content-box'>
+		{/*
 		<div style={{
 			marginTop: '2rem',
 			marginBottom:'2rem',
-			fontFamily:'GowunDodum',
-			fontWeight:'300',
+			fontFamily:'Regular',
+			outline: '1px solid red',
 		}}>
+		*/}
 			<div className='sub-title'>
-				NOTICE
+				N O T I C E 
 			</div>
 	
-			<div className='div-title' style={{fontWeight:'500'}}>
+			<div className='div-title'>
 				안내사항
 			</div>
 
 			<div 
 				style={{
-					fontFamily:'maruburi',
 					fontSize:'1.4rem',
 					textAlign: 'left',
-					width: '85%',
-					paddingLeft: '2rem',
-					paddingRight: '2rem',
+					width: '90%',
+					margin: '0 auto',
+					lineHeight: '2.5rem',
 				}}
 			>
 				- 예식은 야외에서 진행되오니, 선글라스 지참을 추천드립니다<br/>

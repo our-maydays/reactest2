@@ -100,10 +100,12 @@ const Route = () => {
 			fontSize:'1.5rem', 
 			display: 'flex', 
 			justifyContent:'space-between', 
-			width: '85%',
+			width: '90%',
 			margin: 'auto',
-			marginTop: '2rem',
-			marginBottpm: '2rem',
+			marginTop: '1rem',
+			marginBottpm: '1rem',
+			paddingTop: '1rem',
+			paddingBottom: '1rem',
 		}}>
 			<div className='map-button' onClick={openNaverMap}>
 				<img src={nmapIcon}

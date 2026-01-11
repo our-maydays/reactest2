@@ -1,8 +1,10 @@
+import './App.css'
+
 import mainphoto from './assets/images/DSC07876.jpg'
 
 const MainPhoto = () => {
 	return (
-		<div style={{position:'relative' }}>
+		<div className= 'content-box'>
 			
 			<img src={mainphoto} width={'90%'} style={{display:'block', margin: 'auto'}} />
 	

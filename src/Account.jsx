@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import AccountAccordion from './Accounttest'
+import './App.css'
 
 const Account = () => {
 	
@@ -8,21 +9,41 @@ const Account = () => {
 
 
 	return (
-		<div style={{marginTop: '2rem',marginBottom: '2rem'}}>
-			<div className='sub-title' style={{fontWeight:'300'}}>
-				ACCOUNT
+		<div className='content-box'>
+		{/*
+			<div style={{
+			marginTop: '2rem',
+			marginBottom: '2rem',
+			outline: '1px solid red'
+			}}>
+			*/}
+			<div className='sub-title'>
+				A C C O U N T
 			</div>
-			<div className='div-title' style={{fontWeight:'500'}}>
+			<div className='div-title'>
 				마음 전하실 곳
 			</div>
 
-			<p style={{fontSize: '1.6rem' ,marginBottom: '1.5rem'}}>
+			<div style={{
+				fontSize: '1.6rem' ,
+				marginBottom: '1rem',
+				paddingBottom: '1rem',
+				marginTop: '1rem',
+				paddingTop: '1rem',
+			}}>
 				참석이 어려우신 분들을 위해<br/>
 				계좌번호를 기재하였습니다<br/>
 				너그러운 마음으로 양해 부탁드립니다
-			</p>
+			</div>
 			
+			<div style={{
+				marginTop: '1rem',
+				marginBottom: '1rem',
+				paddingTop: '1rem',
+				paddingBottom: '0rem',
+			}}>
 			<AccountAccordion/>
+			</div>
 			
 				
 

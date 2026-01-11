@@ -1,7 +1,6 @@
 import { useEffect, useState, useMemo } from "react";
 import Modal from 'react-modal'
-
-
+import './App.css'
 
 import styled from 'styled-components';
 import { StSlider, StGallery } from './Styled';
@@ -62,26 +61,62 @@ const Gallery = () => {
 		slidesToScroll: 1,
 		arrows: true,
 		dots: true,
+
+		afterChange: (current) => {
+			const dots = document.querySelector('.modal-container .slick-dots')
+			if (!dots) return
+
+			const dotItems = dots.querySelectorAll('li')
+			const active = dots.querySelector('.slick-active')
+			if (!active) return
+
+			const dotWidth = active.offsetWidth + 1;
+			const centerIndex = 2
+			const moveX = (current - centerIndex) * dotWidth
+
+			dots.style.transition = 'transform 0.3s ease'
+			dots.style.transform = `translateX(calc(-50% + ${-moveX}px))`
+
+			dotItems.forEach((dot,index) => {
+				const distance = Math.abs(index - current);
+
+				if (distance === 0) {
+					dot.style.transform = 'scale(1.4)'
+				} else if (distance === 1) {
+					dot.style.transform = 'scale(0.9)'
+				} else if (distance === 2) {
+					dot.style.transform = 'scale(0.7)'
+				} else {
+					dot.style.transform = 'scale(0.5)'
+				}
+			})
+		}
 	})
 
 	return (
+		<div className='content-box'>
+		{/*
 		<div style={{
 			border: 'none',
 			marginTop: '2rem',
 			marginBottom: '5rem',
-			fontFamily: 'GowunDodum',
+			fontFamily: 'Regular',
+			outline: '1px solid red',
 		}}>
-		<div style={{fontWeight:'300',marginBottom:'2rem'}}>
-			<span className='sub-title'> GALLERY </span><br/>
-			<span className='div-title' style={{fontWeight:'500'}}> 사진첩</span>
-		</div>
-		 	<Slider {...gridSettings}>
+		*/}
+	
+			<div className='sub-title'> G A L L E R Y </div>
+			<div className='div-title'> 사진첩</div>
+		 
+			<div className='grid-wrapper'>
+			<Slider {...gridSettings}>
 				{images.map( (src, index) => (
 					<div 
 						key={index} 
 						onClick={ (e) => {
 							openModal(index) 
 						}}
+						style={{display:'flex',justifyContent:'center',margin:'auto'}}
 					>
 						<div className='grid-item'>
 							<img
@@ -94,6 +129,7 @@ const Gallery = () => {
 					</div>
 				))}
 			</Slider>
+			</div>
 
 			<Modal
 				isOpen={isOpen}
@@ -118,6 +154,7 @@ const Gallery = () => {
 					},
 				}}
 				>
+				
 					<div className='modal-container'>
 						<Slider {...modalSettings(currentIndex)} key={currentIndex}>
 							{images.map( (src, index) => (
@@ -130,7 +167,7 @@ const Gallery = () => {
 								</div>
 							))}
 						</Slider>
-				
+						
 						<button
 							onClick={ () => setIsOpen(false)}
 							style={{

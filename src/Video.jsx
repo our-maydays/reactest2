@@ -1,5 +1,6 @@
 import myVideo from './assets/videos/test.mov'
 import {useRef} from 'react'
+import './App.css'
 
 const Video = () => {
 
@@ -17,11 +18,18 @@ const Video = () => {
 	}
 
 	return (
-		<div style={{marginTop:'2rem', marginBottom:'2rem', fontFamily:'GowunDodum'}}>
-			<div className='sub-title' style={{fontWeight:'300'}}>
-				VIDEO
+		<div className='content-box'>
+		{/*
+			<div style={{
+			marginTop:'2rem', 
+			marginBottom:'2rem',
+			outline: '1px solid black',
+		}}>
+		*/}
+			<div className='sub-title'>
+				V I D E O
 			</div>
-			<div className='div-title' style={{fontWeight:'500'}}>
+			<div className='div-title'>
 				웨딩비디오
 			</div>
 

@@ -255,6 +255,12 @@ const Comment = () => {
 
 
 	return (
+		<div className='content-box' style={{
+			display: 'flex',
+			flexDirection: 'column',
+			alignItems: 'center'
+		}}>
+		{/*
 		<div style={{
 			maginTop: '2.0rem',
 			marginBottom: '2.0rem',
@@ -262,11 +268,13 @@ const Comment = () => {
 			flexDirection:'column',
 			alignItems:'center',
 			fontFamily:'Regular',
+			outline: '1px solid red',
 		}}>
+		*/}
 			<div className='sub-title'>
-				GUESTBOOK
+				G U E S T B O O K
 			</div>
-			<div className='div-title' style={{fontWeight:'500'}}>
+			<div className='div-title'>
 				방명록
 			</div>
 			<StEntireDiv>
@@ -479,6 +487,16 @@ const Comment = () => {
 				style={{
 					fontSize: '1.6rem',
 					marginTop: '1rem',
+					background: 'rgb(242,238,238)',
+					lineHeight: '3rem',
+					width: '15rem',
+					textAlign: 'center',
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center',
+					borderRadius: '1rem',
+					padding: '0.5rem',
+					boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
 				}}
 				onClick={() => setIsOpenNew(true) }
 			>

@@ -1,37 +1,49 @@
-import wedding from './assets/wedding.png'
-import mymap from './assets/map.png'
 import Transport from './Transport'
-
+import './App.css'
 
 import Map from './Map'
 
 const Navi = () => {
 	return (
-		<div style={{marginTop: '2rem', marginBottom: '2rem', fontFamily:'Regular'}}>
-			<div className='sub-title' style={{ }}> LOCATION </div>
-			<div className='div-title' style={{marginBottom: '1.5rem'}}>
+		<div className='content-box'>
+		{/*
+		<div style={{
+			marginTop: '2rem',
+			marginBottom: '2rem',
+			fontFamily:'Regular',
+			outline: '1px solid black',
+		}}>
+		*/}
+			<div className='sub-title'> L O C A T I O N </div>
+			<div className='div-title'>
 				오시는 길 
 			</div>
 
-{/*
-			<img src={wedding} width={'35%'} style={{marginTop:'2%'}} />
-			<img src={mymap} width={'90%'} /> <br/>
-*/}
-			<div style={{marginTop: '2rem', marginBottom: '2rem'}}>
+			<div style={{
+				marginTop: '1rem',
+				marginBottom: '1rem',
+				paddingTop:'1rem',
+				paddingBottom: '1rem',
+			}}>
 				<span style={{fontSize: '1.6rem', fontFamily: 'bold',}}>
 					영도 목장원
 				</span>
 				<br/>
-				<span style={{fontSize: '1.4rem', fontWeight:'500'}}>
+				<span style={{fontSize: '1.4rem'}}>
 					부산광역시 영도구 절영로 355
 				</span>
 				<br/>
-				<span style={{fontSize: '1.2rem', fontWeight:'300'}}>
+				<span style={{fontSize: '1.2rem'}}>
 					051-404-5011
 				</span>
 			</div>
 
-				<div style={{marginTop: '2rem', marginBottom: '2rem'}}>
+				<div style={{
+					marginTop: '1rem',
+					marginBottom: '1rem',
+					paddingTop: '1rem',
+					paddingBottom: '1rem',
+				}}>
 					<Map/>
 				</div>
 

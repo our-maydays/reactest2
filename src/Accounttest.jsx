@@ -55,11 +55,6 @@ export default function AccountAccordion() {
 							left: '50%',
 							transform:'translateX(-50%)'
 						}}>{section.title}</div>
-						{/*
-						<span style={styles.arrow}>
-              {openKey === section.key ? '▲' : '▼'}
-            </span>
-						*/}
 						<span>{open[section.key] ? '▲' : '▼'}</span>
           </div>
 
@@ -110,7 +105,7 @@ const styles = {
   card: {
     background: 'rgb(242,238,238)',
     borderRadius: 12,
-    marginBottom: 16,
+    marginBottom: '16px',
     overflow: 'hidden',
     boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
   },

@@ -28,8 +28,8 @@ export const StEntireDiv = styled.div`
 export const StCommentContent = styled.div`
 	display: inline-block;
 	float: left;
-	min-height: 1.5rem;
-	font-size: 1.4rem;
+	min-height: 1.6rem;
+	font-size: 1.6rem;
 	margin: 0.1rem 0.2rem 0.8rem 0.8rem;
 	padding: 0.5rem;
 	text-align: left;
@@ -122,8 +122,8 @@ export const StInputDiv = styled.div`
 export const StCommentName = styled.div`
 	height: 1.5rem;
 	max-width: 10rem;
-	font-size: 1.2rem;
-	font-family: maruburibold;
+	font-size: 1.4rem;
+	font-family: Regular;
 	line-height: 1.5rem;
 	padding: 0.1rem 0.5rem 0.1rem 0.5rem;
 	text-align: left;
@@ -138,8 +138,8 @@ export const StCommentDate = styled.div`
 	height: 1.5rem;
 	padding: 0.1rem 0.5rem  0.1rem 0.5rem;
 	text-align: left;
-	line-height: 1.2rem;
-	font-size: 1.rem;
+	line-height: 1.0rem;
+	font-size: 1.0rem;
 	margin: 0.5rem 0.5rem 0.8rem 0.2rem;
 	display: flex;
 	flex-direction: column;

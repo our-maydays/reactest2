@@ -51,26 +51,22 @@ const Calendar = () => {
 	const dayLeft = Math.floor((dateOnly(tg_date)-dateOnly(today))/(1000*60*60*24))
 
 	return (
-		<div style={{
-			fontSize: '1.6rem',
-			marginTop: '2.0rem',
-			marginBottom: '2.0rem',
-			fontFamily: 'Regular',
-			fontWeight: '300',
-			}}
-		>	
+		<div className='content-box' style={{background:'#F3E3B880'}}>
 			<p style = {{
 				fontSize: '1.8rem', 
 				fontFamily: 'Bold',
 				fontWeight: '500',
+				marginTop: '0rem',
 				marginBottom: '0rem',
+				padding: 0,
 			}}>
 				2026. 5. 9.
 			</p>
 			<p style={{
-				fontSize: '1.8rem',
-				marginTop: '0.0rem',
+				fontSize: '1.4rem',
+				marginTop: '0rem',
 				marginBottom: '0rem',
+				padding: 0,
 				}}
 			>
 				토요일 오후 1시<br/>
@@ -79,7 +75,9 @@ const Calendar = () => {
 			<div style={{
 				display: 'flex', 
 				justifyContent: 'center', 
-				marginTop:'2rem',
+				marginTop:'1rem',
+				paddingTop: '1rem',
+				paddingBottom: '1rem',
 				}}
 			>
 				<table className='calendar'>
@@ -98,7 +96,7 @@ const Calendar = () => {
 
 			<Dday/>
 				
-			<p style={{marginTop: '1rem'}}> 
+			<div style={{marginTop: '2rem',marginBottom: '0rem',padding: 0}}> 
 				경보, 유진의 결혼식이 &nbsp;
 				{(dayLeft > 0) ? (
 					<>
@@ -131,7 +129,7 @@ const Calendar = () => {
 
 								
 
-			</p>
+			</div>
 {/*
 			경보와 유진의 결혼식이&nbsp; 
 			<span style={{color: 'magenta'}}>

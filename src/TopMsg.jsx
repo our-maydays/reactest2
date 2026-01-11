@@ -1,14 +1,13 @@
+import './App.css'
+
 const TopMsg = () => {
 	return (
-		<div style={{
-			marginTop: '2rem',
-			marginBottom: '2rem',
-		}}>
+		<div className='content-box'>
 			<p style={{
-				marginBottom: '2rem', 
+				margin: 0,
+				padding: 0,
 				fontSize: '2rem', 
 				fontFamily: 'Bold',
-				fontWeight: '500',
 				color: '#3A2665',
 //				color: '#672026',
 			}}>
