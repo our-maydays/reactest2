@@ -28,8 +28,6 @@ Modal.setAppElement('#root')
 const Gallery = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const [currentIndex, setCurrentIndex] = useState(0)
-	const dotWidth = 15
-	const containerWidth = 75
 
 	const images = useMemo( () => {
 		return Object.values(imagePaths)
@@ -68,43 +66,58 @@ const Gallery = () => {
 				<ul> {dots} </ul>
 			</div>
 		),
-		beforeChange: (current, next) => {
-			updateDots(next);
+		beforeChange: (current,next) => {
+			const dotsUl = document.querySelector('.modal-container .slick-dots ul')
+			if (!dotsUl) return;
+
+			const dotWidth = 20;
+			const containerWidth = 50;
+
+			const moveX = (containerWidth / 2) - (next * dotWidth) - (dotWidth / 2)
+			dotsUl.style.transition = 'transform 500ms cubic-bezier(0.25, 0.1, 0.25, 1)'
+			dotsUl.style.transform = `translateX(${moveX}px)`
+
+			const dotItems = dotsUl.querySelectorAll('li')
+			dotItems.forEach((dot, index) => {
+				const distance = Math.abs(index - next)
+				dot.style.transition = 'all 500ms cubic-bezier(0.25, 0.1, 0.25, 1)'
+				if (distance === 0) {
+					dot.style.transform = 'scale(1.0)'
+				} else if (distance === 1) {
+					dot.style.transform = 'scale(0.8)'
+				} else if (distance === 2) {
+					dot.style.transform = 'scale(0.7)'
+				} else {
+					dot.style.transform = 'scale(0.5)'
+				}
+			})
 		},
+		afterChange: (current) => {
+			const dotsUl = document.querySelector('.modal-container .slick-dots ul')
+			if (!dotsUl) return
+
+			const dotWidth = 20;
+
+			const containerCenter = 50;
+			const currentDotPos = (current * dotWidth) + (dotWidth/2)
+			const moveX = containerCenter - currentDotPos
+			dotsUl.style.transform = `translateX(${moveX}px)`
+			
+			const dotItems = dotsUl.querySelectorAll('li')
+			dotItems.forEach((dot,index) => {
+				const distance = Math.abs(index - current)
+				if (distance === 0) {
+					dot.style.transform = 'scale(1.0)'
+				} else if (distance === 1) {
+					dot.style.transform = 'scale(0.8)'
+				} else if (distance === 2) {
+					dot.style.transform = 'scale(0.7)'
+				} else {
+					dot.style.transform = 'scale(0.5)'
+				}
+			})
+		} 
 	})
-
-	const updateDots = (index) => {
-		const dotsUl = document.querySelector('.modal-container .slick-dots ul')
-		if (!dotsUl) return
-
-		const moveX = (containerWidth/2) - (index * dotWidth) - (dotWidth/2)
-		dotsUl.style.transition = 'transform 500ms cubic-bezier(0.25, 0.1, 0.25, 1)'
-		dotsUl.style.transform = `translateX(${moveX}px)`
-
-		const dotItems = dotsUl.querySelectorAll('li')
-		dotItems.forEach((dot, i) => {
-			const distance = Math.abs(i - index)
-			dot.style.transition = 'all 500ms cubic-bezier(0.25, 0.1, 0.25, 1)'
-			if (distance === 0) {
-				dot.style.transform = 'scale(1.2)'
-			} else if (distance === 1) {
-				dot.style.transform = 'scale(0.8)'
-			} else if (distance === 2) {
-				dot.style.transform = 'scale(0.6)'
-			} else {
-				dot.style.transform = 'scale(0.4)'
-			}
-		})
-	}
-
-	useEffect(() => {
-		if (isOpen) {
-			const timer = setTimeout(() => {
-				updateDots(currentIndex)
-			}, 10)
-			return () => clearTimeout(timer)
-		}
-	}, [isOpen, currentIndex])
 
 	return (
 		<div className='content-box'>

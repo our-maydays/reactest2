@@ -100,13 +100,15 @@
 	left: 50%;
 	right: 0;
 	transform: translateX(-50%);
+/*	display: flex !important;*/
 	align-items: center;
 	justify-content: center;
 	margin: 0;
 	padding: 0;
-	width: 75px;
+	outline: 1px solid red;
+	width: 50px;
 	height: 20px;
-	overflow: hidden; 
+/*	overflow: hidden; */
 	display: block !important; 
 }
 
@@ -131,6 +133,7 @@
 	justify-content: center !important;
 	line-height: 1.4rem;
 	height: 1.4rem;
+outline: 1px solid green;
 }
 
 .modal-container .slick-dots li.slick-active {
@@ -145,19 +148,17 @@
 	border: none;
 	cursor: pointer;
 	position: relative !important;
+	outline: 1px solid red; 
 }
 
 .modal-container .slick-dots li button:before {
 	line-height: 1.4rem;
-/*	position: absolute !important;*/
-/*	top: 50%;*/
-/*	left: 50%;*/
-/*transform: translate(-50%, -50%);*/
+	position: absolute !important;
+	top: 50%;
+	left: 50%;
+transform: translate(-50%, -50%);
 	width: auto;
-	height: auto;
-	position: relative;
-	margin: 0 auto;
-	padding: 0;
+height: auto;
 	text-align: center;
 }
 

@@ -28,8 +28,8 @@ Modal.setAppElement('#root')
 const Gallery = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const [currentIndex, setCurrentIndex] = useState(0)
-	const dotWidth = 15
-	const containerWidth = 75
+	const dotWidth = 10
+	const containerWidth = 50
 
 	const images = useMemo( () => {
 		return Object.values(imagePaths)
@@ -90,7 +90,7 @@ const Gallery = () => {
 			} else if (distance === 1) {
 				dot.style.transform = 'scale(0.8)'
 			} else if (distance === 2) {
-				dot.style.transform = 'scale(0.6)'
+				dot.style.transform = 'scale(0.4)'
 			} else {
 				dot.style.transform = 'scale(0.4)'
 			}
