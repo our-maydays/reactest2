@@ -458,6 +458,7 @@ const Comment = () => {
 										boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
 										border: 'none',
 										outline: 'none',
+										color: '#2F2359',
 									}}>
 										<img src={loginIcon} width='22px' height='22px'/>
 											 
@@ -529,6 +530,7 @@ const Comment = () => {
 											padding: 0,
 											paddingLeft: '1rem',
 											paddingRight: '1rem',
+											color: '#2F2359',
 										}}>
 											<img src={editIcon} width='22px' height='22px'/>
 											&nbsp;수정하기
@@ -546,6 +548,7 @@ const Comment = () => {
 											padding: 0,
 											paddingLeft: '1rem',
 											paddingRight: '1rem',
+											color: '#2F2359',
 										}}> 
 											<img src={eraseIcon} width='22px' height='22px'/>
 											&nbsp;삭제하기
@@ -576,6 +579,7 @@ const Comment = () => {
 					boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
 					border: 'none',
 					outline: 'none',
+					color: '#2F2359',
 				}}
 				onClick={() => setIsOpenNew(true) }
 			>
@@ -665,8 +669,7 @@ const Comment = () => {
 							alignItems: 'center',
 						}}>
 
-							<button
-								type='button' 
+							<div
 								onClick={passwordShow}
 								style= {{
 									margin: '0',
@@ -679,13 +682,15 @@ const Comment = () => {
 									marginRight: '0.5rem',
 									outline: 'none',
 									border: 'none',
+									lineHeight: '1.6rem',
 								}}
 							>
 								<img 
 									src={show ? unlockIcon : lockIcon}
 									width= '22px'
+									height='22px'
 								/>
-							</button>
+							</div>
 
 						<StPasswordInput
 							type='password'
