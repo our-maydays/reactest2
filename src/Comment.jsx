@@ -3,7 +3,18 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 import moment from 'moment'
 import 'moment/dist/locale/ko'
 import SHA256 from 'crypto-js/sha256'
-import sendIcon from './assets/send_icon.png'
+
+import sendIcon from './assets/send.png'
+import messageIcon from './assets/message.png'
+import loginIcon from './assets/login.png'
+import closeIcon from './assets/close_icon.png'
+import lockIcon from './assets/lock.png'
+import unlockIcon from './assets/unlock.png'
+import editIcon from './assets/write.png'
+import eraseIcon from './assets/erase.png'
+import nameIcon from './assets/user.png'
+
+
 import Modal from 'react-modal'
 import { 
 	collection, 
@@ -32,9 +43,6 @@ import {
 	StDisplay,
 	} from './Styled'
 
-import closeIcon from './assets/close_icon.png'
-import lockIcon from './assets/lock.png'
-import openlockIcon from './assets/open-lock.png'
 Modal.setAppElement('#root')
 
 const hashPassword = (password) => {
@@ -132,6 +140,7 @@ const Comment = () => {
 			setName('')
 			setContent('')
 			setPassword('')
+			setIsOpenNew(false)
 		}
 	}
 
@@ -156,6 +165,13 @@ const Comment = () => {
 		await deleteDoc(doc(db,'comment', selectedComment.id))
 		closeModal()
 		fetchData(querySnapshot.docs.length)
+	}
+
+	const closeNew = () => {
+		setName('')
+		setContent('')
+		setPassword('')
+		setIsOpenNew(false)
 	}
 
 	const closeModal = () => {
@@ -399,6 +415,24 @@ const Comment = () => {
 											marginRight: '1rem',
 										}}
 									>
+										<div
+											type='button'
+											onClick={passwordShow}
+											style={{
+												margin: '0rem',
+												marginRight: '0.5rem',
+												padding: '0',
+												display: 'flex',
+												alignItems: 'center',
+												justifyContent: 'center',
+											}}
+										>
+											<img
+												src={show ? unlockIcon : lockIcon}
+												width='22px'
+												height='22px'
+											/>
+										</div>
 										<StPasswordInput
 											type='password'
 											placeholder='비밀번호'
@@ -408,26 +442,26 @@ const Comment = () => {
 											onChange={(e) => setInputPassword(e.target.value.replace(/[^a-z]/g,''))}
 											value={inputPassword}
 										/>
-										<div
-											type='button'
-											onClick={passwordShow}
-											style={{
-												position: 'absolute',
-												right: '0.5rem',
-												margin: '0rem',
-												padding: '0',
-												display: 'flex',
-												alignItems: 'center',
-												justifyContent: 'center',
-											}}
-										>
-											<img
-												src={show ? openlockIcon : lockIcon}
-												width='22px'
-											/>
-										</div>
 									</div>
-									<button onClick={verifyPassword}> 확인 </button>
+									<button onClick={verifyPassword} style={{
+										height: '3rem',
+										display: 'flex',
+										justifyContent: 'center',
+										alignItems: 'center',
+										fontSize: '1.6rem',
+										fontFamily: 'Regular',
+										margin: 0,
+										padding: 0,
+										paddingLeft: '1rem',
+										paddingRight: '1rem',
+										background: 'rgb(242,238,238)',
+										boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+										border: 'none',
+										outline: 'none',
+									}}>
+										<img src={loginIcon} width='22px' height='22px'/>
+											 
+									</button>
 								</div>
 							) : (
 								<div style={{ width: '100%', height:'100%'}}>
@@ -440,11 +474,18 @@ const Comment = () => {
 										padding: '0',
 										position: 'relative',
 									}}>
+										<div style={{
+											display:'flex',
+											justifyContent: 'center',
+											alignItems: 'center',
+										}}>
+										<img src={nameIcon} width='22px' height='22px'/>
 										<StNameInput
 											placeholder='이름'
 											onChange={ (e) => setEditName(e.target.value)}
 											value={editName}
 										/>
+										</div>
 									</div>
 
 									<div style={{
@@ -468,11 +509,47 @@ const Comment = () => {
 									<div 
 										style={{
 											display: 'flex',
-											justifyContent: 'center',
+											justifyContent: 'space-between',
+											alignItems: 'center',
+											marginTop: '1rem',
+											width: '70%',
+											margin: 'auto',
 										}}
 									>
-										<button onClick={handleUpdate}> 확인 </button>
-										<button onClick={handleDelete}> 삭제 </button>
+										<button onClick={handleUpdate} style={{
+											height: '3rem',
+											display: 'flex',
+											justifyContent: 'center',
+											alignItems: 'center',
+											background: 'rgb(242,238,238)',
+											boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+											fontSize: '1.6rem',
+											fontFamily: 'Regular',
+											margin: 0, 
+											padding: 0,
+											paddingLeft: '1rem',
+											paddingRight: '1rem',
+										}}>
+											<img src={editIcon} width='22px' height='22px'/>
+											&nbsp;수정하기
+										</button>
+										<button onClick={handleDelete} style={{
+											height: '3rem',
+											display:'flex',
+											justifyContent: 'center',
+											alignItems: 'center',
+											background: 'rgb(242,238,238)',
+											boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+											fontFamily:'Regular',
+											fontSize: '1.6rem',
+											margin: 0,
+											padding: 0,
+											paddingLeft: '1rem',
+											paddingRight: '1rem',
+										}}> 
+											<img src={eraseIcon} width='22px' height='22px'/>
+											&nbsp;삭제하기
+										</button>
 									</div>
 								</div>
 							)}
@@ -483,13 +560,13 @@ const Comment = () => {
 
 
 
-			<div
+			<button
 				style={{
 					fontSize: '1.6rem',
 					marginTop: '1rem',
 					background: 'rgb(242,238,238)',
 					lineHeight: '3rem',
-					width: '15rem',
+					width: '16rem',
 					textAlign: 'center',
 					display: 'flex',
 					justifyContent: 'center',
@@ -497,15 +574,18 @@ const Comment = () => {
 					borderRadius: '1rem',
 					padding: '0.5rem',
 					boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+					border: 'none',
+					outline: 'none',
 				}}
 				onClick={() => setIsOpenNew(true) }
 			>
-				축하메세지 보내기
-			</div>
+				<img src={messageIcon} width='22px' height='22px'/>
+				&nbsp;축하메세지 보내기
+			</button>
 
 			<Modal 
 				isOpen={isOpenNew}
-				onRequestClose= {() => setIsOpenNew(false)}
+				onRequestClose= {closeNew}
 				style={{
 					overlay: {
 						backgroundColor: '#D2D7D9CC',
@@ -532,7 +612,7 @@ const Comment = () => {
 				<div style={{height: '100%'}}>
 					<div style={{display:'flex'}}>
 						<button
-							onClick={ () => setIsOpenNew(false)}
+							onClick={closeNew}
 							style={{
 								alingItems: 'left',
 								background: 'transparent',
@@ -558,11 +638,55 @@ const Comment = () => {
 						padding: '0',
 						position: 'relative',
 					}}>
+						<div style={{
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+						}}>
+						<div style={{
+							display: 'flex',
+							justifyContent:'center',
+							alignItems: 'center',
+							padding: 0,
+							margin: 0,
+							marginRight: '0.5rem',
+						}}>
+							<img src={nameIcon} width='22px' height='22px'/>
+						</div>
 						<StNameInput
 							placeholder='이름'
 							onChange={onChangeNameHandler}
 							value={name}
 						/>
+						</div>
+						<div style={{
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+						}}>
+
+							<button
+								type='button' 
+								onClick={passwordShow}
+								style= {{
+									margin: '0',
+									padding: '0',
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center',
+									margin:0,
+									padding: 0,
+									marginRight: '0.5rem',
+									outline: 'none',
+									border: 'none',
+								}}
+							>
+								<img 
+									src={show ? unlockIcon : lockIcon}
+									width= '22px'
+								/>
+							</button>
+
 						<StPasswordInput
 							type='password'
 							placeholder='비밀번호'
@@ -573,24 +697,6 @@ const Comment = () => {
 							value={password}
 						/>
 
-							<div 
-								type='button' 
-								onClick={passwordShow}
-								style= {{
-									position: 'absolute',
-									right: '0.5rem',
-									color:'red',
-									margin: '0',
-									padding: '0',
-									display: 'flex',
-									alignItems: 'center',
-									justifyContent: 'center',
-								}}
-							>
-								<img 
-									src={show ? openlockIcon : lockIcon}
-									width= '22px'
-								/>
 							</div>
 					</div>
 
@@ -619,7 +725,8 @@ const Comment = () => {
 						}}
 					>
 						<StSubmitButton onClick={onClickSubmitHandler}>
-							<img src={sendIcon} width='100%'/>
+							<img src={sendIcon} width='22px' height='22px'/>
+							&nbsp;전송하기
 						</StSubmitButton>
 					</div>
 

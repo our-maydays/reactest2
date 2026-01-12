@@ -6,6 +6,9 @@
 	margin-top: 1rem;
 	margin-bottom: 0rem;
 	text-align: left;
+	display: flex;
+	justify-content: left;
+	align-items: center;
 }
 
 .explain {
@@ -15,7 +18,7 @@
 	height: 100%;
 	margin-top: 0rem;
 	margin-bottom: 0rem;
-	padding-left: 1rem;
+	padding-left: 3rem;
 	text-align: left;
 }
 

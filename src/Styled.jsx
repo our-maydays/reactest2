@@ -41,7 +41,7 @@ export const StNameInput = styled.textarea`
 	display: inline-block;
 	font-family: Regular;
 	font-size: 1.6rem;	
-	width: 15rem;
+	width: 14rem;
 	height: 1.6rem;
 	line-height: 1.6rem;
 	padding: 0.5rem;
@@ -61,7 +61,7 @@ export const StPasswordInput = styled.textarea`
 	display: inline-block;
 	font-family: Regular;
 	font-size: 1.6rem;	
-	width: 15rem;
+	width: 14rem;
 	height: 1.6rem;
 	line-height: 1.6rem;
 	padding: 0.5rem;
@@ -95,18 +95,23 @@ export const StContentInput = styled.textarea`
 	}
 `;
 
-export const StSubmitButton = styled.div`
-	display: inline-block;
-	width: 1.6rem;
+export const StSubmitButton = styled.button`
+	height: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 10rem;
+	font-family: Regular;
 	font-size: 1.6rem;
-	height: 1.6rem;
-	line-height: 1.6rem;
+	line-height: 3rem;
 	padding: 0.5rem;
 	margin: 0.5rem;
 	margin-top: 0rem;
-	border: 1px solid black;
-	border-radius: 35%;
-	background-color: white;
+	border-radius: 1rem;
+	background-color: rgb(242,238,238);
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	outline: none;
+	border: none;
 `;
 
 export const StInputDiv = styled.div`

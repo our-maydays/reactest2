@@ -11,8 +11,10 @@ const Map = () => {
 
 		const navermaps = useNavermaps()
 
-		const lng = 129.057387
-		const lat = 35.071647
+//		const lng = 129.057387
+//		const lat = 35.071647
+		const lng = 129.057362356798
+		const lat = 35.0716400952136
 
 
 		const position = new naver.maps.LatLng(lat, lng)
@@ -23,30 +25,42 @@ const Map = () => {
 			minZoom: 6,
 			zoomControl: false,
 			scaleControl: false,
-			disableKineticPan: false,
+			disableDoubleClickZoom: true,
+			disableDoubleTapZoom: true,
+			disableKineticPan: true,
+			disableTwoFingerTapZoom: true,
+			keyboardShortcuts: false,
+
 			draggable: false,
 			logoControl: false,
 			scrollWheel: false,
+
 		}
 
 		const map = new naver.maps.Map(container, mapOptions)
 
 		const markerOptions = {
-			position: position.destinationPoint(0,-30),
+			position: position.destinationPoint(0,0),
 			map: map,
 		}
 
 		const marker = new naver.maps.Marker(markerOptions)
-		
+	
 		const infoContent = [
-			'<div class="iw_inner">',
-			'	<h3> 목장원 </h3>',
-			'	<p> 부산시 영도구 목장원 </p>',
-			'</div>',
-		].join('')
+		  '<div class="iw_inner" style="padding:5px; line-height: 1.5;">',
+ 			'  <div style="font-family: Bold; font-size: 1.6rem;"> 목장원 </div>',
+ 		  '  <div style="font-family: Regular; font-size: 1.6rem"> 부산시 영도구 절영로 355</div>',
+			'  <div style="font-family: Regular; font-size: 1.6rem"> 오필로스가든</div>',
+			'  <div style="font-family: Regular; font-size: 1.6rem"> 5월 9일 토요일 오후 1시</div>',
+			'</div>'
+].join('');
 
 		const infowindow = new naver.maps.InfoWindow({
-			content: infoContent
+			position: position.destinationPoint(0,0),
+			content: infoContent,
+			disableAnchor: false,
+			maxWidth: 200,
+			pixelOffset: new naver.maps.Point(-80,190),
 		})
 
 		naver.maps.Event.addListener(marker, 'click', function(e) {

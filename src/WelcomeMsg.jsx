@@ -57,7 +57,6 @@ const WelcomeMsg = () => {
 				paddingTop: '1rem',
 				paddingBottom: '1rem',
 				margin: 0,
-				outline: '1px solid red',
 			}}>	
 				벚꽃이 지는 봄날, 처음 만난 인연이 <br/>
 				4년이 지나 같은 계절에 이르렀습니다 <br/><br/>
@@ -72,7 +71,6 @@ const WelcomeMsg = () => {
 				...styles.box,
 				marginTop: '1rem', 
 				marginBottom: '0rem',
-				outline: '1px solid green',
 			}}>
 				<div style={styles.parentname}> 강대원 </div>
 				<div style={styles.separate}> · </div>
@@ -86,7 +84,6 @@ const WelcomeMsg = () => {
 				...styles.box,
 				marginBottom: '0rem',
 				marginTop: '0rem', 
-				outline: '1px solid green',
 			}}>
 				<div style={styles.parentname}> 장상문 </div>
 				<div style={styles.separate}> · </div>

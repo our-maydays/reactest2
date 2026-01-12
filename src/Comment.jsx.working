@@ -1,35 +1,80 @@
-import styled from 'styled-components';
-import { useState, useEffect, useCallback, useRef } from 'react';
+import styled from 'styled-components'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import moment from 'moment'
 import 'moment/dist/locale/ko'
+import SHA256 from 'crypto-js/sha256'
 
-import sendIcon from './assets/send_icon.png'
+import sendIcon from './assets/send.png'
+import messageIcon from './assets/message.png'
+import loginIcon from './assets/login.png'
+import closeIcon from './assets/close_icon.png'
+import lockIcon from './assets/lock.png'
+import unlockIcon from './assets/unlock.png'
+import editIcon from './assets/write.png'
+import eraseIcon from './assets/erase.png'
+import nameIcon from './assets/user.png'
 
-import { collection, doc, addDoc, getDocs, orderBy, query, limit } from 'firebase/firestore'
+
+import Modal from 'react-modal'
+import { 
+	collection, 
+	doc,
+	addDoc,
+	getDocs,
+	updateDoc,
+	deleteDoc,
+	orderBy,
+	query,
+	limit
+	} from 'firebase/firestore'
 import { db } from './firebase'
 
-import {StBarText, StEntireDiv, StInputDiv, StNameInput, StContentInput, StSubmitButton} from './Styled'
+import {
+	StBarText,
+	StEntireDiv,
+	StInputDiv,
+	StNameInput,
+	StContentInput,
+	StPasswordInput,
+	StSubmitButton,
+	StCommentName,
+	StCommentDate,
+	StCommentContent,
+	StDisplay,
+	} from './Styled'
 
-import {StCommentName, StCommentDate, StCommentContent, StDisplay} from './Styled'
+Modal.setAppElement('#root')
+
+const hashPassword = (password) => {
+	return SHA256(password).toString()
+}
 
 const Comment = () => {
-
+	Modal.setAppElement('#root')
 	moment.locale('ko')
-
 	const [name, setName] = useState('')
 	const [content, setContent] = useState('')
+	const [password, setPassword] = useState('')
+
 	const [comments, setComments] = useState([])
+	
 	const [querySnapshot, setQuerySnapshot] = useState(null)
 	const [isLoading, setIsLoading] = useState(false)
-	const scrollRef = useRef(null);
+	
+	const [selectedComment, setSelectedComment] = useState(null)
+	const [inputPassword, setInputPassword] = useState('')
+	const [isAuthorized, setIsAuthorized] = useState(false)
+	const [editContent, setEditContent] = useState('')
+	const [editName, setEditName] = useState('')
 
-	const onChangeNameHandler = (e) => {
-		setName(e.target.value)
-	}
+	const [isOpenNew, setIsOpenNew] = useState(false)
+	const [isOpenVerify, setIsOpenVerify] = useState(false)
+	const [isOpenOld, setIsOpenOld] = useState(false)
 
-	const onChangeContentHandler = (e) => {
-		setContent(e.target.value)
-	}
+	const scrollRef = useRef(null)
+
+	const [show, setShow] = useState(false)
+	const timerRef = useRef(null)
 
 	const fetchData = async (newLimit) => {
 		setIsLoading(true)
@@ -44,6 +89,10 @@ const Comment = () => {
 		setIsLoading(false)
 	}
 
+	useEffect( () => {
+		fetchData(10);
+	}, [])
+	
 	const loadMoreData = () => {
 		if (!isLoading) {
 			const newLimit = querySnapshot.docs.length + 5
@@ -51,36 +100,25 @@ const Comment = () => {
 		}
 	}
 
-
-	useEffect( () => {
-		fetchData(10);
-	}, [])
-
-
-	useEffect( () => {
-		const div = scrollRef.current
-		if (!div) return;
-		div.addEventListener('scroll',handleScroll)
-		return () => {
-			div.removeEventListener('scroll',handleScroll)
-		}
-	}, [querySnapshot])
-
 	const onClickSubmitHandler = async () => {
 		const createdAt = new Date()
 		const validName = name.trim().length > 0
 		const validContent = content.trim().length > 0
+		const validPassword = password.trim().length > 0
+		const errors = []
 
-		if (!validName && !validContent) {
-			alert('이름과 메세지를 모두 입력해주세요')
-		} else if (!validName) {
-			alert('이름을 입력해주세요') 
-		} else if (!validContent) {
-			alert('메세지를 입력해주세요')
+		if (!validName) errors.push('이름')
+		if (!validPassword) errors.push('비밀번호')
+		if (!validContent) errors.push('메세지')
+
+		if (errors.length > 0) {
+			alert(`${errors.join(', ')} 항목을 입력해주세요`)
 		} else {
+			const passwordHash = hashPassword(password)
 			await addDoc(collection(db,'comment'), {
 				name: name,
 				content: content,
+				passwordHash: passwordHash,
 				createdAt: createdAt,
 			})
 
@@ -88,6 +126,7 @@ const Comment = () => {
 				id: comments.length,
 				name,
 				content,
+				passwordHash,
 				createdAt,
 			}
 
@@ -100,9 +139,108 @@ const Comment = () => {
 
 			setName('')
 			setContent('')
+			setPassword('')
 		}
 	}
 
+	const verifyPassword = () => {
+		if (hashPassword(inputPassword) === selectedComment.passwordHash) {
+			setIsAuthorized(true)
+		} else {
+			alert('비밀번호가 일치하지 않습니다')
+		}
+	}
+
+	const handleUpdate = async () => {
+		await updateDoc(doc(db,'comment', selectedComment.id), {
+			content: editContent,
+			name: editName,
+		})
+		closeModal()
+		fetchData(querySnapshot.docs.length) //??
+	}
+
+	const handleDelete = async () => {
+		await deleteDoc(doc(db,'comment', selectedComment.id))
+		closeModal()
+		fetchData(querySnapshot.docs.length)
+	}
+
+	const closeModal = () => {
+		setSelectedComment(null)
+		setInputPassword('')
+		setIsAuthorized(false)
+		setIsOpenVerify(false)
+	}
+
+	const passwordShow = () => {
+		console.log('clicked')
+		console.log('show:', show)
+
+		if (timerRef.current) {
+			clearTimeout(timerRef.current)
+		}
+
+		setShow(true)
+
+		timerRef.current = setTimeout( () => {
+			setShow(false)
+			timerRef.current = null
+		}, 3000)
+	}
+
+
+
+	const onChangeNameHandler = (e) => {
+		setName(e.target.value)
+	}
+
+	const onChangeContentHandler = (e) => {
+		setContent(e.target.value)
+	}
+
+	const onChangePasswordHandler = (e) => {
+		const passwordEng = e.target.value.replace(/[^a-z]/g,'');
+		setPassword(passwordEng)
+	}
+
+
+	useEffect( () => {
+		if (isOpenNew) {
+			document.body.style.overflow = 'hidden'
+		} else {
+			document.body.style.overflow = 'auto'
+		}
+
+		return () => {
+			document.body.style.overflow = 'auto'
+		}
+
+	}, [isOpenNew])
+
+
+	useEffect( () => {
+		if (isOpenVerify) {
+			document.body.style.overflow = 'hidden'
+		} else {
+			document.body.style.overflow = 'auto'
+		}
+
+		return () => {
+			document.body.style.overflow = 'auto'
+		}
+
+	}, [isOpenVerify])
+
+
+	useEffect( () => {
+		const div = scrollRef.current
+		if (!div) return;
+		div.addEventListener('scroll',handleScroll)
+		return () => {
+			div.removeEventListener('scroll',handleScroll)
+		}
+	}, [querySnapshot])
 
 
 	const handleScroll = () => {
@@ -125,45 +263,32 @@ const Comment = () => {
 
 
 	return (
+		<div className='content-box' style={{
+			display: 'flex',
+			flexDirection: 'column',
+			alignItems: 'center'
+		}}>
+		{/*
 		<div style={{
 			maginTop: '2.0rem',
 			marginBottom: '2.0rem',
 			display: 'flex', 
 			flexDirection:'column',
 			alignItems:'center',
-			fontFamily:'GowunDodum',
-			fontWeight:'300',
+			fontFamily:'Regular',
+			outline: '1px solid red',
 		}}>
+		*/}
 			<div className='sub-title'>
-				Gusetbook
+				G U E S T B O O K
 			</div>
-			<div className='div-title' style={{fontWeight:'500'}}>
+			<div className='div-title'>
 				방명록
 			</div>
-
 			<StEntireDiv>
-				<StInputDiv>
-					<StNameInput
-						placeholder='이름'
-						onChange={onChangeNameHandler}
-						value={name}
-					></StNameInput>
-				
-					<span style={{display: 'flex', marginTop:'0', alignItems: 'flex-end'}}>
-					<StContentInput
-						rows='1'
-						placeholder='메세지를 작성해주세요'
-						onChange={onChangeContentHandler}
-						value={content}
-					></StContentInput>
 
-					<StSubmitButton onClick={onClickSubmitHandler}>
-						<img src={sendIcon} width='100%'/>
-					</StSubmitButton>
-					</span>
-				</StInputDiv>
 
-				<hr style={{width: "80%"}} />
+				{/* Display Area */}
 
 				<div ref={scrollRef} 
 					style= {{
@@ -177,7 +302,15 @@ const Comment = () => {
 
 					{querySnapshot &&
 						[...querySnapshot.docs].map( (doc) => (
-							<div key={doc.id}>
+							<div 
+								key={doc.id}
+								onClick={ () => {
+									setSelectedComment({ id: doc.id, ...doc.data() })
+									setEditContent(doc.data().content)
+									setEditName(doc.data().name)
+									setIsOpenVerify(true)
+								}}
+							>
 									<StCommentName> {doc.data().name} </StCommentName>
 									
 									<div style={{display: 'flex', flexDirection: 'row', alignItems: 'flex-end'}}>
@@ -193,9 +326,317 @@ const Comment = () => {
 					}
 				</div>
 			</StEntireDiv>
-		</div>
-	)
+		
+			{/* Update & Delete Modal */}
 
+			{selectedComment && (
+				<Modal
+					isOpen={isOpenVerify}
+					onRequestClose={closeModal}
+					preventScroll={true}
+					style={{
+						overlay: {
+							backgroundColor: '#D2D7D9CC',
+							zIndex: '1000',
+						},
+						content: {
+							position: 'absolute',
+							top: '50%',
+							left: '50%',
+							transform: 'translate(-50%,-50%)',
+							background: '#F8F7EE',
+							width: '80vw',
+							height: '40vh',
+							minWidth: '370px',
+							maxWidth: '400px',
+							minHeight: '280px',
+							maxHeight: '400px',
+							margin: '0',
+							padding: '0',
+							border: 'none',
+							borderRadius: '1.5rem',
+						},
+					}}
+				>
+					<div style={{height: '100%', display:'flex',flexDirection: 'column',}}>
+						<div style={{display:'flex'}}>
+							<button
+								onClick={ closeModal}
+								style={{
+									alignItems: 'left',
+									background: 'transparent',
+									fontSize: '1.6rem',
+									border: 'none',
+									cursor: 'pointer',
+									margin: '0',
+									marginLeft: 'auto',
+									padding: '0',
+								}}
+							>
+								<img src={closeIcon} width='25rem'/>
+							</button>
+						</div>
+
+						<div style={{
+							display: 'flex',
+							alignItems: 'center',
+							justifyContent: 'space-between',
+							margin: '1rem',
+							marginTop: '0',
+							padding: '0',
+							position: 'relative',
+							height: '100%',
+							width: 'auto',
+						}}>
+							{!isAuthorized ? (
+								<div 
+									style={{
+										display: 'flex',
+										margin: 'auto',
+										alignItems: 'center',
+										justifyContents: 'center',
+										padding: '1rem',
+
+									}}
+								>
+									<div 
+										style={{
+											position: 'relative',
+											display: 'flex',
+											alignItems: 'center',
+											marginRight: '1rem',
+										}}
+									>
+										<StPasswordInput
+											type='password'
+											placeholder='비밀번호'
+											style={{
+												WebkitTextSecurity: show ? 'none' : 'disc'
+											}}
+											onChange={(e) => setInputPassword(e.target.value.replace(/[^a-z]/g,''))}
+											value={inputPassword}
+										/>
+										<div
+											type='button'
+											onClick={passwordShow}
+											style={{
+												position: 'absolute',
+												right: '0.5rem',
+												margin: '0rem',
+												padding: '0',
+												display: 'flex',
+												alignItems: 'center',
+												justifyContent: 'center',
+											}}
+										>
+											<img
+												src={show ? openlockIcon : lockIcon}
+												width='22px'
+											/>
+										</div>
+									</div>
+									<button onClick={verifyPassword}> 확인 </button>
+								</div>
+							) : (
+								<div style={{ width: '100%', height:'100%'}}>
+									<div style={{
+										display: 'flex',
+										justifyContent: 'space-between',
+										alignItems:'center',
+										margin: '1rem',
+										marginTop:'0',
+										padding: '0',
+										position: 'relative',
+									}}>
+										<StNameInput
+											placeholder='이름'
+											onChange={ (e) => setEditName(e.target.value)}
+											value={editName}
+										/>
+									</div>
+
+									<div style={{
+										display: 'flex',
+										justifyContent: 'space-between',
+										alignItems: 'center',
+										margin: '1rem',
+										marginTop: '1.5rem',
+										padding: '0',
+										position: 'relative',
+										height: '70%',
+									}}>
+										<StContentInput
+											rows= '1'
+											placeholder='메세지'
+											onChange={(e) => setEditContent(e.target.value)}
+											value={editContent}
+										/>
+									</div>
+
+									<div 
+										style={{
+											display: 'flex',
+											justifyContent: 'center',
+										}}
+									>
+										<button onClick={handleUpdate}> 확인 </button>
+										<button onClick={handleDelete}> 삭제 </button>
+									</div>
+								</div>
+							)}
+						</div>
+					</div>
+				</Modal>
+			)}								
+
+
+
+			<div
+				style={{
+					fontSize: '1.6rem',
+					marginTop: '1rem',
+					background: 'rgb(242,238,238)',
+					lineHeight: '3rem',
+					width: '15rem',
+					textAlign: 'center',
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center',
+					borderRadius: '1rem',
+					padding: '0.5rem',
+					boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+				}}
+				onClick={() => setIsOpenNew(true) }
+			>
+				축하메세지 보내기
+			</div>
+
+			<Modal 
+				isOpen={isOpenNew}
+				onRequestClose= {() => setIsOpenNew(false)}
+				style={{
+					overlay: {
+						backgroundColor: '#D2D7D9CC',
+						zIndex: '1000',
+					},
+					content: {
+						top: '50%',
+						left: '50%',
+						transform: 'translate(-50%,-50%)',
+						background: '#F8F7EE',
+						width: '80vw',
+						height: '40vh',
+						minWidth: '370px',
+						maxWidth: '400px',
+						minHeight: '280px',
+						maxHeight: '400px',
+						border: 'none',
+						margin: '0',
+						padding: '0',
+						borderRadius: '1.5rem',
+					},
+				}}
+			>
+				<div style={{height: '100%'}}>
+					<div style={{display:'flex'}}>
+						<button
+							onClick={ () => setIsOpenNew(false)}
+							style={{
+								alingItems: 'left',
+								background: 'transparent',
+								color: 'white',
+								fontSize: '1.6rem',
+								border: 'none',
+								cursor: 'pointer',
+								margin: '0',
+								marginLeft: 'auto',
+								padding: '0',
+							}}
+						>
+							<img src={closeIcon} width='25rem'/>
+						</button>
+					</div>
+
+					<div style={{
+						display: 'flex',
+						justifyContent: 'space-between',
+						alignItems: 'center',
+						margin: '1rem',
+						marginTop: '0',
+						padding: '0',
+						position: 'relative',
+					}}>
+						<StNameInput
+							placeholder='이름'
+							onChange={onChangeNameHandler}
+							value={name}
+						/>
+						<StPasswordInput
+							type='password'
+							placeholder='비밀번호'
+							style={{
+								WebkitTextSecurity: show ? 'none' : 'disc'
+							}}
+							onChange={onChangePasswordHandler}
+							value={password}
+						/>
+
+							<div 
+								type='button' 
+								onClick={passwordShow}
+								style= {{
+									position: 'absolute',
+									right: '0.5rem',
+									color:'red',
+									margin: '0',
+									padding: '0',
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center',
+								}}
+							>
+								<img 
+									src={show ? openlockIcon : lockIcon}
+									width= '22px'
+								/>
+							</div>
+					</div>
+
+					<div style={{
+						display: 'flex',
+						justifyContent: 'space-between',
+						alignItems: 'center',
+						margin: '1rem',
+						marginTop: '1.5rem',
+						padding: '0',
+						position: 'relative',
+						height: '60%',
+					}}>
+						<StContentInput
+							rows='1'
+							placeholder='메세지를 작성해주세요'
+							onChange={onChangeContentHandler}
+							value={content}
+						/>
+					</div>
+					
+					<div
+						style={{
+							display:'flex',
+							justifyContent: 'center',
+						}}
+					>
+						<StSubmitButton onClick={onClickSubmitHandler}>
+							<img src={sendIcon} width='100%'/>
+						</StSubmitButton>
+					</div>
+
+
+				</div>
+			</Modal>
+		</div>
+
+	)
 
 };
 

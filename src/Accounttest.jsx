@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import copyIcon from './assets/copy.png'
 
 export default function AccountAccordion() {
   const [open, setOpen] = useState({
@@ -76,9 +77,13 @@ export default function AccountAccordion() {
 									copy_account(acc.bank, acc.number)
 								}
 							>
-								<div>
-									<span> O </span>
- 		              <span style={{fontFamily:'Bold'}}>{acc.name}</span>
+								<div style={{
+									display: 'flex',
+									justifyContent: 'center',
+									alignItems: 'center',
+								}}>
+									<img src={copyIcon} width='15px' height='15px'/>
+ 		              <span style={{fontFamily:'Bold', marginLeft:'5px'}}> {acc.name}</span>
 								</div>
                 <span style={styles.account}>
                   {acc.bank} {acc.number}

@@ -1,6 +1,10 @@
 import './Transport.css'
 import './App.css'
 
+import shuttleIcon from './assets/shuttle.png'
+import busIcon from './assets/bus.png'
+import carIcon from './assets/car.png'
+
 const Transport = ( ) => {
 
 	return (
@@ -10,7 +14,7 @@ const Transport = ( ) => {
 			flexDirection: 'column',
 			justifyContent: 'flex-start',
 			alignItems: 'flex-start',
-			width: '80%',
+			width: '90%',
 			margin: 'auto',
 			marginTop: '0rem',
 			pading: 0,
@@ -18,7 +22,8 @@ const Transport = ( ) => {
 		}}>
 			
 			<div className='name'>
-				셔틀버스
+				<img src={shuttleIcon} width='22px' height='22px'/>
+				&nbsp;셔틀버스
 			</div>
 			<div className='explain'>
 				부산역 토요코인호텔 앞 12시 출발<br/>
@@ -26,14 +31,16 @@ const Transport = ( ) => {
 			</div>
 
 			<div className='name'>
-				시내버스
+				<img src={busIcon} width='22px' height='22px'/>
+				&nbsp;시내버스
 			</div>
 			<div className='explain'>
 				6번, 7번, 70번, 71번, 508번 / 75광장 하차<br/>
 			</div>
 
 			<div className='name'>
-				급행버스
+				<img src={busIcon} width='22px' height='22px'/>
+				&nbsp;급행버스
 			</div>
 			<div className='explain'>
 				3003번(김해공항↔태종도) / 75광장 하차<br/>
@@ -41,7 +48,8 @@ const Transport = ( ) => {
 			</div>
 
 			<div className='name'>
-				주차
+				<img src={carIcon} width='22px' height='22px'/>
+				&nbsp;주차
 			</div>
 			<div className='explain'>
 				약 150대 가능
