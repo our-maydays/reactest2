@@ -729,10 +729,28 @@ const Comment = () => {
 							justifyContent: 'center',
 						}}
 					>
-						<StSubmitButton onClick={onClickSubmitHandler}>
+						<button onClick={onClickSubmitHandler} style={{
+							display:'flex',
+							justifyContent:'center',
+							alignItems:'center',
+							width:'10rem',
+							height:'3rem',
+							fontFamily:'Regular',
+							fontSize:'1.6rem',
+							lineHeight:'3rem',
+							padding: '0.5rem',
+							margin: '0.5rem',
+							marginTop: '0rem',
+							borderRadius: '1rem',
+							backgroundColor: 'rgb(243,238,238)',
+							boxShadow:'0 4px 8px rgba(0,0,0,0.1)',
+							outline: 'none',
+							border: 'none',
+							color: '#2F2359',
+						}}>
 							<img src={sendIcon} width='22px' height='22px'/>
 							&nbsp;전송하기
-						</StSubmitButton>
+						</button>
 					</div>
 
 
