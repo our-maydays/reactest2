@@ -3,6 +3,7 @@ import './App.css'
 const TopMsg = () => {
 	return (
 		<div className='content-box'>
+		<i class='fi fi-rr-electric-bus'></i>
 			<p style={{
 				margin: 0,
 				padding: 0,

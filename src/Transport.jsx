@@ -1,9 +1,10 @@
 import './Transport.css'
 import './App.css'
 
-import shuttleIcon from './assets/shuttle.png'
-import busIcon from './assets/bus.png'
-import carIcon from './assets/car.png'
+import shuttleIcon from './assets/shuttle.svg'
+import busIcon from './assets/bus.svg'
+import expressbusIcon from './assets/expressbus.svg'
+import carIcon from './assets/car.svg'
 
 const Transport = ( ) => {
 
@@ -39,7 +40,7 @@ const Transport = ( ) => {
 			</div>
 
 			<div className='name'>
-				<img src={busIcon} width='22px' height='22px'/>
+				<img src={expressbusIcon} width='22px' height='22px'/>
 				&nbsp;급행버스
 			</div>
 			<div className='explain'>

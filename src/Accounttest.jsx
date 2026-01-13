@@ -1,5 +1,8 @@
 import { useState } from 'react'
-import copyIcon from './assets/copy.png'
+import copyIcon from './assets/copy.svg'
+import upIcon from './assets/up.svg'
+import downIcon from './assets/down.svg'
+
 
 export default function AccountAccordion() {
   const [open, setOpen] = useState({
@@ -56,7 +59,7 @@ export default function AccountAccordion() {
 							left: '50%',
 							transform:'translateX(-50%)'
 						}}>{section.title}</div>
-						<span>{open[section.key] ? '▲' : '▼'}</span>
+						<img src={open[section.key] ? upIcon : downIcon } width='22px' height='22px'/>
           </div>
 
           {/* 드롭다운 */}

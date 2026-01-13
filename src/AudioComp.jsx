@@ -1,7 +1,7 @@
 import silenceFile from './assets/silence.mp3'
 import audioFile from './assets/bgm.mp3'
-import audioIconOn from './assets/volume_on.png'
-import audioIconOff from './assets/volume_off.png'
+import audioIconOn from './assets/volume-on.svg'
+import audioIconOff from './assets/volume-off.svg'
 import { useEffect, useRef, useState } from 'react';
 
 const AudioComp = () => {
