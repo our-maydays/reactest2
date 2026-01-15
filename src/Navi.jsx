@@ -25,7 +25,7 @@ const Navi = () => {
 				paddingTop:'1rem',
 				paddingBottom: '1rem',
 			}}>
-				<span style={{fontSize: '1.6rem', fontFamily: 'bold',}}>
+				<span className='bold-text' style={{fontSize: '1.6rem', fontFamily: 'bold',}}>
 					영도 목장원
 				</span>
 				<br/>

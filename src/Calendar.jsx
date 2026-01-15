@@ -51,11 +51,10 @@ const Calendar = () => {
 	const dayLeft = Math.floor((dateOnly(tg_date)-dateOnly(today))/(1000*60*60*24))
 
 	return (
-		<div className='content-box' style={{background:'#F3E3B880'}}>
-			<p style = {{
+		<div className='calendar-box' style={{background:'#F3E3B880'}}>
+			<p className='bold-text' style = {{
 				fontSize: '1.8rem', 
 				fontFamily: 'Bold',
-				fontWeight: '500',
 				marginTop: '0rem',
 				marginBottom: '0rem',
 				padding: 0,
@@ -100,27 +99,30 @@ const Calendar = () => {
 				경보, 유진의 결혼식이 &nbsp;
 				{(dayLeft > 0) ? (
 					<>
-						<span style={{fontWeight: '500'}}>
+						<span className='bold-text' style={{fontFamily: 'Bold'}}>
 							{dayLeft}
 						</span>
-						<span style={{fontWeight: '300'}}>
+						<span style={{}}>
 							일 남았습니다
 						</span>
 					</>
 				) : (
 					((dayLeft < 0) ? (
 						<>
-							<span style={{fontWeight: '500'}}>
+							<span className='bold-text' style={{fontFamily: 'Bold'}}>
 								{-dayLeft}
 							</span>
-							<span style={{fontWeight: '300'}}>
+							<span style={{}}>
 								일 지났습니다
 							</span>
 						</>
 					) : (
 						<>
-							<span style={{fontWeight: '300'}}>
-								오늘입니다
+							<span className='bold-text' style={{fontFamily: 'Bold'}}>
+								오늘
+							</span>
+							<span> 
+								입니다
 							</span>
 						</>
 					))
@@ -130,12 +132,6 @@ const Calendar = () => {
 								
 
 			</div>
-{/*
-			경보와 유진의 결혼식이&nbsp; 
-			<span style={{color: 'magenta'}}>
-				{Math.floor((dateOnly(tg_date)-dateOnly(today))/(1000*60*60*24))}
-			</span>일 남았습니다.<br/>
-*/}
 		</div>
 	);
 };

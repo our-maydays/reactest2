@@ -49,11 +49,11 @@ function App() {
 				<Intersect className='fade-in' style={{ }}>
 					<MainPhoto/>
 				</Intersect>
-
+				{/*
 				<Intersect className='fade-in' style={{ }}>
 					<TopMsg/>
 				</Intersect>
-
+				*/}
 
 				<Intersect className='fade-in' style={{ }}>
 					<WelcomeMsg/>

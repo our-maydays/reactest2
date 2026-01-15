@@ -23,8 +23,8 @@ const Transport = ( ) => {
 		}}>
 			
 			<div className='name'>
-				<img src={shuttleIcon} width='22px' height='22px'/>
-				&nbsp;셔틀버스
+				<img className='icon' src={shuttleIcon} style={{paddingRight: '0.5rem'}}/>
+				 셔틀버스
 			</div>
 			<div className='explain'>
 				부산역 토요코인호텔 앞 12시 출발<br/>
@@ -32,16 +32,16 @@ const Transport = ( ) => {
 			</div>
 
 			<div className='name'>
-				<img src={busIcon} width='22px' height='22px'/>
-				&nbsp;시내버스
+				<img className='icon' src={busIcon} style={{paddingRight: '0.5rem'}}/>
+				시내버스
 			</div>
 			<div className='explain'>
 				6번, 7번, 70번, 71번, 508번 / 75광장 하차<br/>
 			</div>
 
 			<div className='name'>
-				<img src={expressbusIcon} width='22px' height='22px'/>
-				&nbsp;급행버스
+				<img className='icon' src={expressbusIcon} style={{paddingRight: '0.5rem'}}/>
+				급행버스
 			</div>
 			<div className='explain'>
 				3003번(김해공항↔태종도) / 75광장 하차<br/>
@@ -49,8 +49,8 @@ const Transport = ( ) => {
 			</div>
 
 			<div className='name'>
-				<img src={carIcon} width='22px' height='22px'/>
-				&nbsp;주차
+				<img className='icon' src={carIcon} style={{paddingRight: '0.5rem'}}/>
+				주차
 			</div>
 			<div className='explain'>
 				약 150대 가능

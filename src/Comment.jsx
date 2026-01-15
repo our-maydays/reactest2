@@ -381,7 +381,7 @@ const Comment = () => {
 									padding: '0',
 								}}
 							>
-								<img src={closeIcon} width='25rem'/>
+								<img className='icon' src={closeIcon}/>
 							</button>
 						</div>
 
@@ -428,9 +428,8 @@ const Comment = () => {
 											}}
 										>
 											<img
+												className='icon'
 												src={show ? unlockIcon : lockIcon}
-												width='22px'
-												height='22px'
 											/>
 										</div>
 										<StPasswordInput
@@ -455,7 +454,7 @@ const Comment = () => {
 										paddingLeft: '1rem',
 										paddingRight: '1rem',
 										background: 'rgb(242,238,238)',
-										boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+										boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
 										border: 'none',
 										outline: 'none',
 										color: '#2F2359',
@@ -569,21 +568,21 @@ const Comment = () => {
 					marginTop: '1rem',
 					background: 'rgb(242,238,238)',
 					lineHeight: '3rem',
-					width: '16rem',
+					width: '90%',
 					textAlign: 'center',
 					display: 'flex',
 					justifyContent: 'center',
 					alignItems: 'center',
 					borderRadius: '1rem',
 					padding: '0.5rem',
-					boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+					boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
 					border: 'none',
 					outline: 'none',
 					color: '#2F2359',
 				}}
 				onClick={() => setIsOpenNew(true) }
 			>
-				<img src={messageIcon} width='22px' height='22px'/>
+				<img src={messageIcon} className='icon'/>
 				&nbsp;축하메세지 보내기
 			</button>
 

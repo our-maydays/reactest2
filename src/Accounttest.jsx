@@ -115,7 +115,7 @@ const styles = {
     borderRadius: 12,
     marginBottom: '16px',
     overflow: 'hidden',
-    boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
   },
   header: {
     padding: '1.5rem',
