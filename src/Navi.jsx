@@ -18,15 +18,14 @@ const Navi = () => {
 				paddingBottom: '1rem',
 			}}>
 				<span className='bold-text' style={{fontSize: '1.6rem', fontFamily: 'bold',}}>
-					영도 목장원<br/>
-					오필로스가든
+					영도 목장원	오필로스가든
 				</span>
 				<br/>
-				<span style={{fontSize: '1.4rem'}}>
+				<span style={{fontSize: '1.4rem', color:'#344859'}}>
 					부산광역시 영도구 절영로 355
 				</span>
 				<br/>
-				<span style={{fontSize: '1.2rem'}}>
+				<span style={{fontSize: '1.2rem', color: '#344859'}}>
 					051-404-5011
 				</span>
 			</div>

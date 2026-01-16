@@ -84,7 +84,7 @@ const AudioComp = () => {
 
 	return (
 		<div style={{
-			position: 'relative',
+			position: 'absolute',
 			display:'flex', 
 			justifyContent: 'right',
 			flexDirection:'row',
@@ -93,15 +93,15 @@ const AudioComp = () => {
 			}}
 		>
 			<div
-				className='disappear'
+				className='disappear' 
 				style={{
 					fontSize: '1.6rem',
-					height: '25px',
+					height: '3rem',
 					display:'flex',
 					alignItems: 'center',
 					justifyContent:'center',
-					padding: '0',
-					margin: '0',
+					padding: '0rem',
+					margin: '0rem ',
 					marginTop: '10px',
 					marginRight: '80px',
 					width: '100%',
@@ -109,17 +109,28 @@ const AudioComp = () => {
 					left: '50%',
 					transform: 'translate(-50%,0)',
 					background: 'rgba(100,100,100,0.8)',
+					color:'white',
 				}}
 			>
 				배경음악이 준비되어 있습니다
 			</div>
+			<div style={{
+				height: '3rem',
+				display: 'flex',
+				justifyContent: 'center',
+				alignItems: 'cneter',
+				margin: 0,
+				padding: 0,
+				marginRight: '10px',
+				marginTop: '10px',
+			}}>
 			<img
 				className='slidedown'
 				src={isPlaying ? audioIconOn : audioIconOff}
-				width={'25px'}
-				style={{marginRight: '10px', marginTop: '10px', }}
+				width={'20px'}
 				onClick={() => handleAudioToggle()}
 			/>
+			</div>
 		</div>
 	)
 

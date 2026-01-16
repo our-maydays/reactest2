@@ -58,6 +58,7 @@ const Calendar = () => {
 				marginTop: '0rem',
 				marginBottom: '0rem',
 				padding: 0,
+				color: '#2F2359',
 			}}>
 				2026. 5. 9.
 			</p>
@@ -66,6 +67,7 @@ const Calendar = () => {
 				marginTop: '0rem',
 				marginBottom: '0rem',
 				padding: 0,
+				color: '#344859',
 				}}
 			>
 				토요일 오후 1시<br/>

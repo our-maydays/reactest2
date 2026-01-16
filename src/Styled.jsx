@@ -53,7 +53,7 @@ export const StNameInput = styled.textarea`
 		outline: none;
 	}
 	&::placeholder {
-		color: #7553A6;
+		color: #344859
 	}
 `;
 
@@ -73,7 +73,7 @@ export const StPasswordInput = styled.textarea`
 		outline: none;
 	}
 	&::placeholder {
-		color: #7553A6;
+		color: #344859;
 	}
 `;
 export const StContentInput = styled.textarea`
@@ -91,7 +91,7 @@ export const StContentInput = styled.textarea`
 		outline: none;
 	}
 	&::placeholder {
-		color: #7553A6;
+		color: #344859;
 	}
 `;
 

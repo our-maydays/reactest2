@@ -367,17 +367,18 @@ const Comment = () => {
 					}}
 				>
 					<div style={{height: '100%', display:'flex',flexDirection: 'column',}}>
-						<div style={{display:'flex'}}>
+						<div style={{display:'flex', justifyContent: 'right'}}>
 							<button
 								onClick={ closeModal}
 								style={{
-									alignItems: 'left',
+									display: 'flex',
+									justifyContent: 'center',
+									alignItems: 'center',
 									background: 'transparent',
 									fontSize: '1.6rem',
 									border: 'none',
 									cursor: 'pointer',
-									margin: '0',
-									marginLeft: 'auto',
+									margin: '1rem',
 									padding: '0',
 								}}
 							>
@@ -419,8 +420,7 @@ const Comment = () => {
 											type='button'
 											onClick={passwordShow}
 											style={{
-												margin: '0rem',
-												marginRight: '0.5rem',
+												margin: '0.5rem',
 												padding: '0',
 												display: 'flex',
 												alignItems: 'center',
@@ -443,14 +443,12 @@ const Comment = () => {
 										/>
 									</div>
 									<button onClick={verifyPassword} style={{
-										height: '1.6rem',
 										lineHeight: '1.6rem',
 										display: 'flex',
 										justifyContent: 'center',
 										alignItems: 'center',
 										fontSize: '1.6rem',
 										fontFamily: 'Regular',
-										margin: 0,
 										padding: '0.5rem',
 										background: 'rgb(242,238,238)',
 										boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
@@ -459,7 +457,6 @@ const Comment = () => {
 										color: '#2F2359',
 									}}>
 										<img src={loginIcon} className='icon'/>
-											비밀		 
 									</button>
 								</div>
 							) : (
@@ -478,7 +475,7 @@ const Comment = () => {
 											justifyContent: 'center',
 											alignItems: 'center',
 										}}>
-										<img src={nameIcon} width='22px' height='22px'/>
+										<img src={nameIcon} className='icon'/>
 										<StNameInput
 											placeholder='이름'
 											onChange={ (e) => setEditName(e.target.value)}
@@ -521,16 +518,16 @@ const Comment = () => {
 											justifyContent: 'center',
 											alignItems: 'center',
 											background: 'rgb(242,238,238)',
-											boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+											boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
 											fontSize: '1.6rem',
 											fontFamily: 'Regular',
 											margin: 0, 
 											padding: 0,
 											paddingLeft: '1rem',
 											paddingRight: '1rem',
-											color: '#2F2359',
+											color: 'black',
 										}}>
-											<img src={editIcon} width='22px' height='22px'/>
+											<img src={editIcon} className='icon'/>
 											&nbsp;수정하기
 										</button>
 										<button onClick={handleDelete} style={{
@@ -539,16 +536,16 @@ const Comment = () => {
 											justifyContent: 'center',
 											alignItems: 'center',
 											background: 'rgb(242,238,238)',
-											boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+											boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
 											fontFamily:'Regular',
 											fontSize: '1.6rem',
 											margin: 0,
 											padding: 0,
 											paddingLeft: '1rem',
 											paddingRight: '1rem',
-											color: '#2F2359',
+											color: 'black',
 										}}> 
-											<img src={eraseIcon} width='22px' height='22px'/>
+											<img src={eraseIcon} className='icon'/>
 											&nbsp;삭제하기
 										</button>
 									</div>

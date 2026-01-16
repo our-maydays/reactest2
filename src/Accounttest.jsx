@@ -51,6 +51,7 @@ export default function AccountAccordion() {
           
           {/* 헤더 */}
           <div
+						className='bold-text'
             style={styles.header}
             onClick={() => toggle(section.key)}
           >
@@ -59,7 +60,7 @@ export default function AccountAccordion() {
 							left: '50%',
 							transform:'translateX(-50%)'
 						}}>{section.title}</div>
-						<img src={open[section.key] ? upIcon : downIcon } width='22px' height='22px'/>
+						<img src={open[section.key] ? upIcon : downIcon } className='icon'/>
           </div>
 
           {/* 드롭다운 */}
@@ -85,8 +86,8 @@ export default function AccountAccordion() {
 									justifyContent: 'center',
 									alignItems: 'center',
 								}}>
-									<img src={copyIcon} width='15px' height='15px'/>
- 		              <span style={{fontFamily:'Bold', marginLeft:'5px'}}> {acc.name}</span>
+									<img src={copyIcon} className='icon'/>
+ 		              <span className='bold-text' style={{fontFamily:'Bold', marginLeft:'5px'}}> {acc.name}</span>
 								</div>
                 <span style={styles.account}>
                   {acc.bank} {acc.number}

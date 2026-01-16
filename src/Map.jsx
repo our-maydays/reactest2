@@ -47,10 +47,9 @@ const Map = () => {
 		const marker = new naver.maps.Marker(markerOptions)
 	
 		const infoContent = [
-		  '<div class="iw_inner" style="padding:5px; line-height: 1.5;">',
- 			'  <div style="font-family: Bold; font-size: 1.6rem;"> 목장원 </div>',
+		  '<div className="iw_inner" style="padding:5px; line-height: 1.5;">',
+ 			'  <div className="bold-text" style="font-family: Bold; font-size: 1.6rem;"> 목장원 오필로스가든</div>',
  		  '  <div style="font-family: Regular; font-size: 1.6rem"> 부산시 영도구 절영로 355</div>',
-			'  <div style="font-family: Regular; font-size: 1.6rem"> 오필로스가든</div>',
 			'  <div style="font-family: Regular; font-size: 1.6rem"> 5월 9일 토요일 오후 1시</div>',
 			'</div>'
 ].join('');

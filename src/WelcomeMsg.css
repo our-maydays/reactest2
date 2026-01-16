@@ -18,7 +18,7 @@
 	width: 20%;
 	display: flex;
 	justify-content: center;
-	-webkit-text-stroke: 0.5px #2F2359;
+	-webkit-text-stroke: 0.5px black;
 }
 
 .separate {
@@ -26,6 +26,7 @@
 	padding-left: 0;
 	padding-right: 0;
 	width: 3%;
+	color: #344859;
 }
 
 .namebox {
@@ -34,7 +35,7 @@ padding: 0;
 	width: 15%;
 	display: flex;
 	justify-content: center;
-	-webkit-text-stroke: 0.5px #2F2359;
+	-webkit-text-stroke: 0.5px black;
 }
 
 .type {
@@ -43,6 +44,7 @@ margin: 0;
 	font-family: Regular;
 display: flex;
 	justify-content: left;
+color: #344859;
 }
 
 .sd {
@@ -52,4 +54,5 @@ display: flex;
 	width: 18%;
 	display: flex;
 	justify-content: center;
+	color: #344859;
 }
