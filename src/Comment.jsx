@@ -443,24 +443,23 @@ const Comment = () => {
 										/>
 									</div>
 									<button onClick={verifyPassword} style={{
-										height: '3rem',
+										height: '1.6rem',
+										lineHeight: '1.6rem',
 										display: 'flex',
 										justifyContent: 'center',
 										alignItems: 'center',
 										fontSize: '1.6rem',
 										fontFamily: 'Regular',
 										margin: 0,
-										padding: 0,
-										paddingLeft: '1rem',
-										paddingRight: '1rem',
+										padding: '0.5rem',
 										background: 'rgb(242,238,238)',
 										boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
 										border: 'none',
 										outline: 'none',
 										color: '#2F2359',
 									}}>
-										<img src={loginIcon} width='22px' height='22px'/>
-											 
+										<img src={loginIcon} className='icon'/>
+											비밀		 
 									</button>
 								</div>
 							) : (
@@ -599,12 +598,8 @@ const Comment = () => {
 						left: '50%',
 						transform: 'translate(-50%,-50%)',
 						background: '#F8F7EE',
-						width: '80vw',
-						height: '40vh',
-						minWidth: '370px',
-						maxWidth: '400px',
-						minHeight: '280px',
-						maxHeight: '400px',
+						width: '390px',
+						height: '330px',
 						border: 'none',
 						margin: '0',
 						padding: '0',
@@ -613,22 +608,23 @@ const Comment = () => {
 				}}
 			>
 				<div style={{height: '100%'}}>
-					<div style={{display:'flex'}}>
+					<div style={{display:'flex', justifyContent:'right'}}>
 						<button
 							onClick={closeNew}
 							style={{
-								alingItems: 'left',
+								display: 'flex',
+								alingItems: 'center',
+								justifyContent: 'center',
 								background: 'transparent',
 								color: 'white',
 								fontSize: '1.6rem',
 								border: 'none',
 								cursor: 'pointer',
-								margin: '0',
-								marginLeft: 'auto',
+								margin: '1rem',
 								padding: '0',
 							}}
 						>
-							<img src={closeIcon} width='25rem'/>
+							<img src={closeIcon} className='icon'/>
 						</button>
 					</div>
 
@@ -654,7 +650,8 @@ const Comment = () => {
 							margin: 0,
 							marginRight: '0.5rem',
 						}}>
-							<img src={nameIcon} width='22px' height='22px'/>
+							<img src={nameIcon} className='icon'/>
+
 						</div>
 						<StNameInput
 							placeholder='이름'
@@ -686,8 +683,7 @@ const Comment = () => {
 							>
 								<img 
 									src={show ? unlockIcon : lockIcon}
-									width= '22px'
-									height='22px'
+									className='icon'
 								/>
 							</div>
 
@@ -711,7 +707,6 @@ const Comment = () => {
 						margin: '1rem',
 						marginTop: '1.5rem',
 						padding: '0',
-						position: 'relative',
 						height: '60%',
 					}}>
 						<StContentInput
@@ -739,15 +734,15 @@ const Comment = () => {
 							lineHeight:'3rem',
 							padding: '0.5rem',
 							margin: '0.5rem',
-							marginTop: '0rem',
+							marginTop: '0.5rem',
 							borderRadius: '1rem',
 							backgroundColor: 'rgb(243,238,238)',
-							boxShadow:'0 4px 8px rgba(0,0,0,0.1)',
+							boxShadow:'0 2px 4px rgba(0,0,0,0.1)',
 							outline: 'none',
 							border: 'none',
 							color: '#2F2359',
 						}}>
-							<img src={sendIcon} width='22px' height='22px'/>
+							<img src={sendIcon} className='icon'/>
 							&nbsp;전송하기
 						</button>
 					</div>

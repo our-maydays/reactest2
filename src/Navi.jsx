@@ -6,14 +6,6 @@ import Map from './Map'
 const Navi = () => {
 	return (
 		<div className='content-box'>
-		{/*
-		<div style={{
-			marginTop: '2rem',
-			marginBottom: '2rem',
-			fontFamily:'Regular',
-			outline: '1px solid black',
-		}}>
-		*/}
 			<div className='sub-title'> L O C A T I O N </div>
 			<div className='div-title'>
 				오시는 길 
@@ -26,7 +18,8 @@ const Navi = () => {
 				paddingBottom: '1rem',
 			}}>
 				<span className='bold-text' style={{fontSize: '1.6rem', fontFamily: 'bold',}}>
-					영도 목장원
+					영도 목장원<br/>
+					오필로스가든
 				</span>
 				<br/>
 				<span style={{fontSize: '1.4rem'}}>

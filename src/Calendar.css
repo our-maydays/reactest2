@@ -34,10 +34,9 @@
 	position: relative;
 	z-index: 1;
 	font-family: maruburibold;
-	color: black;
+	color: white;
 }
 
-	{/*	content: '♥';*/}
 .calendar .special-day::after {
 	content:'. ';
 	display: block;
