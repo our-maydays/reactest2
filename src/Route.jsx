@@ -21,12 +21,6 @@ const Route = () => {
 	const isAndroid = /Android/i.test(navigator.userAgent)
 
 	const openNaverMap = async () => {
-		try {
-			const locat=	await getLocation()
-		} catch (e) {
-			console.error(e);
-		}
-		console.log({locat})
 		if (isMobile) {
 //			const appUrl = `nmap://route/car?dlat=${destLat}&dlng=${destLng}&dname=${destName}&appname=com.my.app`
 

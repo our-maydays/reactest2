@@ -3,6 +3,7 @@ import myPoster from './assets/videos/test.png'
 
 import {useRef} from 'react'
 import './App.css'
+import './Video.css'
 
 const Video = () => {
 
@@ -30,14 +31,27 @@ const Video = () => {
 			</div>
 			<div className='space-box'/>
 
-			<video 
-				ref={videoRef}
-				id='myVideo' 
-				width='90%' 
-				poster={myPoster}
-				src={myVideo}
-				controls
-			/>
+			<div className='video-wrapper'
+				style={{
+					margin: '0 auto',
+					padding: 0,
+					width: '90%',
+					height: '100%',
+				}}
+			>
+				<video 
+					ref={videoRef}
+					id='myVideo' 
+					poster={myPoster}
+					src={myVideo}
+					controls
+					style={{
+						width: '100%',
+						height: '100%',
+						objectFit: 'cover',
+					}}
+				/>
+			</div>
 			<div className='space-box'/>
 		</div>
 	)

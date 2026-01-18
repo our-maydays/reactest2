@@ -4,24 +4,7 @@ import upIcon from './assets/up.svg'
 import downIcon from './assets/down.svg'
 
 
-export default function AccountAccordion() {
-  const [open, setOpen] = useState({
-		groom: false,
-		bride: false,
-	})
-
-  const toggle = (key) => {
-    setOpen((prev) => ({
-			...prev,
-			[key]: !prev[key],
-		}))
-  }
-
-	const copy_account = (bank, account) => {
-		const text = `${bank} ${account}`
-		navigator.clipboard.writeText(text)
-		alert('계좌번호가 복사되었습니다')
-	}
+export default function AccountAccordion({sectionKey}) {
 
   const data = [
     {
@@ -43,24 +26,37 @@ export default function AccountAccordion() {
       ],
     },
   ]
+	const section = data.find((d) => d.key === sectionKey)
+
+	const [open, setOpen] = useState(false)
+
+	if (!section) return null
+
+	const toggle = () => setOpen( (prev) => !prev ) 
+
+	const copy_account = (bank, account) => {
+		const text = `${bank} ${account}`
+		navigator.clipboard.writeText(text)
+		alert('계좌번호가 복사되었습니다')
+	}
+
 
   return (
     <div style={styles.wrapper}>
-      {data.map((section) => (
-        <div key={section.key} style={styles.card}>
+			<div style={styles.card}>
           
           {/* 헤더 */}
           <div
 						className='bold-text'
             style={styles.header}
-            onClick={() => toggle(section.key)}
+            onClick={toggle}
           >
             <div style={{
 							position: 'relative',
 							left: '50%',
 							transform:'translateX(-50%)'
 						}}>{section.title}</div>
-						<img src={open[section.key] ? upIcon : downIcon } className='icon'/>
+						<img src={open ? upIcon : downIcon } className='icon'/>
           </div>
 
           {/* 드롭다운 */}
@@ -68,7 +64,7 @@ export default function AccountAccordion() {
             style={{
               ...styles.dropdown,
               maxHeight:
-                open[section.key]
+                open
                   ? section.accounts.length * 58
                   : 0,
             }}
@@ -97,7 +93,6 @@ export default function AccountAccordion() {
           </div>
 
         </div>
-      ))}
     </div>
   )
 }
@@ -114,8 +109,7 @@ const styles = {
   card: {
     background: 'rgb(242,238,238)',
     borderRadius: 12,
-		marginTop: '1.6rem',
-		marginBottom: '1.6rem',
+		margin: 0,
     overflow: 'hidden',
     boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
   },

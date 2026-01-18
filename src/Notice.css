@@ -9,16 +9,15 @@
 	margin: 0 auto;
 }
 
-
 .notice-title {
-	height: 3rem;
+	height: 5rem;
 	position: absolute;
 	top: -2.5rem;
 	left: 50%;
 	transform: translateX(-50%);
 	background: #F8F7EE ;
 	color: white;
-	padding: 1rem;
+	padding: 0;
 	padding-left: 2rem;
 	padding-right: 2rem;
 	display: flex;

@@ -276,6 +276,8 @@ const Comment = () => {
 			flexDirection: 'column',
 			alignItems: 'center'
 		}}>
+			<div className='space-box'/>
+
 			<div className='sub-title'>
 				G U E S T B O O K
 			</div>
@@ -325,7 +327,9 @@ const Comment = () => {
 					}
 				</div>
 			</StEntireDiv>
-		
+
+			<div className='space-box'/>
+
 			{/* Update & Delete Modal */}
 
 			{selectedComment && (
@@ -552,7 +556,7 @@ const Comment = () => {
 			<button
 				style={{
 					fontSize: '1.6rem',
-					marginTop: '1rem',
+					margin: 0,
 					background: 'rgb(242,238,238)',
 					lineHeight: '3rem',
 					width: '90%',
@@ -572,6 +576,8 @@ const Comment = () => {
 				<img src={messageIcon} className='icon'/>
 				&nbsp;축하메세지 보내기
 			</button>
+
+			<div className='space-box'/>
 
 			<Modal 
 				isOpen={isOpenNew}

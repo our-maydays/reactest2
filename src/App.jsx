@@ -13,10 +13,7 @@ import Intersect from './Intersect'
 
 import WeddingDay from './Weddingday'
 
-import Map from './Map'
-
-import Route from './Route'
-import Dday from './Dday'
+import GuestSnap from './GuestSnap'
 
 
 import { Desktop, Mobile, Tablet, Default } from './Responsive'
@@ -24,6 +21,8 @@ import Comment from './Comment'
 
 import Notice from './Notice'
 import Video from './Video'
+
+import Share from './Share'
 
 function App() {
 	
@@ -89,10 +88,13 @@ function App() {
 				<Intersect className='fade-in' style={{ }}>
 					<Notice/>
 				</Intersect>
-
+				
+				<Intersect className='fade-in'>
+					<GuestSnap/>
+				</Intersect>
 
 				<Intersect className='fade-in' style={{ }}>
-					Share
+					<Share/>
 				</Intersect>
 			
 			</div>
