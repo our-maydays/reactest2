@@ -1,6 +1,6 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
-import './Calendar.css';
+import { useEffect, useState } from 'react'
+import './Calendar.css'
+import './App.css'
 
 import moment from 'moment'
 import 'moment/dist/locale/ko'
@@ -52,11 +52,11 @@ const Calendar = () => {
 
 	return (
 		<div className='calendar-box' style={{background:'#F3E3B880'}}>
+		<div className='space-box'/>
 			<p className='bold-text' style = {{
 				fontSize: '1.8rem', 
 				fontFamily: 'Bold',
-				marginTop: '0rem',
-				marginBottom: '0rem',
+				margin: 0,
 				padding: 0,
 				color: '#2F2359',
 			}}>
@@ -64,21 +64,21 @@ const Calendar = () => {
 			</p>
 			<p style={{
 				fontSize: '1.4rem',
-				marginTop: '0rem',
-				marginBottom: '0rem',
+				margin: 0,
 				padding: 0,
 				color: '#344859',
 				}}
 			>
 				토요일 오후 1시<br/>
 			</p>
+			
+			<div className='space-box'/>
 
 			<div style={{
 				display: 'flex', 
 				justifyContent: 'center', 
-				marginTop:'1rem',
-				paddingTop: '1rem',
-				paddingBottom: '1rem',
+				margin: 0,
+				padding: 0,
 				}}
 			>
 				<table className='calendar'>
@@ -94,10 +94,14 @@ const Calendar = () => {
 					</tbody>
 				</table>
 			</div>
+			<div className='space-box'/>
 
 			<Dday/>
+			
+			<div className='space-box'/>
+
+			<div style={{margin: 0, padding: 0}}> 
 				
-			<div style={{marginTop: '2rem',marginBottom: '0rem',padding: 0}}> 
 				경보, 유진의 결혼식이 &nbsp;
 				{(dayLeft > 0) ? (
 					<>
@@ -129,11 +133,10 @@ const Calendar = () => {
 						</>
 					))
 				)}
-
-
-								
-
 			</div>
+			
+			<div className='space-box'/>
+
 		</div>
 	);
 };

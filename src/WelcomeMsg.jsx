@@ -5,13 +5,14 @@ const WelcomeMsg = () => {
 
 	return (
 		<div className='content-box'>
-		{/*			color: '#372773',*/}
+			<div className='space-box'/>
 			<div className='sub-title' style={{ }}> I N V I T A T I O N </div>
 
 			<div className='div-title'>
 				{/*				소중한 분들을 초대합니다<br/>  */}
 				저희만의 작은 축제에 여러분을 초대합니다
 			</div>
+			<div className='space-box'/>
 
 			<div style={{
 				lineHeight: '3rem',
@@ -19,6 +20,8 @@ const WelcomeMsg = () => {
 				paddingTop: '1rem',
 				paddingBottom: '1rem',
 				margin: 0,
+				outline: 'none',
+				border: 'none',
 			}}>	
 				<br/>
 				벚꽃이 지는 봄날, 처음 만난 인연이 <br/>
@@ -30,10 +33,8 @@ const WelcomeMsg = () => {
 				함께 기억하고 싶습니다<br/><br/>
 			</div>
 
-			<div className='box' style={{
-				marginTop: '1rem', 
-				marginBottom: '0rem',
-			}}>
+			<div className='space-box'/>
+			<div className='box'>
 				<div className='parentname'> 강대원 </div>
 				<div className='separate'> · </div>
 				<div className='parentname'> 노신조 </div>
@@ -43,10 +44,7 @@ const WelcomeMsg = () => {
 				<div className='namebox'> 경보 </div><br/>
 			</div>
 
-			<div className='box' style={{
-				marginBottom: '0rem',
-				marginTop: '0rem', 
-			}}>
+			<div className='box'>
 				<div className='parentname'> 장상문 </div>
 				<div className='separate'> · </div>
 				<div className='parentname'> 한현순 </div>
@@ -55,6 +53,8 @@ const WelcomeMsg = () => {
 				<div className='sd'> 딸 </div>
 				<div className='namebox'> 유진</div><br/>
 			</div>
+			<div className='space-box'/>
+
 			
 		</div>
 	)

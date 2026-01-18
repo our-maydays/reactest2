@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import React from 'react'
 import './App.css'
 
 import moment from 'moment'
@@ -45,7 +44,8 @@ const Dday = () => {
 	return (
 		<div style={{
 			width: '40%', 
-			margin: 'auto', 
+			margin: '0 auto',
+			padding: 0,
 			fontSize:'1.6rem', 
 			marginTop: '1.0rem'
 			}}

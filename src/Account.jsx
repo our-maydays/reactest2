@@ -10,19 +10,13 @@ const Account = () => {
 
 	return (
 		<div className='content-box'>
-		{/*
-			<div style={{
-			marginTop: '2rem',
-			marginBottom: '2rem',
-			outline: '1px solid red'
-			}}>
-			*/}
 			<div className='sub-title'>
 				A C C O U N T
 			</div>
 			<div className='div-title'>
 				마음 전하실 곳
 			</div>
+			<div className='space-box'/>
 
 			<div style={{
 				fontSize: '1.6rem' ,

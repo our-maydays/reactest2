@@ -1,4 +1,6 @@
 import myVideo from './assets/videos/test.mov'
+import myPoster from './assets/videos/test.png'
+
 import {useRef} from 'react'
 import './App.css'
 
@@ -19,30 +21,24 @@ const Video = () => {
 
 	return (
 		<div className='content-box'>
-		{/*
-			<div style={{
-			marginTop:'2rem', 
-			marginBottom:'2rem',
-			outline: '1px solid black',
-		}}>
-		*/}
+			<div className='space-box'/>
 			<div className='sub-title'>
 				V I D E O
 			</div>
 			<div className='div-title'>
 				웨딩비디오
 			</div>
+			<div className='space-box'/>
 
-			<div>
-				<video 
-					ref={videoRef}
-					id='myVideo' 
-					width='90%' 
-					src={myVideo}
-					controls
-				>
-				</video>
-			</div>
+			<video 
+				ref={videoRef}
+				id='myVideo' 
+				width='90%' 
+				poster={myPoster}
+				src={myVideo}
+				controls
+			/>
+			<div className='space-box'/>
 		</div>
 	)
 }

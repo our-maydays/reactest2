@@ -2,8 +2,6 @@ import { useEffect, useState, useMemo } from "react";
 import Modal from 'react-modal'
 import './App.css'
 
-import styled from 'styled-components';
-import { StSlider, StGallery } from './Styled';
 
 import './gallery.css';
 import Slider from 'react-slick';
@@ -12,7 +10,6 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import closeIcon from './assets/close_icon.png'
 
-import video from './assets/videos/test.mov'
 
 
 import './Gallery.css'
@@ -108,41 +105,36 @@ const Gallery = () => {
 
 	return (
 		<div className='content-box'>
-		{/*
-		<div style={{
-			border: 'none',
-			marginTop: '2rem',
-			marginBottom: '5rem',
-			fontFamily: 'Regular',
-			outline: '1px solid red',
-		}}>
-		*/}
+		<div className='space-box'/>
 	
 			<div className='sub-title'> G A L L E R Y </div>
 			<div className='div-title'> 사진첩</div>
-		 
+			<div className='space-box'/>
+
 			<div className='grid-wrapper'>
-			<Slider {...gridSettings}>
-				{images.map( (src, index) => (
-					<div 
-						key={index} 
-						onClick={ (e) => {
-							openModal(index) 
-						}}
-						style={{display:'flex',justifyContent:'center',margin:'auto'}}
-					>
-						<div className='grid-item'>
-							<img
-								src={src}
-								style={{
-									width: '100%',
-								}}
-							/>
+				<Slider {...gridSettings}>
+					{images.map( (src, index) => (
+						<div 
+							key={index} 
+							onClick={ (e) => {
+								openModal(index) 
+							}}
+							style={{display:'flex',justifyContent:'center',margin:'auto'}}
+						>
+							<div className='grid-item'>
+								<img
+									src={src}
+									style={{
+										width: '100%',
+									}}
+								/>
+							</div>
 						</div>
-					</div>
-				))}
-			</Slider>
+					))}
+				</Slider>
 			</div>
+
+			<div className='space-box'/>
 
 			<Modal
 				isOpen={isOpen}

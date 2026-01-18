@@ -276,23 +276,14 @@ const Comment = () => {
 			flexDirection: 'column',
 			alignItems: 'center'
 		}}>
-		{/*
-		<div style={{
-			maginTop: '2.0rem',
-			marginBottom: '2.0rem',
-			display: 'flex', 
-			flexDirection:'column',
-			alignItems:'center',
-			fontFamily:'Regular',
-			outline: '1px solid red',
-		}}>
-		*/}
 			<div className='sub-title'>
 				G U E S T B O O K
 			</div>
 			<div className='div-title'>
 				방명록
 			</div>
+			<div className='space-box'/>
+
 			<StEntireDiv>
 
 
