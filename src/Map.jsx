@@ -2,6 +2,7 @@ import { useState, useEffect, useRef} from 'react'
 import { Container as MapDiv, NaverMap, Marker, useNavermaps, InfoWindow} from 'react-naver-maps'
 
 import Route from './Route'
+import './App.css'
 
 const {naver} = window;
 const Map = () => {
