@@ -45,7 +45,7 @@ function App() {
 					<AudioComp/>
 				</div>
 
-				<Intersect className='fade-in' style={{ }}>
+				<Intersect>
 					<MainPhoto/>
 				</Intersect>
 				{/*
@@ -54,46 +54,46 @@ function App() {
 				</Intersect>
 				*/}
 
-				<Intersect className='fade-in' style={{ }}>
+				<Intersect>
 					<WelcomeMsg/>
 				</Intersect>
 
 
-				<Intersect className='fade-in' style={{ }}>
+				<Intersect>
 					<Calendar/>
 				</Intersect>
 
 			
-				<Intersect className='fade-in' style={{ }}>
+				<Intersect>
 					<Navi/>
 				</Intersect>
 
-				<Intersect className='fade-in' style={{ }}>
+				<Intersect>
 					<Gallery/>
 				</Intersect>
 
-				<Intersect className='fade-in' style={{ }}>
+				<Intersect>
 					<Video/>
 				</Intersect>
 
-				<Intersect className='fade-in'>
+				<Intersect>
 					<Account/>
 				</Intersect>
 
-				<Intersect className='fade-in' style={{ }}>
+				<Intersect>
 					<Comment/>
 				</Intersect>
 
 
-				<Intersect className='fade-in' style={{ }}>
+				<Intersect>
 					<Notice/>
 				</Intersect>
 				
-				<Intersect className='fade-in'>
+				<Intersect>
 					<GuestSnap/>
 				</Intersect>
 
-				<Intersect className='fade-in' style={{ }}>
+				<Intersect>
 					<Share/>
 				</Intersect>
 			

@@ -1,27 +1,44 @@
+import './App.css'
+import './intersect.css'
+
 import { useEffect, useRef, useState} from 'react'
 
-const Intersect = ({ children, ...props }) => {
-	const ref = useRef()
+const Intersect = ({ children, className = '', style,...props }) => {
+	const ref = useRef(null)
 	const [intersect, setIntersect] = useState(false)
-	const observer = new IntersectionObserver(([entry]) => {
-
-		if (entry.isIntersecting) {
-			setIntersect(true)
-			observer.disconnect()
-		}
-
-	}, {threshold: 0.3})
-
+	
 	useEffect( () => {
-		observer.observe(ref.current)
-		return () => observer.disconnect()
-	}, [])
+		if (!ref.current) return
+
+		const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIntersect(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.3 }
+    )
+
+    observer.observe(ref.current)
+
+    return () => observer.disconnect()
+  }, [])
 
 	return (
 		<>
-			<div ref={ref} 
-				{...(intersect ? props : {style: {visibility: 'hidden'}})}
-				style={{margin: 0, padding: 0, border: 'none', outline: 'none'}}
+			<div
+				className={`intersect ${intersect ? 'show' : ''} ${className}`}
+				ref={ref}
+				{...props}
+				style={{
+					margin: 0,
+					padding: 0,
+					border: 'none',
+					outline: 'none',
+					visibility: intersect ? 'visible' : 'hidden',
+					...style,
+				}}
 			>
 				{children}
 			</div>
