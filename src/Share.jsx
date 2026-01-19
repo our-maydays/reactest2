@@ -47,7 +47,7 @@ const Share = () => {
 				content: {
 					title: '경보 유진 결혼합니다',
 					description: '2026.05.09. 오후 1시</n> 부산 영도 목장원 오필로스가든',
-					imageUrl: mainImg,
+					imageUrl: 'https://github.com/our-maydays/reactest2/blob/main/src/assets/heart.png',
 					link: {
 						mobileWebUrl: 'https://our-maydays.github.io/reactest2',
 						webUrl: 'https://our-maydays.github.io/reactest2',
