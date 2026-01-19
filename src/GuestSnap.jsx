@@ -2,7 +2,7 @@ import './App.css'
 
 const GuestSnap = () => {
 
-	const snapUrl = 'https://dropbox.com'
+	const snapUrl = 'https://www.dropbox.com/request/hVGhXqTs4oj4iNHWAMTU'
 
 	const openGuestSnap = async () => {
 		window.location.href = snapUrl
