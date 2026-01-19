@@ -6,6 +6,7 @@ const WelcomeMsg = () => {
 	return (
 		<div className='content-box'>
 			<div className='space-box'/>
+			<div className='space-box'/>
 			<div className='sub-title' style={{ }}> I N V I T A T I O N </div>
 
 			<div className='div-title'>
@@ -54,7 +55,7 @@ const WelcomeMsg = () => {
 				<div className='namebox'> 유진</div><br/>
 			</div>
 			<div className='space-box'/>
-
+			<div className='space-box'/>
 			
 		</div>
 	)

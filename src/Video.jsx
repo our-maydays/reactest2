@@ -23,6 +23,7 @@ const Video = () => {
 	return (
 		<div className='content-box'>
 			<div className='space-box'/>
+			<div className='space-box'/>
 			<div className='sub-title'>
 				V I D E O
 			</div>
@@ -52,6 +53,7 @@ const Video = () => {
 					}}
 				/>
 			</div>
+			<div className='space-box'/>
 			<div className='space-box'/>
 		</div>
 	)

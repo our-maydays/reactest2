@@ -74,6 +74,7 @@ const Share = () => {
 	return (
 		<div className='content-box'>
 			<div className='space-box'/>
+			<div className='space-box'/>
 
 			<div className='sub-title'> S H A R E </div>
 			<div className='div-title'> 공유하기 </div>
@@ -97,6 +98,7 @@ const Share = () => {
 				</div>
 			</div>
 
+			<div className='space-box'/>
 			<div className='space-box'/>
 		</div>
 	)

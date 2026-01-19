@@ -9,6 +9,7 @@ const Navi = () => {
 		<div className='content-box'>
 
 			<div className='space-box'/>
+			<div className='space-box'/>
 
 			<div className='sub-title'> L O C A T I O N </div>
 			<div className='div-title'>
@@ -40,6 +41,7 @@ const Navi = () => {
 			<Route/>	
 			<div className='space-box'/>
 			<Transport/>
+			<div className='space-box'/>
 			<div className='space-box'/>
 		</div>
 	)

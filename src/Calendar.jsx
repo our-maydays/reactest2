@@ -53,6 +53,7 @@ const Calendar = () => {
 	return (
 		<div className='calendar-box' style={{background:'#F3E3B880'}}>
 		<div className='space-box'/>
+		<div className='space-box'/>
 			<p className='bold-text' style = {{
 				fontSize: '1.8rem', 
 				fontFamily: 'Bold',
@@ -153,7 +154,7 @@ const Calendar = () => {
 			</div>
 			
 			<div className='space-box'/>
-
+			<div className='space-box'/>
 		</div>
 	);
 };

@@ -152,6 +152,7 @@ const Gallery = () => {
 			</div>
 
 			<div className='space-box'/>
+			<div className='space-box'/>
 
 			<Modal
 				isOpen={isOpen}

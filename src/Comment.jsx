@@ -277,6 +277,7 @@ const Comment = () => {
 			alignItems: 'center'
 		}}>
 			<div className='space-box'/>
+			<div className='space-box'/>
 
 			<div className='sub-title'>
 				G U E S T B O O K
@@ -577,6 +578,7 @@ const Comment = () => {
 				&nbsp;축하메세지 보내기
 			</button>
 
+			<div className='space-box'/>
 			<div className='space-box'/>
 
 			<Modal 

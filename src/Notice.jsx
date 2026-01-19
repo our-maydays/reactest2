@@ -42,6 +42,7 @@ const Notice = () => {
 			</div>
 			
 			<div className='space-box'/>
+			<div className='space-box'/>
 
 		</div>
 	)

@@ -12,6 +12,7 @@ const GuestSnap = () => {
 		<div className='content-box'>
 
 			<div className='space-box'/>
+			<div className='space-box'/>
 			
 			<div className='sub-title'> G U E S T S N A P </div>
 			<div className='div-title'> 게스트스냅 </div>
@@ -51,6 +52,7 @@ const GuestSnap = () => {
 				사진 업로드
 			</div>
 			
+			<div className='space-box'/>
 			<div className='space-box'/>
 
 		</div>	

@@ -12,6 +12,7 @@ const Account = () => {
 	return (
 		<div className='content-box'>
 			<div className='space-box'/>
+			<div className='space-box'/>
 
 			<div className='sub-title'>
 				A C C O U N T
@@ -40,7 +41,7 @@ const Account = () => {
 			<AccountAccordion sectionKey='bride'/>
 
 			<div className='space-box'/>
-			
+			<div className='space-box'/>	
 				
 
 
