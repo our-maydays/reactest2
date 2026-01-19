@@ -1,4 +1,7 @@
 import './App.css'
+import mainImg from './assets/heart.png'
+import { useEffect } from 'react'
+
 
 const Share = () => {
 
@@ -13,11 +16,57 @@ const Share = () => {
 	}
 
 	const url = 'https://our-maydays.github.io/reactest2'
+
 	
 	const shareUrl = async() => {
 		navigator.clipboard.writeText(url)
 		alert('링크가 복사되었습니다')
 	}
+
+	{/*
+	Kakao.init('JAVASCRIPT_KEY')
+	console.log('kakao ', Kakao.isInitialized())
+ 	*/}
+
+	useEffect( () => {
+		Kakao.cleanup()
+		Kakao.init(import.meta.env.VITE_REACT_APP_KAKAO_JAVASCRIPT_KEY);
+		console.log(Kakao.isInitialized())
+	}, [])
+
+	const kakaoShare = async () => {
+		if (!Kakao.isInitialized()) {
+			Kakao.init(import.meta.env.VITE_REACT_APP_KAKAO_JAVACRIPT_KEY);
+		}
+
+		try {
+			Kakao.Share.sendDefault({
+				objectType: 'feed',
+				content: {
+					title: '경보 유진 결혼합니다',
+					description: '2026.05.09. 오후 1시</n> 부산 영도 목장원 오필로스가든',
+					imageUrl: mainImg,
+					link: {
+						mobileWebUrl: 'https://our-maydays.github.io/reactest2',
+						webUrl: 'https://our-maydays.github.io/reactest2',
+					},
+				},
+				buttons: [{
+					title:'모바일 청첩장 보기',
+					link: {
+						mobileWebUrl: 'https://our-maydays.github.io/reactest2',
+						webUrl: 'https://our-maydays.github.io/reactest2',
+					},
+				}],
+				installTalk: true,
+			})
+		} catch (error) {
+			console.error(error);
+		}
+	}
+
+
+
 
 
 	return (
@@ -40,6 +89,8 @@ const Share = () => {
 				<div style={styles.button}>
 					카톡
 				</div>
+				
+				<button type='button' id='kakaotalk-share-btn' onClick={()=> {kakaoShare()}}> 공유 </button>
 
 				<div onClick={shareUrl} style={styles.button}>
 					링크
