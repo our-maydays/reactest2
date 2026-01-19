@@ -73,6 +73,14 @@ const Calendar = () => {
 			</p>
 			
 			<div className='space-box'/>
+			
+			<hr style={{
+				outline: 'none',
+				border: '0.5px solid #34485955',
+				margin: '0 auto',
+				padding: 0,
+				width: '65%',
+			}}/>
 
 			<div style={{
 				display: 'flex', 
@@ -94,6 +102,15 @@ const Calendar = () => {
 					</tbody>
 				</table>
 			</div>
+			
+			<hr style={{
+				outline: 'none',
+				border: '0.5px solid #34485955',
+				width: '65%',
+				margin: '0 auto',
+				padding: 0,
+			}}/>
+
 			<div className='space-box'/>
 
 			<Dday/>

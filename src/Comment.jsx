@@ -7,7 +7,7 @@ import SHA256 from 'crypto-js/sha256'
 import sendIcon from './assets/send.svg'
 import messageIcon from './assets/message.svg'
 import loginIcon from './assets/check.svg'
-import closeIcon from './assets/close.svg'
+import closeIcon from './assets/close_icon.svg'
 import lockIcon from './assets/lock.svg'
 import unlockIcon from './assets/unlock.svg'
 import editIcon from './assets/write.svg'
@@ -377,7 +377,7 @@ const Comment = () => {
 									padding: '0',
 								}}
 							>
-								<img className='icon' src={closeIcon}/>
+								<img width={'25rem'} height={'25rem'} src={closeIcon}/>
 							</button>
 						</div>
 
@@ -618,7 +618,7 @@ const Comment = () => {
 								padding: '0',
 							}}
 						>
-							<img src={closeIcon} className='icon'/>
+							<img src={closeIcon} width={'25rem'} height={'25rem'}/>
 						</button>
 					</div>
 

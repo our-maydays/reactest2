@@ -8,7 +8,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import closeIcon from './assets/close_icon.png'
+import closeIcon from './assets/close_icon.svg'
 
 
 
