@@ -121,6 +121,7 @@ const AudioComp = () => {
 			padding: 0,
 			}}
 		>
+		{/*
 			<div
 				className='disappear' 
 				style={{
@@ -141,6 +142,7 @@ const AudioComp = () => {
 			>
 				배경음악이 준비되었습니다
 			</div>
+			*/}
 			<div className='slidedown' style={{
 				height: '3rem',
 				width: '3rem',

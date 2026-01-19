@@ -24,11 +24,11 @@ const Navi = () => {
 					영도 목장원	오필로스가든
 				</span>
 				<br/>
-				<span style={{fontSize: '1.4rem', color:'rgba(0,0,0,0.6)'}}>
+				<span style={{fontSize: '1.4rem', color:'gray'}}>
 					부산광역시 영도구 절영로 355
 				</span>
 				<br/>
-				<span style={{fontSize: '1.2rem', color: 'rgba(0,0,0,0.6)'}}>
+				<span style={{fontSize: '1.2rem', color: 'gray'}}>
 					051-404-5011
 				</span>
 			</div>

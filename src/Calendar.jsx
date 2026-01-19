@@ -67,7 +67,7 @@ const Calendar = () => {
 				fontSize: '1.4rem',
 				margin: 0,
 				padding: 0,
-				color: '#344859',
+				color: 'gray',
 				}}
 			>
 				토요일 오후 1시<br/>
@@ -77,7 +77,7 @@ const Calendar = () => {
 			
 			<hr style={{
 				outline: 'none',
-				border: '0.5px solid rgba(0,0,0,0.6)',
+				border: '0.5px solid gray',
 				margin: '0 auto',
 				padding: 0,
 				width: '65%',
@@ -106,7 +106,7 @@ const Calendar = () => {
 			
 			<hr style={{
 				outline: 'none',
-				border: '0.5px solid rgba(0,0,0,0.6)',
+				border: '0.5px solid gray',
 				width: '65%',
 				margin: '0 auto',
 				padding: 0,

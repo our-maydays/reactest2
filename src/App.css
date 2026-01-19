@@ -108,7 +108,7 @@ html, body {
 	margin: 0px auto;
 	margin-left: 0px;
 	margin-right: 0px;
-	color: rgba(0,0,0,0.6);
+	color: gray;
 }
 .dday-box {
 	display: flex;
@@ -140,7 +140,7 @@ html, body {
 	display: inline-block;
 	margin: 0 auto;
 	font-size: 1.0rem;
-	color: rgba(0,0,0,0.6);
+	color: gray;
 }
 
 .dday-num {
