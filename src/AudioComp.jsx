@@ -36,29 +36,6 @@ const AudioComp = () => {
 			console.log('autoplay.blocked')
 		})
 
-		const stopAudio = () => {
-			if (audioRef.current.pause()) {
-				audioRef.current.pause()
-				audioRef.current.currentTime=0
-				setIsPlaying(false)
-			}
-		}
-
-		const handleVisibility = () => {
-			if (document.hidden) {
-				stopAudio()
-			}
-
-			window.addEventListener('pagehide', stopAudio)
-			window.addEventListener('beforeunload', stopAudio)
-			window.addEventListener('visibilitychange', handleVisibility)
-
-			return () => {
-				window.removeEventListener('pagehide',stopAudio)
-				window.removeEventListener('beforeunload', stopAudio)
-				window.removeEventListener('visibilitychange',handleVisibility)
-			}
-		}
 
 		{/*
 		const handleScrollStart = () => {
@@ -83,6 +60,32 @@ const AudioComp = () => {
 			window.removeEventListener('touchstart',handleScrollStart)
 		}
 		*/}
+	}, [])
+
+	useEffect( () => {
+		const stopAudio = () => {
+			if (audioRef.current.pause()) {
+				audioRef.current.pause()
+				audioRef.current.currentTime=0
+				setIsPlaying(false)
+			}
+		}
+
+		const handleVisibility = () => {
+			if (document.hidden) {
+				stopAudio()
+			}
+
+			window.addEventListener('pagehide', stopAudio)
+			window.addEventListener('beforeunload', stopAudio)
+			window.addEventListener('visibilitychange', handleVisibility)
+
+			return () => {
+				window.removeEventListener('pagehide',stopAudio)
+				window.removeEventListener('beforeunload', stopAudio)
+				window.removeEventListener('visibilitychange',handleVisibility)
+			}
+		}
 	}, [])
 
 	const handleAudioToggle = () => {

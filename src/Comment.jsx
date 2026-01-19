@@ -667,8 +667,6 @@ const Comment = () => {
 									display: 'flex',
 									alignItems: 'center',
 									justifyContent: 'center',
-									margin:0,
-									padding: 0,
 									marginRight: '0.5rem',
 									outline: 'none',
 									border: 'none',
