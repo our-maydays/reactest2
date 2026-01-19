@@ -35,7 +35,10 @@ const MainPhoto = () => {
 					images={images}
 				/>
 				<img src={mainphoto} width={'100%'} style={{display:'block', margin: 'auto'}} 
-					onContextMenu={(e) => e.preventDefault()}	/>
+					onContextMenu={(e) => e.preventDefault()}
+					onDragStart={(e) => e.preventDefault()}
+					draggable={false}
+				/>
 			</div>
 			<div className='space-box'/>
 		</div>

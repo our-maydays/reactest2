@@ -127,6 +127,9 @@ const Gallery = () => {
 									style={{
 										width: '100%',
 									}}
+									 onContextMenu={(e) => e.preventDefault()}
+      				     onDragStart={(e) => e.preventDefault()}
+ 			        	   draggable={false}
 								/>
 							</div>
 						</div>
@@ -168,6 +171,9 @@ const Gallery = () => {
 										src={src}
 										alt=''
 										className='modal-image'
+										onContextMenu={(e) => e.preventDefault()}
+				            onDragStart={(e) => e.preventDefault()}
+				            draggable={false}
 									/>
 								</div>
 							))}
