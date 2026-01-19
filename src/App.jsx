@@ -30,10 +30,6 @@ function App() {
 	return (
 		<>
 			<div className='main-frame'>
-				<div style={{fontSize: '8px' }}>
-					build time : {import.meta.env.VITE_BUILD_TIME}
-				</div>
-
 				<WeddingDay targetDate='2026-05-09'/>
 
 				<div style={{
@@ -53,6 +49,11 @@ function App() {
 					<TopMsg/>
 				</Intersect>
 				*/}
+
+				<div style={{fontSize: '8px' }}>
+					build time : {import.meta.env.VITE_BUILD_TIME}
+				</div>
+
 
 				<Intersect>
 					<WelcomeMsg/>

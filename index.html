@@ -2,15 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-		<meta name="color-scheme" content="light only" />
+		<meta name="color-scheme" content="light" />
 		<meta name='supported-color-schemes' content='light'/>
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>reactest2</title>
+		<link rel='stylesheet' href='./src/sakura.css'/>
+		<script src='./src/sakura.js'></script>
+
+    <title>경보 유진 결혼합니다</title>
 		<script type='text/javascript' src='https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=%VITE_REACT_APP_NAVER_CLIENT_ID%'></script>
+
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+		<script src='./src/sakura.js' text='text/javascript'></script>
+		<script>
+			const sakura = new Sakura('photo-box');
+		</script>
   </body>
 </html>

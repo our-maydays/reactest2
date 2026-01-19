@@ -90,6 +90,8 @@ const AudioComp = () => {
 			flexDirection:'row',
 			alignItems:'center',
 			width:'100%',
+			margin: 0,
+			padding: 0,
 			}}
 		>
 			<div
@@ -100,10 +102,8 @@ const AudioComp = () => {
 					display:'flex',
 					alignItems: 'center',
 					justifyContent:'center',
-					padding: '0rem',
-					margin: '0rem ',
-					marginTop: '10px',
-					marginRight: '80px',
+					padding: '0',
+					margin: '0',
 					width: '100%',
 					position: 'absolute',
 					left: '50%',
@@ -112,22 +112,23 @@ const AudioComp = () => {
 					color:'white',
 				}}
 			>
-				배경음악이 준비되어 있습니다
+				배경음악이 준비되었습니다
 			</div>
-			<div style={{
+			<div className='slidedown' style={{
 				height: '3rem',
+				width: '3rem',
 				display: 'flex',
 				justifyContent: 'center',
-				alignItems: 'cneter',
+				alignItems: 'center',
 				margin: 0,
 				padding: 0,
-				marginRight: '10px',
-				marginTop: '10px',
 			}}>
 			<img
-				className='slidedown'
 				src={isPlaying ? audioIconOn : audioIconOff}
-				width={'20px'}
+				style={{ 
+					width: '20px', 
+					height: '20px', 
+				}}
 				onClick={() => handleAudioToggle()}
 			/>
 			</div>

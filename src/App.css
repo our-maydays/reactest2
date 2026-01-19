@@ -198,19 +198,19 @@ html, body {
 }
 @keyframes slideDown {
 	0% {
-		transform: translate(-50%, -10px);
+		transform: translate(0, -10px);
 		opacity: 0;
 	}
 	20% {
-		transform: translate(-50%, 0);
+		transform: translate(0, 0);
 		opacity: 1;			 
 	}
 	80% {
-		transform: translate(-50%,0);
+		transform: translate(0,0);
 		opacity: 1;
 	}
 	100% {
-	  transform: translate(-50%,0);
+	  transform: translate(0,0);
 		opacity: 1;
 	}
 }

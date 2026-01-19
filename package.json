@@ -24,6 +24,8 @@
     "react-naver-maps": "^0.1.4",
     "react-responsive": "^10.0.1",
     "react-slick": "^0.31.0",
+    "react-snowfall": "^2.4.0",
+    "sakura-js": "^1.1.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.19"
   },
