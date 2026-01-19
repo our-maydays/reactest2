@@ -42,8 +42,26 @@ const Share = () => {
 		}
 
 		try {
-			Kakao.Share.sendCustom({
-				templateId: 128114,
+			Kakao.Share.sendDefault({
+				objectType: 'feed',
+				content: {
+					title: '경보 유진 결혼합니다',
+					description: '2026.05.09. 오후 1시</n> 부산 영도 목장원 오필로스가든',
+					imageUrl: 'https://github.com/our-maydays/reactest2/blob/main/src/assets/images/IMG_0250.JPG',
+
+					link: {
+						mobileWebUrl: 'https://our-maydays.github.io/reactest2',
+						webUrl: 'https://our-maydays.github.io/reactest2',
+					},
+				},
+				buttons: [{
+					title:'모바일 청첩장 보기',
+					link: {
+						mobileWebUrl: 'https://our-maydays.github.io/reactest2',
+						webUrl: 'https://our-maydays.github.io/reactest2',
+					},
+				}],
+				installTalk: true,
 			})
 		} catch (error) {
 			console.error(error);

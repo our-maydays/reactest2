@@ -120,6 +120,7 @@ const Gallery = () => {
 	return (
 		<div className='content-box'>
 		<div className='space-box'/>
+		<div className='space-box'/>
 	
 			<div className='sub-title'> G A L L E R Y </div>
 			<div className='div-title'> 사진첩</div>

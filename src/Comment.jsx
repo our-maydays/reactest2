@@ -570,12 +570,12 @@ const Comment = () => {
 					boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
 					border: 'none',
 					outline: 'none',
-					color: '#2F2359',
+					color: 'black',
 				}}
 				onClick={() => setIsOpenNew(true) }
 			>
 				<img src={messageIcon} className='icon'/>
-				&nbsp;축하메세지 보내기
+					&nbsp;축하메세지 보내기
 			</button>
 
 			<div className='space-box'/>

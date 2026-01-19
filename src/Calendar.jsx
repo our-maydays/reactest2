@@ -77,7 +77,7 @@ const Calendar = () => {
 			
 			<hr style={{
 				outline: 'none',
-				border: '0.5px solid #34485955',
+				border: '0.5px solid rgba(0,0,0,0.6)',
 				margin: '0 auto',
 				padding: 0,
 				width: '65%',
@@ -106,7 +106,7 @@ const Calendar = () => {
 			
 			<hr style={{
 				outline: 'none',
-				border: '0.5px solid #34485955',
+				border: '0.5px solid rgba(0,0,0,0.6)',
 				width: '65%',
 				margin: '0 auto',
 				padding: 0,
