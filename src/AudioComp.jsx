@@ -66,7 +66,6 @@ const AudioComp = () => {
 		const stopAudio = () => {
 			if (audioRef.current) {
 				audioRef.current.pause()
-				audioRef.current.currentTime=0
 				setIsPlaying(false)
 			}
 		}
