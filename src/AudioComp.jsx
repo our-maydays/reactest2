@@ -64,27 +64,27 @@ const AudioComp = () => {
 
 	useEffect( () => {
 		const stopAudio = () => {
-			if (audioRef.current.pause()) {
+			if (audioRef.current) {
 				audioRef.current.pause()
 				audioRef.current.currentTime=0
 				setIsPlaying(false)
 			}
 		}
 
-		const handleVisibility = () => {
+		const handleVisibilityChange = () => {
 			if (document.hidden) {
 				stopAudio()
 			}
+		}
 
-			window.addEventListener('pagehide', stopAudio)
-			window.addEventListener('beforeunload', stopAudio)
-			window.addEventListener('visibilitychange', handleVisibility)
+		window.addEventListener('pagehide', stopAudio)
+		window.addEventListener('beforeunload', stopAudio)
+		document.addEventListener('visibilitychange', handleVisibilityChange)
 
-			return () => {
-				window.removeEventListener('pagehide',stopAudio)
-				window.removeEventListener('beforeunload', stopAudio)
-				window.removeEventListener('visibilitychange',handleVisibility)
-			}
+		return () => {
+			window.removeEventListener('pagehide',stopAudio)
+			window.removeEventListener('beforeunload', stopAudio)
+			document.removeEventListener('visibilitychange',handleVisibilityChange)
 		}
 	}, [])
 
