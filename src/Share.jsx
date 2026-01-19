@@ -12,6 +12,8 @@ const Share = () => {
 			padding: '0.5rem',
 			background: 'rgb(242,238,238)',
 			boxShadow: '0 2px 4px rgb(0,0,0,0.1)',
+			borderRadius: '0.8rem',
+			cursor: 'pointer',
 		}
 	}
 
@@ -45,7 +47,7 @@ const Share = () => {
 				content: {
 					title: '경보 유진 결혼합니다',
 					description: '2026.05.09. 오후 1시</n> 부산 영도 목장원 오필로스가든',
-					imageUrl: mainImg,
+					imageUrl: {mainImg},
 					link: {
 						mobileWebUrl: 'https://our-maydays.github.io/reactest2',
 						webUrl: 'https://our-maydays.github.io/reactest2',
@@ -86,7 +88,7 @@ const Share = () => {
 				margin: '0 auto',
 				padding: 0,
 			}}>
-				<div style={styles.button}>
+				<div style={styles.button} onClick={() => {kakaoShare()}}>
 					카톡
 				</div>
 				
