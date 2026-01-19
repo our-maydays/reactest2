@@ -34,7 +34,8 @@ const MainPhoto = () => {
 					snowflakeCount={30}
 					images={images}
 				/>
-				<img src={mainphoto} width={'100%'} style={{display:'block', margin: 'auto'}} />
+				<img src={mainphoto} width={'100%'} style={{display:'block', margin: 'auto'}} 
+					onContextMenu={(e) => e.preventDefault()}	/>
 			</div>
 			<div className='space-box'/>
 		</div>

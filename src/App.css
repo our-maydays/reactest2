@@ -11,6 +11,12 @@
 	color-scheme: light;
 }
 
+img {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
 .icon {
 	width:15px;
 	height:15px;
