@@ -11,7 +11,7 @@
 	color-scheme: light;
 }
 
-.prevent-img {
+img {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	user-select: none;
