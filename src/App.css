@@ -21,6 +21,16 @@ img {
 	-ms-user-select: none;
 }
 
+::-webkit-scrollbar {
+	display: none;
+}
+
+.no-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	overflow-y: scroll;
+}
+
 .icon {
 	width:15px;
 	height:15px;
