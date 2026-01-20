@@ -6,6 +6,11 @@ html, body {
 	color-scheme: light only;
 }
 
+* {
+	background-color: initial !important;
+	color: inherit !important;
+}
+
 #root {
 	margin: 0 auto;
 	text-align: center;
