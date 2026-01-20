@@ -208,7 +208,7 @@ const Comment = () => {
 	}
 
 	const onChangePasswordHandler = (e) => {
-		const passwordEng = e.target.value.replace(/[^a-z]/g,'');
+		const passwordEng = e.target.value.replace(/[^0-9]/g,'');
 		setPassword(passwordEng)
 	}
 

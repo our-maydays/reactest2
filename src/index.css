@@ -1,4 +1,13 @@
 :root {
+	color-scheme: light only;
+}
+
+html, body {
+	color-scheme: light only;
+}
+
+
+:root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -54,15 +63,3 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #2F2359;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #2F2359;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
