@@ -4,27 +4,23 @@ import audioIconOn from './assets/volume-on.svg'
 import audioIconOff from './assets/volume-off.svg'
 import { useEffect, useRef, useState } from 'react';
 
+const audioURL = './assets/bgm.mp3'
+
 const AudioComp = () => {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const audioRef = useRef(null);
 	const [phase, setPhase] = useState('hidden')
 
-	useEffect( () => {
-		setPhase('visible')
-		const fadeTimer = setTimeout( () => {
-			setPhase('fadeOut')
-		}, 2000)
-
-		return () => clearTimeout(fadeTimer)
-	}, [])
-
 	
 	useEffect( () => {
-		const audio = new Audio(audioFile)
-
+		const audio = new Audio(audioURL)
+		
 		audioRef.current = audio
 		audioRef.current.load()
 		audioRef.current.addEventListener('ended', () => setIsPlaying(false))
+		audio.src = audioFile
+		{/*
+
 		audioRef.current.play().then( () => {
 			console.log('silence autoplay success')
 			console.log(isPlaying)
@@ -35,7 +31,7 @@ const AudioComp = () => {
 		}).catch(() => {
 			console.log('autoplay.blocked')
 		})
-
+*/}
 
 		{/*
 		const handleScrollStart = () => {
