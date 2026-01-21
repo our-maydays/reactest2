@@ -1,10 +1,9 @@
 import silenceFile from './assets/silence.mp3'
-import audioFile from './assets/bgm.mp3'
-import audioIconOn from './assets/volume-on.svg'
 import audioIconOff from './assets/volume-off.svg'
 import { useEffect, useRef, useState } from 'react';
 
-const audioURL = './assets/bgm.mp3'
+const audioFile = `${import.meta.env.BASE_URL}src/assets/bgm.mp3`
+const audioIconOn = `${import.meta.env.BASE_URL}src/assets/volume-on.svg`
 
 const AudioComp = () => {
 	const [isPlaying, setIsPlaying] = useState(false);
@@ -13,12 +12,14 @@ const AudioComp = () => {
 
 	
 	useEffect( () => {
-		const audio = new Audio(audioURL)
+		const audio = new Audio(audioFile)
 		
 		audioRef.current = audio
 		audioRef.current.load()
 		audioRef.current.addEventListener('ended', () => setIsPlaying(false))
+		console.log(audioFile)
 		audio.src = audioFile
+		console.log(audio.src)
 		{/*
 
 		audioRef.current.play().then( () => {
