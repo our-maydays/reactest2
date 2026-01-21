@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import './Calendar.css'
 import './App.css'
 
@@ -12,8 +11,6 @@ const Calendar = () => {
 	moment.locale('ko')
 	const today = new Date();
 	const tg_date = new Date(2026,4,9,13,0,0);
-//	const tg_date = new Date(2025,11,17,20,38,0);
-//	const daysOfWeek = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 	const daysOfWeek = ['일','월','화','수','목','금','토']
 	const daysInMonth = 31;
 	const firstDayOfMonth = new Date(2026,4,1).getDay();
@@ -163,4 +160,3 @@ function dateOnly(d) {
 	return new Date(d.getFullYear(), d.getMonth(), d.getDate());
 }
 export default Calendar
-

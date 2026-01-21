@@ -1,10 +1,13 @@
 import './Transport.css'
 import './App.css'
 
-import shuttleIcon from './assets/shuttle.svg'
-import busIcon from './assets/bus.svg'
+//import shuttleIcon from './assets/shuttle.svg'
+//import busIcon from './assets/bus.svg'
 import expressbusIcon from './assets/expressbus.svg'
 import carIcon from './assets/car.svg'
+
+const shuttleIcon = `${import.meta.env.BASE_URL}src/assets/shuttle.svg`
+const busIcon = `${import.meta.env.BASE_URL}src/assets/bus.svg`
 
 const Transport = ( ) => {
 

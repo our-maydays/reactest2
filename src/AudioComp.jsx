@@ -1,9 +1,8 @@
-import silenceFile from './assets/silence.mp3'
-import audioIconOff from './assets/volume-off.svg'
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react'
 
 const audioFile = `${import.meta.env.BASE_URL}src/assets/bgm.mp3`
 const audioIconOn = `${import.meta.env.BASE_URL}src/assets/volume-on.svg`
+const audioIconOff = `${import.meta.env.BASE_URL}src/assets/volume-off.svg`
 
 const AudioComp = () => {
 	const [isPlaying, setIsPlaying] = useState(false);
@@ -18,23 +17,9 @@ const AudioComp = () => {
 		audioRef.current.load()
 		audioRef.current.addEventListener('ended', () => setIsPlaying(false))
 		console.log(audioFile)
-		audio.src = audioFile
-		console.log(audio.src)
-		{/*
+		console.log('src', audioRef.src)
 
-		audioRef.current.play().then( () => {
-			console.log('silence autoplay success')
-			console.log(isPlaying)
-
-			audio.src = audioFile
-			audio.play()
-			setIsPlaying(true)
-		}).catch(() => {
-			console.log('autoplay.blocked')
-		})
-*/}
-
-		{/*
+		{/* scroll, gesture, touch 하면 음악 자동재생
 		const handleScrollStart = () => {
 			if (!isPlaying) {
 				audioRef.current.play().catch( () => {} )
@@ -87,11 +72,8 @@ const AudioComp = () => {
 	const handleAudioToggle = () => {
 		if (isPlaying) {
 			audioRef.current.pause()
-			console.log('audio pause')
 		} else {
 			audioRef.current.play();
-			console.log('audio start');
-			console.log(audioRef.current.play())
 		}
 		setIsPlaying(!isPlaying)
 	}
@@ -160,20 +142,6 @@ const AudioComp = () => {
 			</div>
 		</div>
 	)
-
-	{/*
-	return(
-		<>
-			<iframe src={silenceFile} allow='autoplay' id='audio'>
-			</iframe>
-			<audio id='audio' autoPlay>
-			<source src={audioFile}/>
-			</audio>
-
-		</>
-	)
-*/}
-
 }
 
 export default AudioComp
