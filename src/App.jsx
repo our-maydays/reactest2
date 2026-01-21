@@ -68,11 +68,11 @@ function App() {
 				<Intersect>
 					<Navi/>
 				</Intersect>
-
+				{/*
 				<Intersect>
 					<Gallery/>
 				</Intersect>
-
+				*/}
 				<Intersect>
 					<Video/>
 				</Intersect>

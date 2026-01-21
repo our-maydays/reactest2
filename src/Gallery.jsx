@@ -16,9 +16,10 @@ const closeIcon = `${import.meta.env.BASE_URL}icon/close_icon.svg`
 import './Gallery.css'
 
 // src/assets/images에 있는 모든 이미지를 한번에 불러오기
-const imagePaths = import.meta.glob('./assets/images/*.{jpg,JPG}', {
-//const imagePaths = import.meta.glob('/photo/*.{jpg,JPG}',{
+//const imagePaths = import.meta.glob('./assets/images/*.{jpg,JPG}', {
+const imagePaths = import.meta.glob('/photo/*.{jpg,JPG}',{
 	eager: true,
+	query: '?url',
 	import: 'default',
 });
 
@@ -34,6 +35,10 @@ const Gallery = () => {
 	const images = useMemo( () => {
 		return Object.values(imagePaths)
 	}, [])
+//	const images = Object.keys(imagePaths)
+
+
+	console.log(images)
 
 	useEffect( () => {
 		document.body.style.overflow = isOpen ? "hidden" : 'auto';
