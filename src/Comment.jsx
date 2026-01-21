@@ -39,7 +39,6 @@ import {
 import { db } from './firebase'
 
 import {
-	StBarText,
 	StEntireDiv,
 	StInputDiv,
 	StNameInput,

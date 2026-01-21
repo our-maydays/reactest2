@@ -6,6 +6,27 @@ html, body {
 	color-scheme: light only;
 }
 
+.button {
+	cursor: pointer;
+	font-family: Regular;
+	font-size: 1.6rem;
+	line-height: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background: rgb(242,238,238);
+	border-radius: 1rem;
+	padding: 0.5rem;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	border: none;
+}
+
+.button:focus,
+.button:hover,
+.button:focus-visible {
+	outline: none;
+}
 
 #root {
 	margin: 0 auto;

@@ -14,7 +14,7 @@ import Intersect from './Intersect'
 import WeddingDay from './Weddingday'
 
 import GuestSnap from './GuestSnap'
-
+import RSVP from './RSVP'
 
 import { Desktop, Mobile, Tablet, Default } from './Responsive'
 import Comment from './Comment'
@@ -68,11 +68,11 @@ function App() {
 				<Intersect>
 					<Navi/>
 				</Intersect>
-				{/*
+
 				<Intersect>
 					<Gallery/>
 				</Intersect>
-				*/}
+				
 				<Intersect>
 					<Video/>
 				</Intersect>
@@ -88,6 +88,10 @@ function App() {
 
 				<Intersect>
 					<Notice/>
+				</Intersect>
+
+				<Intersect>
+					<RSVP/>
 				</Intersect>
 				
 				<Intersect>
