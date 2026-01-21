@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-const audioFile = `${import.meta.env.BASE_URL}src/assets/bgm.mp3`
+const audioFile = `${import.meta.env.BASE_URL}bgm.mp3`
 const audioIconOn = `${import.meta.env.BASE_URL}src/assets/volume-on.svg`
 const audioIconOff = `${import.meta.env.BASE_URL}src/assets/volume-off.svg`
 
