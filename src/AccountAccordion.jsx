@@ -1,10 +1,14 @@
 import { useState } from 'react'
-import copyIcon from './assets/copy.svg'
-import upIcon from './assets/up.svg'
-import downIcon from './assets/down.svg'
+
+const copyIcon = `${import.meta.env.BASE_URL}/icon/copy.svg`
+const upIcon = `${import.meta.env.BASE_URL}/icon/up.svg`
+const downIcon = `${import.meta.env.BASE_URL}/icon/down.svg`
+//import copyIcon from './assets/copy.svg'
+//import upIcon from './assets/up.svg'
+//import downIcon from './assets/down.svg'
 
 
-export default function AccountAccordion({sectionKey}) {
+export default function AccountAccordion({sectionKey, defaultOpen=false}) {
 
   const data = [
     {
@@ -28,7 +32,7 @@ export default function AccountAccordion({sectionKey}) {
   ]
 	const section = data.find((d) => d.key === sectionKey)
 
-	const [open, setOpen] = useState(false)
+	const [open, setOpen] = useState(defaultOpen)
 
 	if (!section) return null
 

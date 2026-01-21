@@ -1,19 +1,28 @@
 import styled from 'styled-components'
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import moment from 'moment'
 import 'moment/dist/locale/ko'
 import SHA256 from 'crypto-js/sha256'
 
-import sendIcon from './assets/send.svg'
-import messageIcon from './assets/message.svg'
-import loginIcon from './assets/check.svg'
-import closeIcon from './assets/close_icon.svg'
-import lockIcon from './assets/lock.svg'
-import unlockIcon from './assets/unlock.svg'
-import editIcon from './assets/write.svg'
-import eraseIcon from './assets/erase.svg'
-import nameIcon from './assets/user.svg'
+//import sendIcon from './assets/send.svg'
+//import messageIcon from './assets/message.svg'
+//import loginIcon from './assets/check.svg'
+//import closeIcon from './assets/close_icon.svg'
+//import lockIcon from './assets/lock.svg'
+//import unlockIcon from './assets/unlock.svg'
+//import editIcon from './assets/write.svg'
+//import eraseIcon from './assets/erase.svg'
+//import nameIcon from './assets/user.svg'
 
+const sendIcon = `${import.meta.env.BASE_URL}/icon/send.svg`
+const messageIcon = `${import.meta.env.BASE_URL}/icon/message.svg`
+const loginIcon = `${import.meta.env.BASE_URL}/icon/check.svg`
+const closeIcon = `${import.meta.env.BASE_URL}/icon/close_icon.svg`
+const lockIcon = `${import.meta.env.BASE_URL}/icon/lock.svg`
+const unlockIcon = `${import.meta.env.BASE_URL}/icon/unlock.svg`
+const editIcon = `${import.meta.env.BASE_URL}/icon/write.svg`
+const eraseIcon = `${import.meta.env.BASE_URL}/icon/erase.svg`
+const nameIcon = `${import.meta.env.BASE_URL}/icon/user.svg`
 
 import Modal from 'react-modal'
 import { 

@@ -1,14 +1,10 @@
-import { useState } from 'react';
 import AccountAccordion from './AccountAccordion'
 
 import './App.css'
 
 const Account = () => {
-	
-	const [isOpen, setIsOpen] = useState(false)
-	const [bank_modal, set_bank_modal] = useState({isopen:false, src:null});
 
-
+	const randomKey = Math.random() < 0.5 ? 'groom' : 'bride'
 	return (
 		<div className='content-box'>
 			<div className='space-box'/>
@@ -34,11 +30,11 @@ const Account = () => {
 		
 			<div className='space-box'/>
 
-			<AccountAccordion sectionKey='groom'/>
+			<AccountAccordion sectionKey='groom' defaultOpen={randomKey==='groom'}/>
 
 			<div className='space-box'/>
 
-			<AccountAccordion sectionKey='bride'/>
+			<AccountAccordion sectionKey='bride' defaultOpen={randomKey==='bride'}/>
 
 			<div className='space-box'/>
 			<div className='space-box'/>	
