@@ -8,7 +8,8 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import closeIcon from './assets/close_icon.svg'
+//import closeIcon from './assets/close_icon.svg'
+const closeIcon = `${import.meta.env.BASE_URL}icon/close_icon.svg`
 
 
 
@@ -16,11 +17,13 @@ import './Gallery.css'
 
 // src/assets/images에 있는 모든 이미지를 한번에 불러오기
 const imagePaths = import.meta.glob('./assets/images/*.{jpg,JPG}', {
+//const imagePaths = import.meta.glob('/photo/*.{jpg,JPG}',{
 	eager: true,
 	import: 'default',
 });
 
 Modal.setAppElement('#root')
+console.log(imagePaths)
 
 const Gallery = () => {
 	const [isOpen, setIsOpen] = useState(false)

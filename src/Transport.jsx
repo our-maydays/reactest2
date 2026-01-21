@@ -1,13 +1,11 @@
 import './Transport.css'
 import './App.css'
 
-//import shuttleIcon from './assets/shuttle.svg'
-//import busIcon from './assets/bus.svg'
-import expressbusIcon from './assets/expressbus.svg'
-import carIcon from './assets/car.svg'
 
-const shuttleIcon = `${import.meta.env.BASE_URL}src/assets/shuttle.svg`
-const busIcon = `${import.meta.env.BASE_URL}src/assets/bus.svg`
+const shuttleIcon = `${import.meta.env.BASE_URL}icon/shuttle.svg`
+const busIcon = `${import.meta.env.BASE_URL}icon/bus.svg`
+const expressbusIcon = `${import.meta.env.BASE_URL}icon/expressbus.svg`
+const carIcon = `${import.meta.env.BASE_URL}icon/car.svg`
 
 const Transport = ( ) => {
 
@@ -69,4 +67,3 @@ const Transport = ( ) => {
 }
 
 export default Transport
-

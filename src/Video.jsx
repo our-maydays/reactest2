@@ -1,5 +1,8 @@
-import myVideo from './assets/videos/test.mov'
-import myPoster from './assets/videos/test.png'
+//import myVideo from './assets/videos/test.mov'
+//import myPoster from './assets/videos/test.png'
+
+const myVideo = `${import.meta.env.BASE_URL}video/test.mov`
+const myPoster = `${import.meta.env.BASE_URL}video/test.png`
 
 import {useRef} from 'react'
 import './App.css'
@@ -43,7 +46,8 @@ const Video = () => {
 				<video 
 					ref={videoRef}
 					id='myVideo' 
-					poster={myPoster}
+//					poster={myPoster}
+					preload='auto'
 					src={myVideo}
 					controls
 					style={{

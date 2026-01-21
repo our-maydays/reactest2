@@ -1,16 +1,15 @@
-import React from 'react'
-import { useState } from 'react'
+//import nmapIcon from './assets/nmap.png'
+//import kmapIcon from './assets/kmap.png'
+//import tmapIcon from './assets/tmap.jpeg'
 
-import nmapIcon from './assets/nmap.png'
-import kmapIcon from './assets/kmap.png'
-import tmapIcon from './assets/tmap.jpeg'
+const nmapIcon = `${import.meta.env.BASE_URL}icon/nmap.png`
+const kmapIcon = `${import.meta.env.BASE_URL}icon/kmap.png`
+const tmapIcon = `${import.meta.env.BASE_URL}icon/tmap.jpeg`
 
 import './Route.css'
 
 const Route = () => {
 
-	const [locat, setLocat] = useState({lat:'null',lng:'null'})
-	const [error, setError] = useState('')
 
 	const destLat = 35.0716472
 	const destLng = 129.0573867

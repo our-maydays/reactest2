@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 
 const audioFile = `${import.meta.env.BASE_URL}bgm.mp3`
-const audioIconOn = `${import.meta.env.BASE_URL}src/assets/volume-on.svg`
-const audioIconOff = `${import.meta.env.BASE_URL}src/assets/volume-off.svg`
+const audioIconOn = `${import.meta.env.BASE_URL}icon/volume-on.svg`
+const audioIconOff = `${import.meta.env.BASE_URL}icon/volume-off.svg`
 
 const AudioComp = () => {
 	const [isPlaying, setIsPlaying] = useState(false);

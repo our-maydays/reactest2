@@ -2,8 +2,8 @@ import './App.css'
 import Snowfall from 'react-snowfall'
 
 
-const mainphoto = `${import.meta.env.BASE_URL}src/assets/images/DSC07876.jpg`
-const sakura = `${import.meta.env.BASE_URL}src/assets/sakura.png`
+const mainphoto = `${import.meta.env.BASE_URL}photo/DSC07876.jpg`
+const sakura = `${import.meta.env.BASE_URL}icon/sakura.png`
 
 const MainPhoto = () => {
 
